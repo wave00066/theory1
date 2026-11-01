@@ -1,0 +1,19 @@
+# The quiz's flow for the README's picture (docs/make_graphics.py): a question, a wrong note, half the answer,
+# the answer right.
+wait 900
+turn SELECT 1
+tap SEL
+wait 50
+seed 7
+quizof 3
+tap SEL
+wait 300
+shot q1.png
+wrong
+wait 300
+shot q2.png
+solve
+wait 380
+shot q3.png
+wait 1200
+shot q4.png

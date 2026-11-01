@@ -9,7 +9,7 @@ font_full = ["M"]              # lower case in the medium font too: note names (
 ble = true                     # Bluetooth MIDI
 ble_central = true             # and the FM-1 connects to a Bluetooth MIDI keyboard or piano (REC)
 # the site (tools/make_site.py, tools/publish_site.sh)
-tagline = "music theory lessons and quizzes on the FM-1, in four languages"
+tagline = "music theory lessons and quizzes on the FM-1, in five languages"
 repo = "https://github.com/wave00066/theory1"
 licence = "MPL-2.0"
 credits = "Built on fm1-base (Charles Vestal) and felucca-bsp (Leo Kuroshita, Hügelton Instruments)."

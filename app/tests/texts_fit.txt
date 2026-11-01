@@ -1,5 +1,5 @@
-# Every lesson page, quiz type and level, the lab and the settings, in every language and two
-# ways of naming notes: no text may run off the screen (app_host_fails).
+# Every lesson page (Harmony: every scale on every root, triads and sevenths), quiz type and level, the lab and
+# the settings, in every language and two ways of naming notes: no text may run off the screen (app_host_fails).
 wait 900
 lang 0
 names 0
@@ -204,67 +204,940 @@ turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -641,6 +1514,7 @@ turn SELECT 1
 tap SEL
 wait 30
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -655,6 +1529,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -669,6 +1544,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -683,6 +1559,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -697,6 +1574,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -711,6 +1589,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -725,6 +1604,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -739,6 +1619,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -753,6 +1634,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -767,6 +1649,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -781,6 +1664,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -795,6 +1679,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -809,6 +1694,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -823,6 +1709,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -837,6 +1724,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -851,6 +1739,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -865,6 +1754,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1092,67 +1982,940 @@ turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -1529,6 +3292,7 @@ turn SELECT 1
 tap SEL
 wait 30
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1543,6 +3307,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1557,6 +3322,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1571,6 +3337,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1585,6 +3352,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1599,6 +3367,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1613,6 +3382,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1627,6 +3397,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1641,6 +3412,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1655,6 +3427,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1669,6 +3442,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1683,6 +3457,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1697,6 +3472,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1711,6 +3487,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1725,6 +3502,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1739,6 +3517,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1753,6 +3532,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -1980,67 +3760,940 @@ turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -2417,6 +5070,7 @@ turn SELECT 1
 tap SEL
 wait 30
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2431,6 +5085,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2445,6 +5100,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2459,6 +5115,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2473,6 +5130,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2487,6 +5145,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2501,6 +5160,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2515,6 +5175,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2529,6 +5190,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2543,6 +5205,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2557,6 +5220,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2571,6 +5235,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2585,6 +5250,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2599,6 +5265,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2613,6 +5280,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2627,6 +5295,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2641,6 +5310,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -2868,67 +5538,940 @@ turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -3305,6 +6848,7 @@ turn SELECT 1
 tap SEL
 wait 30
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3319,6 +6863,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3333,6 +6878,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3347,6 +6893,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3361,6 +6908,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3375,6 +6923,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3389,6 +6938,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3403,6 +6953,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3417,6 +6968,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3431,6 +6983,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3445,6 +6998,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3459,6 +7013,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3473,6 +7028,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3487,6 +7043,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3501,6 +7058,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3515,6 +7073,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3529,6 +7088,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -3756,67 +7316,940 @@ turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -4193,6 +8626,7 @@ turn SELECT 1
 tap SEL
 wait 30
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4207,6 +8641,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4221,6 +8656,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4235,6 +8671,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4249,6 +8686,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4263,6 +8701,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4277,6 +8716,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4291,6 +8731,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4305,6 +8746,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4319,6 +8761,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4333,6 +8776,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4347,6 +8791,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4361,6 +8806,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4375,6 +8821,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4389,6 +8836,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4403,6 +8851,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4417,6 +8866,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -4644,67 +9094,940 @@ turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -5081,6 +10404,7 @@ turn SELECT 1
 tap SEL
 wait 30
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5095,6 +10419,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5109,6 +10434,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5123,6 +10449,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5137,6 +10464,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5151,6 +10479,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5165,6 +10494,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5179,6 +10509,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5193,6 +10524,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5207,6 +10539,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5221,6 +10554,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5235,6 +10569,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5249,6 +10584,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5263,6 +10599,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5277,6 +10614,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5291,6 +10629,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5305,6 +10644,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5532,67 +10872,940 @@ turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -5969,6 +12182,7 @@ turn SELECT 1
 tap SEL
 wait 30
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5983,6 +12197,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -5997,6 +12212,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6011,6 +12227,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6025,6 +12242,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6039,6 +12257,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6053,6 +12272,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6067,6 +12287,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6081,6 +12302,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6095,6 +12317,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6109,6 +12332,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6123,6 +12347,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6137,6 +12362,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6151,6 +12377,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6165,6 +12392,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6179,6 +12407,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6193,6 +12422,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6420,67 +12650,940 @@ turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn SELECT 1
 wait 20
-turn K3 1
+turn K1 1
 turn K2 1
 wait 20
 turn K3 1
 wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -6857,6 +13960,7 @@ turn SELECT 1
 tap SEL
 wait 30
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6871,6 +13975,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6885,6 +13990,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6899,6 +14005,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6913,6 +14020,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6927,6 +14035,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6941,6 +14050,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6955,6 +14065,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6969,6 +14080,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6983,6 +14095,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -6997,6 +14110,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -7011,6 +14125,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -7025,6 +14140,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -7039,6 +14155,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -7053,6 +14170,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -7067,6 +14185,7 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down
@@ -7081,6 +14200,3563 @@ wait 20
 key b4 up
 wait 20
 turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30
+lang 4
+names 0
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 5
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 12
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 19
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 18
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 25
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 32
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 31
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 38
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 45
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 44
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 51
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 58
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 57
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 64
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 71
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 70
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 77
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 84
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 83
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 90
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 97
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 96
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 103
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 110
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 109
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 116
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 123
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 122
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 129
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 136
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30
+lang 4
+names 3
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn SELECT 1
+wait 20
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn K1 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn K3 1
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 8
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 15
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 22
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 21
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 28
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 35
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 34
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 41
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 48
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 47
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 54
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 61
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 60
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 67
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 74
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 73
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 80
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 87
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 86
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 93
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 100
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 99
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 106
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 113
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 112
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 119
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 126
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 125
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 132
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 139
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+turn K1 3
 key w4 down
 key w6 down
 key w8 down

@@ -1,10 +1,12 @@
-# THEORY-1 — music theory on the M-VAVE FM-1
+<p align="center"><img src="docs/img/banner.png" alt="THEORY-1: music theory on the M-VAVE FM-1"></p>
 
-*[Versione italiana](README.it.md)*
+<p align="center"><i><a href="README.it.md">Versione italiana</a></i></p>
 
 THEORY-1 is a teaching firmware for the M-VAVE FM-1. It teaches music theory to students and beginners through
-the synth's keys, lights and screen, in **English, Italian, Spanish and German**. Notes can be shown as **Do (C)**
-(solfège with the letter beside it), solfège only, letters only, or the German way (C D E … H, Fis, Es).
+the synth's keys, lights and screen, in **English, Italian, Spanish, German and French**. Notes can be shown as
+**Do (C)** (solfège with the letter beside it), solfège only, letters only, or the German way (C D E … H, Fis, Es).
+
+<p align="center"><img src="docs/img/features.png" alt="Lessons, quiz and lab"></p>
 
 - **LESSONS**: the basics, intervals, 9 scales, the 7 modes, 13 chord types, the chords built on every degree
   (triads and sevenths, with roman numerals and harmonic function) and the circle of fifths with all 15 keys.
@@ -19,25 +21,33 @@ The FM-1's keys light up with the lesson's notes: orange for the root, the scale
 A keyboard at the bottom of the screen shows the same colours. An outside MIDI keyboard works too, over USB, the
 TRS jack or **Bluetooth** (a digital piano with Bluetooth MIDI, say).
 
-| | | | |
-|---|---|---|---|
-| ![menu](docs/img/01-menu.png) | ![scale](docs/img/05-scala.png) | ![mode](docs/img/08-modo.png) | ![harmony](docs/img/10-armonia.png) |
-| ![keys](docs/img/12-tonalita.png) | ![quiz](docs/img/15-quiz-scala.png) | ![ear](docs/img/17-quiz-orecchio.png) | ![lab](docs/img/19-lab-accordo.png) |
-| ![English](docs/img/en-05-scala.png) | ![Español](docs/img/es-10-armonia.png) | ![Deutsch](docs/img/de-15-quiz-scala.png) | ![settings](docs/img/22-impostazioni.png) |
+## A question, step by step
 
-## Language and note names
+<p align="center"><img src="docs/img/quiz-flow.png" alt="A quiz question: asked, a wrong note, the right notes, done"></p>
+
+You answer in any octave; a chord can be played all at once or one note at a time. A wrong note is named on the
+screen and lit red; after 3 mistakes the right keys light up on their own.
+
+## Five languages
+
+<p align="center"><img src="docs/img/languages.png" alt="The same lesson in Italian, English, Spanish, German and French"></p>
 
 In **SETTINGS** (or GLO from any screen):
 
-- **Language**: Italiano, English, Español, Deutsch. All the text changes, lessons included.
+- **Language**: Italiano, English, Español, Deutsch, Français. All the text changes, lessons included, with each
+  language's own terms (tierce, Große Terz, quinta justa) and steps (T/S, G/H in German, T/dT in French).
 - **Note names**:
   - `Do (C)`: solfège with the letters beside it (the default). In the note boxes the letter sits under the name.
-  - `Do Re Mi`: solfège only.
+  - `Do Re Mi`: solfège only (Ré in French).
   - `C D E`: letters only.
   - `C D E ... H`: the German way, H for B and B for Bb, Fis and Es for the accidentals.
 
 In the lessons and the lab, **EDIT** steps through the naming systems without opening the settings. Chord symbols
 (Cm7, G7, Bm7b5) are always in letters, as on pop and jazz charts.
+
+## More screens
+
+<p align="center"><img src="docs/img/gallery.png" alt="Basics, intervals, modes, chords, keys, ear training, key-signature quiz, settings"></p>
 
 ## Controls
 
@@ -57,56 +67,56 @@ In the lessons and the lab, **EDIT** steps through the naming systems without op
 | **REC** | looks for a Bluetooth MIDI keyboard or piano and connects to it (ALGORITHM picks, REC connects) |
 | **OCT− / OCT+** | move the keys' sound an octave |
 
-The buttons that do something on the current screen glow softly. In the quiz only the note names count, so any
-octave is right. A chord can be played all at once or one note at a time.
+The buttons that do something on the current screen glow softly.
 
 ## Quiz scoring
 
 A right answer at the first try is worth 10 points. Each wrong note costs 2 and each hint 3, but a complete played
-answer is always worth at least 2. A multiple-choice question is worth 10 if right and 0 if wrong. After 3 mistakes
-the right keys light up on their own. At the end you get stars and your best score.
+answer is always worth at least 2. A multiple-choice question is worth 10 if right and 0 if wrong. At the end you
+get stars and your best score. Answers with double sharps or flats never come up; E#, B#, Fb and Cb only at level 3.
 
 ## Install
 
-1. Get `theory1-X.Y.fwsc` from this repository's *Releases*, or from the latest run of the *Build and attest
-   firmware* workflow (artifact `packages`).
+1. Get `theory1.fwsc` from the latest run of the *Build and attest firmware* workflow in **Actions** (artifact
+   `packages`), or from *Releases* when there is one.
 2. Connect the FM-1 to a computer with a USB **data** cable, directly, without a hub.
 3. Install it with the [FM-1 Firmware Hub](https://thefirmwarehub.com/)'s web installer in Chrome or Edge, or from a
-   terminal: `python3 base/tools/fm1_install.py theory1-X.Y.fwsc`.
+   terminal: `python3 base/tools/fm1_install.py theory1.fwsc`.
 4. Don't unplug the cable while it writes.
 
 **Back to the official firmware:** download `FM-1.fwsc` (V15) from M-VAVE's download page and install it with
-M-UPGRADE or the installer. This is unofficial firmware: you install it at your own risk.
+M-UPGRADE or the installer. If THEORY-1 ever fails to start twice, the FM-1 comes up in fm1-base's safe mode, from
+which any firmware can be installed again. This is unofficial firmware: you install it at your own risk.
 
 ## Build
 
 The firmware is built in the cloud by GitHub Actions, where the chip's compiler (JieLi) and its SDK are fetched:
-
-- **Actions → Build and attest firmware → Run workflow**: makes `theory1.fwsc` as an artifact.
-- **A tag `vX.Y`** (`git tag v0.1 && git push --tags`): makes a signed release with `theory1-0.1.fwsc`.
+every push to `main` builds `theory1.fwsc` as an artifact, and a tag `vX.Y` makes a signed release.
 
 On a computer, with no FM-1 and no compiler:
 
 ```sh
 git clone --recursive https://github.com/wave00066/theory1
-sh tests/run_tests.sh          # the theory, the quizzes, the lab, and every text in all 4 languages
+sh tests/run_tests.sh          # the theory, every quiz, 10800 generated questions, every text in 5 languages
 python3 base/tools/build.py app --host
 app/build/host/theory1_host app/tests/screens.txt OUT   # the screens as PNGs
+python3 docs/make_graphics.py                            # this README's pictures
 ```
 
 ## Layout
 
 | File | What it holds |
 |---|---|
-| `app/theory.c` | The theory: note spelling and names (Do, C, H), intervals, scales, modes, chords, degrees, keys and chord recognition, with names and explanations in 4 languages. Plain C, tested on its own. |
-| `app/texts.c` | Every other word on the screen, in 4 languages |
+| `app/theory.c` | The theory: note spelling and names (Do, Ré, C, H), intervals, scales, modes, chords, degrees, keys and chord recognition, with names and explanations in 5 languages. Plain C, tested on its own. |
+| `app/texts.c` | Every other word on the screen, in 5 languages |
 | `app/synth.c` | The sound: a small 2-operator FM synth, 8 voices (electric piano, organ, bells) |
 | `app/app.c` | The screens, the accented letters, the lessons, the quiz, the lab, the settings, the keys and MIDI |
-| `app/tests/` | `theory_test.c`, `basic.txt` (every quiz, the lab, the settings), `texts_fit.txt` (every page in every language fits the screen) and `screens.txt` |
+| `app/tests/` | `theory_test.c`, `basic.txt` (every quiz, the lab, the settings), `questions.txt` (10800 generated questions checked), `texts_fit.txt` (every page in every language fits the screen), `screens.txt`, `flow.txt` |
+| `docs/make_graphics.py` | The README's pictures, made from the simulator's screens |
 | `base/` | [fm1-base](https://github.com/charlesvestal/fm1-base) (a submodule) with [felucca-bsp](https://github.com/hugelton/felucca-bsp) |
 
-The FM-1's fonts are ASCII only: an accented letter (è, ñ, ü, ö) is its plain letter with the accent drawn above,
-and the German ß is written "ss".
+The FM-1's fonts are ASCII only: an accented letter (è, ñ, ü, é, ç) is its plain letter with the accent drawn above
+(or the cedilla below), and the German ß is written "ss".
 
 ## Licence and credits
 

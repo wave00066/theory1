@@ -224,6 +224,11 @@ int main(void)
     check("German degree 5", degree_name(&SCALES[SC_MAJOR], 4), "Dominante");
     th_ui = L_ES;
     check("Spanish degree 7", degree_name(&SCALES[SC_MAJOR], 6), "Sensible");
+    th_ui = L_FR;
+    note_full(N("D"), t), check("French D", t, "Ré (D)");
+    scale_steps(&SCALES[SC_HARMMINOR], b), check("French steps", b, "T  dT  T  T  dT  T+dT  dT");
+    check("French degree 6", degree_name(&SCALES[SC_MAJOR], 5), "Sus-dominante");
+    chord_name(CH_DIM, N("B"), b), check("French Bdim name", b, "Si (B) diminué");
     th_ui = L_IT;
     th_names = NAMES_SOLFEGE;
     key_alterations(2, b), check("2 diesis", b, "Fa# Do#");
@@ -253,6 +258,24 @@ int main(void)
             fails++, printf("FAIL E-G-C should be C major, first inversion\n");
     }
 
+    for (r = 0; r < NLANGS; r++) {          /* every name and text, in every language */
+        int ok = 1;
+        for (i = 0; i < NINTERVALS; i++)
+            ok &= INTERVALS[i].name[r] && INTERVALS[i].text[r] && INTERVALS[i].name[r][0];
+        for (i = 0; i < NSCALES; i++)
+            ok &= SCALES[i].name[r] && SCALES[i].text[r] && SCALES[i].name[r][0];
+        for (i = 0; i < NMODES; i++)
+            ok &= MODES[i].name[r] && MODES[i].text[r] && MODES[i].name[r][0];
+        for (i = 0; i < NCHORDS; i++)
+            ok &= CHORDS[i].name[r] && CHORDS[i].text[r] && CHORDS[i].name[r][0];
+        for (i = 0; i < 8; i++)
+            ok &= DEGREE_NAME[r][i] != 0;
+        for (i = 0; i < 3; i++)
+            ok &= FN_NAME[r][i] != 0;
+        checks++;
+        if (!ok)
+            fails++, printf("FAIL language %d: a name or text missing\n", r);
+    }
     printf("theory: %d checks, %d failed\n", checks, fails);
     return fails != 0;
 }

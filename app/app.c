@@ -3,7 +3,7 @@
 /* THEORY-1 teaches music theory on the FM-1: LESSONS (notes, intervals, scales, modes, chords, the chords on every
  * degree of a scale, keys and the circle of fifths), QUIZ (questions answered on the keys or by ear, three levels,
  * a score and a record) and LAB (play anything: it names the note, the interval or the chord). In Italian,
- * English, Spanish or German; notes named Do (C), Do, C or the German way.
+ * English, Spanish, German or French; notes named Do (C), Do, C or the German way.
  * The keys light up with what is on the screen. Notes come from the FM-1's own keys and from any MIDI keyboard
  * (USB, the TRS jack, Bluetooth). Part of the unity build (device/unity.c, host/plat_host.c), after the platform:
  * gfx.c and announce.c are in scope. The theory is theory.c, the words texts.c, the sound synth.c. */
@@ -333,10 +333,10 @@ static void notes_alt(const nt_t *n, int count, char *b)
 /* Text is UTF-8. The fonts have ASCII; an accented letter is its plain letter with the mark drawn above it (an i
  * loses its dot first), and a German sharp s is drawn ss. '\x01' and '\x02' are the roman numerals' small circle
  * (diminished) and crossed circle (half-diminished). */
-enum { MK_NONE, MK_GRAVE, MK_ACUTE, MK_CIRC, MK_TILDE, MK_UML, MK_RING };
+enum { MK_NONE, MK_GRAVE, MK_ACUTE, MK_CIRC, MK_TILDE, MK_UML, MK_RING, MK_CEDILLA };
 static const char LAT_BASE[65] = "AAAAAAACEEEEIIIIDNOOOOOxOUUUUYPsaaaaaaaceeeeiiiidnooooo/ouuuuypy";
-static const uint8_t LAT_MARK[64] = {1, 2, 3, 4, 5, 6, 0, 0, 1, 2, 3, 5, 1, 2, 3, 5, 0, 4, 1, 2, 3, 4, 5, 0,
-                                     0, 1, 2, 3, 5, 2, 0, 0, 1, 2, 3, 4, 5, 6, 0, 0, 1, 2, 3, 5, 1, 2, 3, 5,
+static const uint8_t LAT_MARK[64] = {1, 2, 3, 4, 5, 6, 0, 7, 1, 2, 3, 5, 1, 2, 3, 5, 0, 4, 1, 2, 3, 4, 5, 0,
+                                     0, 1, 2, 3, 5, 2, 0, 0, 1, 2, 3, 4, 5, 6, 0, 7, 1, 2, 3, 5, 1, 2, 3, 5,
                                      0, 4, 1, 2, 3, 4, 5, 0, 0, 1, 2, 3, 5, 2, 0, 5};
 
 static uint32_t u8next(const char **s)
@@ -361,6 +361,19 @@ static int32_t ink_top(const felucca_font_t *f, uint32_t ch)
             if (gd[gy * bpr + b])
                 return (int32_t)gy;
     return f->h;
+}
+
+/* the last row of a glyph with ink in it */
+static int32_t ink_bottom(const felucca_font_t *f, uint32_t ch)
+{
+    uint32_t gi = glyph(f, ch), bpr = (f->bw[gi] + 1u) / 2u, b;
+    int32_t gy;
+    const uint8_t *gd = f->data + f->off[gi];
+    for (gy = (int32_t)f->h - 1; gy >= 0; gy--)
+        for (b = 0; b < bpr; b++)
+            if (gd[(uint32_t)gy * bpr + b])
+                return gy;
+    return 0;
 }
 
 /* one glyph from row row0 down (cv_text's drawing, for the i without its dot) */
@@ -441,8 +454,18 @@ static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *
                     cv_text(x, y, f, one, c);
                     top = ink_top(f, (uint8_t)one[0]);
                 }
-                if (m && y + top - 3 * k >= y - 1)
-                    t1_mark(x - f->pad + (int32_t)f->bw[gi] / 2, y + top, m, k, c);
+                if (m == MK_CEDILLA) {       /* a hook under the letter */
+                    int32_t cx = x - f->pad + (int32_t)f->bw[gi] / 2, by = y + ink_bottom(f, (uint8_t)one[0]);
+                    cv_rect(cx, by + 1, k, k, c);
+                    cv_rect(cx + k, by + 1 + k, k, k, c);
+                    cv_rect(cx - k, by + 1 + 2 * k, 2 * k, k, c);
+                } else if (m) {
+                    int32_t kk = k;
+                    if (top - 3 * kk < -1 && kk > 1)   /* no room above a capital in the big font: a small mark */
+                        kk = 1;
+                    if (top - 3 * kk >= -1)
+                        t1_mark(x - f->pad + (int32_t)f->bw[gi] / 2, y + top, m, kk, c);
+                }
             }
             x += text_w(f, one);
             continue;
@@ -896,8 +919,12 @@ static void draw_lesson(void)
                 t1_tx(78, y + 1, &FONT_B, u, sel ? COL_ROOT : C_WHITE);
                 for (i = 0; i < n; i++)
                     cn[i] = chord_note(ty, cr, i);
-                notes_text(cn, n, u);
-                t1_tx(150, y + 3, &FONT_XS, u, sel ? C_WHITE : C_GRAY);
+                notes_text(cn, n, u);            /* (long spellings, Do## and the like: the small capitals) */
+                if (t1_tw(&FONT_XS, u) <= 236 - 150)
+                    t1_tx(150, y + 3, &FONT_XS, u, sel ? C_WHITE : C_GRAY);
+                else if (t1_tw(&FONT_T, u) <= 236 - 150)
+                    t1_tx(150, y + 5, &FONT_T, u, sel ? C_WHITE : C_GRAY);
+                /* (else, in the far keys, the symbol says it: the notes are on the keys and in the line below) */
                 if (sel)
                     for (i = 0; i < n; i++)
                         m |= (uint16_t)PCB(pc_of(cn[i]));
@@ -1855,11 +1882,30 @@ static void draw_lab(void)
     }
     if (has && count && !inscale)
         t1_tx(8, 132, &FONT_B, S(S_OUT_RED), COL_BAD);
-    t1_strcpy(t, S(S_LAST));                    /* the last notes played */
-    for (i = 0; i < ui.nhist; i++) {
-        note_name(lab_spell(ui.hist[i] % 12), nn);
-        str_cat(t, nn);
-        str_cat(t, " ");
+    {                                         /* the last notes played: the newest that fit */
+        char h[64];
+        int first = ui.nhist;
+        for (;;) {
+            if (first == 0)
+                break;
+            h[0] = 0;
+            for (i = first - 1; i < ui.nhist; i++) {
+                note_name(lab_spell(ui.hist[i] % 12), nn);
+                str_cat(h, nn);
+                str_cat(h, " ");
+            }
+            t1_strcpy(t, S(S_LAST));
+            str_cat(t, h);
+            if (t1_tw(&FONT_XS, t) > 226)
+                break;
+            first--;
+        }
+        t1_strcpy(t, S(S_LAST));
+        for (i = first; i < ui.nhist; i++) {
+            note_name(lab_spell(ui.hist[i] % 12), nn);
+            str_cat(t, nn);
+            str_cat(t, " ");
+        }
     }
     cv_rect(4, 152, 232, 1, C_LINE);
     t1_tx(8, 158, &FONT_XS, t, C_GRAY);

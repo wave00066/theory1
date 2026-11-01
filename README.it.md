@@ -1,11 +1,13 @@
-# THEORY-1 — teoria musicale sull'M-VAVE FM-1
+<p align="center"><img src="docs/img/banner-it.png" alt="THEORY-1: teoria musicale sull'M-VAVE FM-1"></p>
 
-*[English version](README.md)*
+<p align="center"><i><a href="README.md">English version</a></i></p>
 
 THEORY-1 è un firmware didattico per l'M-VAVE FM-1. Insegna la teoria musicale a ragazzi e principianti, usando i
-tasti, le luci e il display del synth. È disponibile in **italiano, inglese, spagnolo e tedesco**. Le note sono
-scritte come **Do (C)**: nome italiano con la lettera inglese/americana accanto, oppure solo Do Re Mi, solo C D E o
-alla tedesca (C D E … H, Fis, Es).
+tasti, le luci e il display del synth, in **italiano, inglese, spagnolo, tedesco e francese**. Le note sono scritte
+come **Do (C)**: nome italiano con la lettera inglese/americana accanto, oppure solo Do Re Mi, solo C D E o alla
+tedesca (C D E … H, Fis, Es).
+
+<p align="center"><img src="docs/img/features-it.png" alt="Lezioni, quiz e laboratorio"></p>
 
 - **LEZIONI**: le basi, gli intervalli, 9 scale, i 7 modi, 13 tipi di accordo, gli accordi costruiti su ogni grado
   (triadi e settime, con numeri romani e funzione armonica) e il circolo delle quinte con tutte le 15 tonalità.
@@ -20,25 +22,34 @@ I tasti dell'FM-1 si illuminano con le note della lezione: arancio la tonica, po
 per le risposte giuste. In basso sul display c'è una tastiera con gli stessi colori. Funziona anche con una
 tastiera MIDI esterna via USB, il jack TRS o il **Bluetooth** (per esempio un piano digitale con Bluetooth MIDI).
 
-| | | | |
-|---|---|---|---|
-| ![menu](docs/img/01-menu.png) | ![scala](docs/img/05-scala.png) | ![modo](docs/img/08-modo.png) | ![armonia](docs/img/10-armonia.png) |
-| ![tonalità](docs/img/12-tonalita.png) | ![quiz](docs/img/15-quiz-scala.png) | ![orecchio](docs/img/17-quiz-orecchio.png) | ![laboratorio](docs/img/19-lab-accordo.png) |
-| ![English](docs/img/en-05-scala.png) | ![Español](docs/img/es-10-armonia.png) | ![Deutsch](docs/img/de-15-quiz-scala.png) | ![impostazioni](docs/img/22-impostazioni.png) |
+## Una domanda, passo per passo
 
-## Lingua e nomi delle note
+<p align="center"><img src="docs/img/quiz-flow-it.png" alt="Una domanda del quiz: la domanda, una nota sbagliata, le note giuste, fatto"></p>
+
+Puoi rispondere in qualsiasi ottava, e un accordo puoi suonarlo tutto insieme o una nota alla volta. Una nota
+sbagliata viene nominata sul display e si accende in rosso. Dopo 3 errori i tasti giusti si accendono da soli.
+
+## Cinque lingue
+
+<p align="center"><img src="docs/img/languages.png" alt="La stessa lezione in italiano, inglese, spagnolo, tedesco e francese"></p>
 
 In **IMPOSTAZIONI** (o con GLO da qualsiasi schermata):
 
-- **Lingua**: Italiano, English, Español, Deutsch. Tutto il testo cambia, lezioni comprese.
+- **Lingua**: Italiano, English, Español, Deutsch, Français. Tutto il testo cambia, lezioni comprese. Ogni lingua
+  usa i suoi termini (tierce, Große Terz, quinta justa) e i suoi simboli per i passi (T/S, G/H in tedesco, T/dT in
+  francese).
 - **Nomi delle note**:
   - `Do (C)`: Do Re Mi con le lettere C D E accanto (predefinito). Nei riquadri la lettera compare sotto.
-  - `Do Re Mi`: solo il nome italiano.
+  - `Do Re Mi`: solo il nome italiano (Ré in francese).
   - `C D E`: solo la lettera.
   - `C D E ... H`: alla tedesca, con H per il Si e B per il Sib, Fis/Es per le alterazioni.
 
 Nelle lezioni e nel laboratorio **EDIT** passa al sistema di nomi successivo senza aprire le impostazioni. Le
 sigle degli accordi (Cm7, G7, Bm7b5) sono sempre in lettere, come si scrivono sugli spartiti pop e jazz.
+
+## Altre schermate
+
+<p align="center"><img src="docs/img/gallery-it.png" alt="Basi, intervalli, modi, accordi, tonalità, orecchio, quiz sulle tonalità, impostazioni"></p>
 
 ## Comandi
 
@@ -58,57 +69,58 @@ sigle degli accordi (Cm7, G7, Bm7b5) sono sempre in lettere, come si scrivono su
 | **REC** | cerca e collega una tastiera o un piano Bluetooth MIDI (ALGORITHM sceglie, REC collega) |
 | **OCT− / OCT+** | spostano di un'ottava il suono dei tasti |
 
-I pulsanti utili nella schermata in cui sei restano accesi tenui. Nel quiz contano solo i nomi delle note, quindi
-puoi rispondere in qualsiasi ottava. Un accordo puoi suonarlo tutto insieme o una nota alla volta.
+I pulsanti utili nella schermata in cui sei restano accesi tenui.
 
 ## Punteggio del quiz
 
 Una risposta giusta al primo colpo vale 10 punti. Ogni nota sbagliata toglie 2 punti e ogni aiuto ne toglie 3, ma
 una risposta suonata completa vale sempre almeno 2 punti. Una domanda a scelta vale 10 punti se giusta e 0 se
-sbagliata. Dopo 3 errori i tasti giusti si accendono da soli. A fine quiz vedi le stelle e il record.
+sbagliata. A fine quiz vedi le stelle e il record. Le risposte con doppi diesis o bemolli non escono mai; Mi#, Si#,
+Fab e Dob solo al livello 3.
 
 ## Installare
 
-1. Prendi il file `theory1-X.Y.fwsc` dalla pagina *Releases* di questo repository, oppure dall'ultima esecuzione
-   della workflow *Build and attest firmware* (artefatto `packages`).
+1. Prendi `theory1.fwsc` dall'ultima esecuzione della workflow *Build and attest firmware* in **Actions**
+   (artefatto `packages`), oppure da *Releases* quando c'è.
 2. Collega l'FM-1 al computer con un cavo USB **dati**, direttamente e senza hub.
-3. Installa il file con l'installer web dell'[FM-1 Firmware Hub](https://thefirmwarehub.com/) in Chrome o Edge,
-   oppure da terminale: `python3 base/tools/fm1_install.py theory1-X.Y.fwsc`.
+3. Installalo con l'installer web dell'[FM-1 Firmware Hub](https://thefirmwarehub.com/) in Chrome o Edge, oppure da
+   terminale: `python3 base/tools/fm1_install.py theory1.fwsc`.
 4. Non staccare il cavo mentre scrive.
 
 **Tornare al firmware ufficiale:** scarica `FM-1.fwsc` (V15) dalla pagina download di M-VAVE e installalo con
-M-UPGRADE o con l'installer. È un firmware non ufficiale: lo installi a tuo rischio.
+M-UPGRADE o con l'installer. Se THEORY-1 non riesce ad avviarsi due volte di seguito, l'FM-1 entra nella modalità
+sicura di fm1-base, da cui si può reinstallare qualsiasi firmware. È un firmware non ufficiale: lo installi a tuo
+rischio.
 
 ## Compilare
 
-Il firmware si compila nel cloud con GitHub Actions, perché il compilatore del chip (JieLi) e il suo SDK si
-scaricano lì:
-
-- **Actions → Build and attest firmware → Run workflow**: produce `theory1.fwsc` come artefatto.
-- **Un tag `vX.Y`** (`git tag v0.1 && git push --tags`): produce una release firmata con `theory1-0.1.fwsc`.
+Il firmware si compila nel cloud con GitHub Actions, dove si scaricano il compilatore del chip (JieLi) e il suo
+SDK. Ogni push su `main` produce `theory1.fwsc` come artefatto, e un tag `vX.Y` crea una release firmata.
 
 Sul computer, senza FM-1 né compilatore:
 
 ```sh
 git clone --recursive https://github.com/wave00066/theory1
-sh tests/run_tests.sh          # teoria, quiz, laboratorio, e ogni testo nelle 4 lingue
+sh tests/run_tests.sh          # teoria, tutti i quiz, 10800 domande generate, ogni testo nelle 5 lingue
 python3 base/tools/build.py app --host
 app/build/host/theory1_host app/tests/screens.txt OUT   # le schermate come PNG
+python3 docs/make_graphics.py                            # le immagini di questo README
 ```
 
 ## Struttura
 
 | File | Cosa contiene |
 |---|---|
-| `app/theory.c` | La teoria: grafia e nomi delle note (Do, C, H), intervalli, scale, modi, accordi, gradi, tonalità e riconoscimento degli accordi, con nomi e spiegazioni nelle 4 lingue. È C puro e si prova da solo. |
-| `app/texts.c` | Tutti gli altri testi dello schermo nelle 4 lingue |
+| `app/theory.c` | La teoria: grafia e nomi delle note (Do, Ré, C, H), intervalli, scale, modi, accordi, gradi, tonalità e riconoscimento degli accordi, con nomi e spiegazioni nelle 5 lingue. È C puro e si prova da solo. |
+| `app/texts.c` | Tutti gli altri testi dello schermo nelle 5 lingue |
 | `app/synth.c` | Il suono: un piccolo FM a 2 operatori e 8 voci (piano elettrico, organo, campane) |
 | `app/app.c` | Le schermate, il disegno delle lettere accentate, le lezioni, il quiz, il laboratorio, le impostazioni, i tasti e il MIDI |
-| `app/tests/` | Le prove: `theory_test.c`, `basic.txt` (tutti i quiz, il laboratorio, le impostazioni), `texts_fit.txt` (ogni pagina in ogni lingua entra nello schermo) e `screens.txt` |
+| `app/tests/` | `theory_test.c`, `basic.txt` (tutti i quiz, il laboratorio, le impostazioni), `questions.txt` (10800 domande generate e controllate), `texts_fit.txt` (ogni pagina in ogni lingua entra nello schermo), `screens.txt`, `flow.txt` |
+| `docs/make_graphics.py` | Le immagini del README, fatte dalle schermate del simulatore |
 | `base/` | [fm1-base](https://github.com/charlesvestal/fm1-base) (submodule) con [felucca-bsp](https://github.com/hugelton/felucca-bsp) |
 
-I font dell'FM-1 contengono solo ASCII. Le lettere accentate (è, ñ, ü, ö) sono la lettera semplice con l'accento
-disegnato sopra. La ß tedesca è scritta "ss".
+I font dell'FM-1 contengono solo ASCII. Le lettere accentate (è, ñ, ü, é, ç) sono la lettera semplice con
+l'accento disegnato sopra (o la cediglia sotto), e la ß tedesca è scritta "ss".
 
 ## Licenza e crediti
 
