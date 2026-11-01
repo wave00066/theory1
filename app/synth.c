@@ -1,6 +1,7 @@
 /* SPDX-License-Identifier: MPL-2.0
  * THEORY-1: music theory for the M-VAVE FM-1. */
-/* A two-operator FM voice (a modulator into a carrier), three timbres: an electric piano (the index decays with
+/* A two-operator FM voice (a modulator into a carrier), four timbres: a piano (a bright hammer that softens at
+ * once, low notes ringing longer than high ones, a damper on release), an electric piano (the index decays with
  * the note), an organ (steady, a ratio of 2) and a bell (an inharmonic ratio, a long ring). Single precision only,
  * no libm (fastmath.h): the FM-1's FPU. */
 #include "synth.h"
@@ -17,17 +18,20 @@ typedef struct {
     float amp, amp_target;
     float idx;                          /* the modulation index, in turns */
     float vel;
+    float dec, idec;                    /* this note's decay and brightness multipliers (key tracking) */
     uint32_t age;
 } voice_t;
 
 typedef struct {
     float ratio, idx0, idx_decay, decay, release, level;
+    float track;                        /* 0: every note decays alike; 1: twice as fast each two octaves up */
 } sound_t;
 /* per-sample multipliers at 44.1 kHz: 0.99996 falls 60 dB in about 4 s, 0.9990 in about 0.16 s */
 static const sound_t SOUNDS[NSOUNDS] = {
-    {1.0f, 0.30f, 0.99985f, 0.99996f, 0.9990f, 0.30f},   /* electric piano */
-    {2.0f, 0.10f, 1.0f, 1.0f, 0.9993f, 0.20f},           /* organ */
-    {3.5f, 0.45f, 0.99993f, 0.99998f, 0.9996f, 0.26f},   /* bell */
+    {1.0f, 0.42f, 0.99955f, 0.99994f, 0.9975f, 0.34f, 1.0f},  /* piano: middle C fades in about 2.6 s */
+    {1.0f, 0.30f, 0.99985f, 0.99996f, 0.9990f, 0.30f, 0.0f},  /* electric piano */
+    {2.0f, 0.10f, 1.0f, 1.0f, 0.9993f, 0.20f, 0.0f},          /* organ */
+    {3.5f, 0.45f, 0.99993f, 0.99998f, 0.9996f, 0.26f, 0.0f},  /* bell */
 };
 
 static voice_t v[NV];
@@ -101,6 +105,11 @@ static void start(int note, int vel)
     v[pick].vel = 0.35f + 0.65f * (float)vel / 127.0f;
     v[pick].amp_target = v[pick].vel;
     v[pick].idx = SOUNDS[snd].idx0 * (0.6f + 0.6f * (float)vel / 127.0f);
+    {   /* key tracking: the distance from 1 scaled, 2^((note - 60) / 24) */
+        float k = SOUNDS[snd].track > 0.0f ? fm_exp2f((float)(note - 60) / 24.0f * SOUNDS[snd].track) : 1.0f;
+        v[pick].dec = 1.0f - (1.0f - SOUNDS[snd].decay) * k;
+        v[pick].idec = 1.0f - (1.0f - SOUNDS[snd].idx_decay) * k;
+    }
     v[pick].age = age_now++;
 }
 
@@ -138,9 +147,9 @@ void synth_render(int32_t *lr, uint32_t n, float gain)
                 if (vo->amp >= vo->amp_target * 0.98f)
                     vo->amp_target = 0.0f;
             } else {
-                vo->amp *= vo->held ? s->decay : s->release;
+                vo->amp *= vo->held ? vo->dec : s->release;
             }
-            vo->idx *= s->idx_decay;
+            vo->idx *= vo->idec;
             m = fm_sin_turns(vo->ph * s->ratio);
             out += fm_sin_turns(vo->ph + vo->idx * m) * vo->amp;
             vo->ph += vo->inc;

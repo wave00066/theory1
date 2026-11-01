@@ -2,6 +2,8 @@
 
 <p align="center"><i><a href="README.md">English version</a></i></p>
 
+<p align="center"><a href="https://ko-fi.com/wave00066"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Offrimi un caffè su Ko-fi"></a></p>
+
 THEORY-1 è un firmware didattico per l'M-VAVE FM-1. Insegna la teoria musicale a ragazzi e principianti, usando i
 tasti, le luci e il display del synth, in **italiano, inglese, spagnolo, tedesco e francese**. Le note sono scritte
 come **Do (C)**: nome italiano con la lettera inglese/americana accanto, oppure solo Do Re Mi, solo C D E o alla
@@ -19,8 +21,10 @@ tedesca (C D E … H, Fis, Es).
 - **LABORATORIO**: suona quello che vuoi e THEORY-1 ti dice che nota, intervallo o accordo è, incluso il rivolto.
   Se scegli una scala, ti mostra i gradi e segnala in rosso le note fuori scala.
 
-I tasti dell'FM-1 si illuminano con le note della lezione: arancio la tonica, poi le note della scala, il verde
-per le risposte giuste. In basso sul display c'è una tastiera con gli stessi colori. Funziona anche con una
+I tasti dell'FM-1 si illuminano con le note della lezione: forte la tonica, più tenui le altre note della scala, del
+modo o dell'accordo. Quando PLAY suona l'esempio, ogni tasto si accende forte mentre suona la sua nota: vedi la
+scala salire e scendere. In basso sul display c'è una tastiera con gli stessi colori (arancio la tonica, verde le
+risposte giuste). Funziona anche con una
 tastiera MIDI esterna via USB, il jack TRS o il **Bluetooth** (per esempio un piano digitale con Bluetooth MIDI).
 
 ## Leggere il pentagramma
@@ -139,7 +143,7 @@ python3 docs/make_graphics.py                            # le immagini di questo
 |---|---|
 | `app/theory.c` | La teoria: grafia e nomi delle note (Do, Ré, C, H), le sette chiavi, intervalli, scale, modi, accordi, gradi, tonalità e riconoscimento degli accordi, con nomi e spiegazioni nelle 5 lingue. È C puro e si prova da solo. |
 | `app/texts.c` | Tutti gli altri testi dello schermo nelle 5 lingue |
-| `app/synth.c` | Il suono: un piccolo FM a 2 operatori e 8 voci (piano elettrico, organo, campane) |
+| `app/synth.c` | Il suono: un piccolo FM a 2 operatori e 8 voci (pianoforte, piano elettrico, organo, campane) |
 | `app/app.c` | Le schermate, il disegno delle lettere accentate, le lezioni, il quiz, il laboratorio, le impostazioni, i tasti e il MIDI |
 | `app/staff_glyphs.h` | Le chiavi, la testa della nota, il diesis e il bemolle, dal font musicale [Bravura](https://github.com/steinbergmedia/bravura) (SIL OFL 1.1), fatti da `app/tools/make_glyphs.py` |
 | `app/tests/` | `theory_test.c`, `basic.txt` (tutti i quiz, il laboratorio, le impostazioni), `questions.txt` (13200 domande generate e controllate), `texts_fit.txt` (ogni pagina in ogni lingua e ogni chiave entra nello schermo), `screens.txt`, `flow.txt`, `clefs.txt`; `gen_tests.py` scrive i più lunghi |

@@ -5,7 +5,7 @@
 #pragma once
 #include <stdint.h>
 
-enum { SND_EPIANO, SND_ORGAN, SND_BELL, NSOUNDS };
+enum { SND_PIANO, SND_EPIANO, SND_ORGAN, SND_BELL, NSOUNDS };
 
 void synth_note_on(int note, int vel);     /* main loop: MIDI note, velocity 1..127 */
 void synth_note_off(int note);

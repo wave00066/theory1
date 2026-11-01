@@ -76,6 +76,7 @@ static struct {
     uint8_t note, on, vel, used;
 } pev[NPEV];
 static uint8_t pev_sounding[128];
+static uint8_t pev_changed;                  /* a note of the example started or stopped: the lights follow */
 
 static void play_stop(void)
 {
@@ -86,6 +87,7 @@ static void play_stop(void)
         if (pev_sounding[i]) {
             pev_sounding[i] = 0;
             synth_note_off(i);
+            pev_changed = 1;
         }
 }
 
@@ -121,9 +123,11 @@ static void play_tick(void)
             if (pev[i].on) {
                 synth_note_on(pev[i].note, pev[i].vel);
                 pev_sounding[pev[i].note] = 1;
+                pev_changed = 1;
             } else if (pev_sounding[pev[i].note]) {
                 pev_sounding[pev[i].note] = 0;
                 synth_note_off(pev[i].note);
+                pev_changed = 1;
             }
         }
 }
@@ -382,6 +386,25 @@ static int32_t ink_bottom(const felucca_font_t *f, uint32_t ch)
     return 0;
 }
 
+/* the middle of a glyph's ink, from the pen (its bitmap can be wider than the letter) */
+static int32_t ink_mid(const felucca_font_t *f, uint32_t ch)
+{
+    uint32_t gi = glyph(f, ch), w = f->bw[gi], bpr = (w + 1u) / 2u, gx, gy;
+    int32_t l = -1, r = -1;
+    const uint8_t *gd = f->data + f->off[gi];
+    for (gx = 0; gx < w; gx++)
+        for (gy = 0; gy < f->h; gy++) {
+            uint32_t a = gd[gy * bpr + gx / 2u];
+            if (((gx & 1u) ? (a & 15u) : (a >> 4)) >= 6u) {
+                if (l < 0)
+                    l = (int32_t)gx;
+                r = (int32_t)gx;
+                break;
+            }
+        }
+    return (l < 0 ? (int32_t)w / 2 : (l + r) / 2) - f->pad;
+}
+
 /* one glyph from row row0 down (cv_text's drawing, for the i without its dot) */
 static void glyph_rows(int32_t x, int32_t y, const felucca_font_t *f, uint32_t ch, uint16_t c, uint32_t row0)
 {
@@ -425,7 +448,7 @@ static void t1_mark(int32_t cx, int32_t top, int m, int32_t k, uint16_t c)
 /* draws (draw 1) or measures (draw 0) text; returns the end x, or the width */
 static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *s, uint16_t c, int ui_draw)
 {
-    int32_t x0 = x, k = f->h >= 22 ? 2 : 1;
+    int32_t x0 = x, k = f->h >= 28 ? 2 : 1;    /* the marks: doubled in the big font only */
     char one[2] = {0, 0};
     while (*s) {
         uint32_t cp = u8next(&s);
@@ -461,7 +484,7 @@ static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *
                     top = ink_top(f, (uint8_t)one[0]);
                 }
                 if (m == MK_CEDILLA) {       /* a hook under the letter */
-                    int32_t cx = x - f->pad + (int32_t)f->bw[gi] / 2, by = y + ink_bottom(f, (uint8_t)one[0]);
+                    int32_t cx = x + ink_mid(f, (uint8_t)one[0]), by = y + ink_bottom(f, (uint8_t)one[0]);
                     cv_rect(cx, by + 1, k, k, c);
                     cv_rect(cx + k, by + 1 + k, k, k, c);
                     cv_rect(cx - k, by + 1 + 2 * k, 2 * k, k, c);
@@ -470,7 +493,7 @@ static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *
                     if (top - 3 * kk < -1 && kk > 1)   /* no room above a capital in the big font: a small mark */
                         kk = 1;
                     if (top - 3 * kk >= -1)
-                        t1_mark(x - f->pad + (int32_t)f->bw[gi] / 2, y + top, m, kk, c);
+                        t1_mark(x + ink_mid(f, (uint8_t)one[0]), y + top, m, kk, c);
                 }
             }
             x += text_w(f, one);
@@ -611,12 +634,51 @@ static void ui_header(const char *title, const char *right, uint16_t rc)
     cv_rect(0, 24, 240, 1, C_LINE);
 }
 
-static void hint(const char *s) { text_c(188, &FONT_T, s, C_GRAY); }
+static int no_kb;                           /* the lists: no keyboard at the bottom, five big rows and the hint lower */
+static void hint(const char *s) { text_c(no_kb ? 228 : 188, &FONT_T, s, C_GRAY); }
+
+/* a list in big type: five rows of 39, the name in the medium font (smaller if it is long) and a second line under
+ * it, scrolled so the chosen row stays in view, with a bar on the right when there is more */
+#define LIST_ROWS 5
+static void big_list(int n, int sel, const char *(*name)(int), const char *(*sub)(int, char *), uint16_t sub_sel)
+{
+    int i, first = clamp(sel - 2, 0, n > LIST_ROWS ? n - LIST_ROWS : 0);
+    for (i = first; i < first + LIST_ROWS && i < n; i++) {
+        int32_t y = 28 + (i - first) * 39, on = i == sel;
+        char b[48];
+        const char *nm = name(i), *sb = sub(i, b);
+        const felucca_font_t *f = t1_tw(&FONT_M, nm) <= 220 ? &FONT_M : &FONT_B;
+        cv_rect(4, y, 228, 37, on ? COL_SELBG : COL_PANEL);
+        t1_tx(10, f == &FONT_M ? y : y + 4, f, nm, on ? C_WHITE : C_HI);
+        if (sb && sb[0])
+            t1_tx(10, y + 22, t1_tw(&FONT_B, sb) <= 216 ? &FONT_B : &FONT_XS, sb, on ? sub_sel : C_GRAY);
+    }
+    if (n > LIST_ROWS) {                        /* where the rows seen are in the list */
+        int32_t h = 193 * LIST_ROWS / n, y = 28 + (193 - h) * first / (n - LIST_ROWS);
+        cv_rect(235, 28, 3, 193, COL_PANEL);
+        cv_rect(235, y, 3, h, C_GRAY);
+    }
+}
 
 /* the footer: the FM-1's 27 keys, F3 .. G5, marked by pitch class */
 static struct {
     uint16_t scale, root, ok, bad, hint;
 } mk;
+/* in the lessons, the key of each note the example plays: it lights while it sounds (the examples sit at F3 .. G5,
+ * the keys' own pitches); not in the quiz, where it would give the answer away */
+static int ex_sounding(int k)
+{
+    return ui.screen == SCR_LESSON && pev_sounding[53 + k];
+}
+static int ex_playing(void)
+{
+    int k;
+    for (k = 0; k < NKEYS; k++)
+        if (ex_sounding(k))
+            return 1;
+    return 0;
+}
+
 static void ui_keyboard(void)
 {
     static const uint8_t WK[16] = PLAT_WHITE_KEYS, BK[11] = PLAT_BLACK_KEYS;
@@ -636,7 +698,7 @@ static void ui_keyboard(void)
             c = COL_OK;
         if (mk.bad >> pc & 1u)
             c = COL_BAD;
-        if (ui.held[note])
+        if (ui.held[note] || ex_sounding(k))
             c = COL_HELD;
         cv_rect(i * kw, y, kw - 1, 40, c);
         if (pc == 0)                        /* the Cs, marked */
@@ -655,26 +717,33 @@ static void ui_keyboard(void)
             c = RGB(40, 170, 80);
         if (mk.bad >> pc & 1u)
             c = RGB(200, 50, 40);
-        if (ui.held[note])
+        if (ui.held[note] || ex_sounding(k))
             c = RGB(230, 190, 40);
         cv_rect(AT[i] * kw + 9, y, 11, 24, C_BLACK);
         cv_rect(AT[i] * kw + 10, y, 9, 23, c);
     }
 }
 
-/* the LEDs follow the footer: bright the root, the right and held notes; dim the scale and the hint */
+/* the LEDs follow the footer: bright the root, the right and held notes; half the scale's notes and the wrong ones;
+ * dim the hint. While a lesson's example plays, only the key sounding is bright: the scale stays lit at half, so
+ * the notes are seen going up and down it */
 static uint32_t btn_live;                    /* the buttons that do something here: they glow */
 static void ui_lights(void)
 {
     uint32_t bright = 0, dim = 0, mid = 0, k;
+    int follow = ex_playing();
     for (k = 0; k < NKEYS; k++) {
         int pc = (int)((53u + k) % 12u), note = 53 + (int)k + 12 * ui.octave;
         uint32_t bit = 1u << k;
-        if (ui.held[note] || ((mk.root | mk.ok) >> pc & 1u))
+        if (ui.held[note] || ex_sounding((int)k))
             bright |= bit;
-        else if (mk.bad >> pc & 1u)
+        else if (follow && ((mk.root | mk.scale | mk.ok) >> pc & 1u))
             mid |= bit;
-        else if ((mk.scale | mk.hint) >> pc & 1u)
+        else if ((mk.root | mk.ok) >> pc & 1u)
+            bright |= bit;
+        else if ((mk.bad | mk.scale) >> pc & 1u)
+            mid |= bit;
+        else if (mk.hint >> pc & 1u)
             dim |= bit;
     }
     plat_lights(ui.btn | (set_dirty ? 1u << B_SAVE : 0u), bright, btn_live, dim, 1);
@@ -769,17 +838,12 @@ static void draw_menu(void)
     mk.root = PCB(0);
 }
 
+static const char *topic_name(int i) { return TOPIC_NAME[th_ui][i]; }
+static const char *topic_sub(int i, char *b) { (void)b; return TOPIC_SUB[th_ui][i]; }
 static void draw_topics(void)
 {
-    int i;
     ui_header(S(S_M_LESSONS), 0, 0);
-    for (i = 0; i < NTOPICS; i++) {
-        int32_t y = 28 + i * 19, sel = i == ui.topic_sel;
-        if (sel)
-            cv_rect(4, y, 232, 19, COL_SELBG);
-        t1_tx(10, y + 1, &FONT_B, TOPIC_NAME[th_ui][i], sel ? C_WHITE : C_HI);
-        text_r(230, y + 3, &FONT_XS, TOPIC_SUB[th_ui][i], sel ? C_HI : C_GRAY);
-    }
+    big_list(NTOPICS, ui.topic_sel, topic_name, topic_sub, C_HI);
     hint(S(S_H_TOPICS));
 }
 
@@ -1128,29 +1192,25 @@ static void draw_lesson(void)
 }
 
 /* -------------------------------------------------------------- the quiz --- */
+static const char *qt_name(int i) { return QT_NAMES[th_ui][i]; }
+static const char *qt_sub(int i, char *b)
+{
+    char t[12];
+    t1_strcpy(b, S(S_RECORD));
+    str_cat(b, " ");
+    if (cfg.best[i]) {
+        int_str(t, cfg.best[i]);
+        str_cat(b, t);
+        str_cat(b, "/100");
+    } else {
+        str_cat(b, "-");
+    }
+    return b;
+}
 static void draw_qsetup(void)
 {
-    int i;
-    char t[16];
-    ui_header(S(S_M_QUIZ), S(S_RECORD), C_GRAY);
-    {
-    int first = clamp(ui.qsel - 4, 0, NQT - 10);  /* ten rows of the list, the chosen one in view */
-    for (i = first; i < first + 10 && i < NQT; i++) {
-        int32_t y = 28 + (i - first) * 14, sel = i == ui.qsel;
-        if (sel)
-            cv_rect(4, y, 232, 14, COL_SELBG);
-        t1_tx(10, y + 1, &FONT_XS, QT_NAMES[th_ui][i], sel ? C_WHITE : C_HI);
-        if (cfg.best[i]) {
-            int_str(t, cfg.best[i]);
-            str_cat(t, "/100");
-        } else {
-            t1_strcpy(t, "-");
-        }
-        text_r(230, y + 1, &FONT_XS, t, sel ? C_WHITE : C_GRAY);
-    }
-    }
-    cv_rect(4, 170, 232, 1, C_LINE);
-    t1_tx(t1_tx(10, 172, &FONT_XS, S(S_LEVEL_K1), C_GRAY) + 8, 172, &FONT_XS, LEVEL_NAMES[th_ui][cfg.level], COL_ROOT);
+    ui_header(S(S_M_QUIZ), LEVEL_NAMES[th_ui][cfg.level], COL_ROOT);
+    big_list(NQT, ui.qsel, qt_name, qt_sub, C_HI);
     hint(S(S_H_QSETUP));
 }
 
@@ -2097,41 +2157,35 @@ static void draw_lab(void)
 
 /* -------------------------------------------------------------- settings --- */
 enum { ST_LANG, ST_NAMES, ST_CLEFS, ST_SOUND, ST_SPEED, ST_EXT, ST_BLE, ST_DEVICE, ST_RESET, NST };
+static const int SET_LABEL[NST] = {S_SET_LANG, S_SET_NAMES, S_SET_CLEFS, S_SET_SOUND, S_SET_SPEED, S_SET_EXT,
+                                   S_SET_BLE, S_SET_DEVICE, S_SET_RESET};
+static const char *set_name(int i) { return S(SET_LABEL[i]); }
+static const char *set_value(int i, char *dev)
+{
+    switch (i) {
+    case ST_LANG: return LANG_SELF[cfg.ui % NLANGS];
+    case ST_NAMES: return NAMES_SELF[cfg.names % NNAMES];
+    case ST_CLEFS: return CLEFSET_NAMES[th_ui][cfg.clefs % NCLEFSETS];
+    case ST_SOUND: return SOUND_NAMES[th_ui][cfg.sound % NSOUNDS];
+    case ST_SPEED: return SPEED_NAMES[th_ui][cfg.speed % 3];
+    case ST_EXT: return S(cfg.ext_mute ? S_EXT_MUTE : S_EXT_BOTH);
+    case ST_BLE: return !FM1B_BLE ? S(S_NOT_BUILT) : S(cfg.ble_off ? S_OFF : S_ON);
+    case ST_DEVICE:
+        if (!FM1B_BLE_CENTRAL)
+            return "-";
+        if (plat_ble_device() == BLE_DEV_READY) {
+            t1_fmt(dev, S(S_CONNECTED), btdev_name(), 0, 0);
+            return dev;
+        }
+        return S(ui.looking ? S_SEARCHING : S_REC_SEARCH);
+    case ST_RESET: return S(S_SEL_RESET);
+    default: return "";
+    }
+}
 static void draw_settings(void)
 {
-    static const int LABEL[NST] = {S_SET_LANG, S_SET_NAMES, S_SET_CLEFS, S_SET_SOUND, S_SET_SPEED, S_SET_EXT, S_SET_BLE,
-                                   S_SET_DEVICE, S_SET_RESET};
-    int i;
     ui_header(S(S_M_SETTINGS), set_dirty ? "SAVE" : 0, COL_ROOT);
-    for (i = 0; i < NST; i++) {
-        int32_t y = 28 + i * 17, sel = i == ui.set_sel;
-        const char *v = "";
-        char dev[40];
-        switch (i) {
-        case ST_LANG: v = LANG_SELF[cfg.ui % NLANGS]; break;
-        case ST_NAMES: v = NAMES_SELF[cfg.names % NNAMES]; break;
-        case ST_CLEFS: v = CLEFSET_NAMES[th_ui][cfg.clefs % NCLEFSETS]; break;
-        case ST_SOUND: v = SOUND_NAMES[th_ui][cfg.sound % NSOUNDS]; break;
-        case ST_SPEED: v = SPEED_NAMES[th_ui][cfg.speed % 3]; break;
-        case ST_EXT: v = S(cfg.ext_mute ? S_EXT_MUTE : S_EXT_BOTH); break;
-        case ST_BLE: v = !FM1B_BLE ? S(S_NOT_BUILT) : S(cfg.ble_off ? S_OFF : S_ON); break;
-        case ST_DEVICE:
-            if (!FM1B_BLE_CENTRAL)
-                v = "-";
-            else if (plat_ble_device() == BLE_DEV_READY) {
-                t1_fmt(dev, S(S_CONNECTED), btdev_name(), 0, 0);
-                v = dev;
-            } else
-                v = S(ui.looking ? S_SEARCHING : S_REC_SEARCH);
-            break;
-        case ST_RESET: v = S(S_SEL_RESET); break;
-        default: break;
-        }
-        if (sel)
-            cv_rect(4, y, 232, 17, COL_SELBG);
-        t1_tx(10, y + 1, &FONT_XS, S(LABEL[i]), sel ? C_WHITE : C_GRAY);
-        text_r(230, y + 1, &FONT_XS, v, sel ? COL_ROOT : C_HI);
-    }
+    big_list(NST, ui.set_sel, set_name, set_value, COL_ROOT);
     hint(S(S_H_SETTINGS));
 }
 
@@ -2523,6 +2577,11 @@ static void ui_input(void)
         if ((e = plat_enc((int)k)) != 0)
             ui_encoder((int)k, e);
     play_tick();
+    if (pev_changed) {
+        pev_changed = 0;
+        if (ui.screen == SCR_LESSON)
+            ui.redraw = 1;
+    }
 }
 
 void app_input_only(void) { ui_input(); }
@@ -2570,6 +2629,7 @@ static void speak(void)
 static void draw_all(void)
 {
     mk.scale = mk.root = mk.ok = mk.bad = mk.hint = 0;
+    no_kb = ui.screen == SCR_TOPICS || ui.screen == SCR_QSETUP || ui.screen == SCR_SETTINGS;
     btn_live = 1u << B_HOME | 1u << B_GLO | (FM1B_BLE_CENTRAL ? 1u << B_REC : 0u) | 1u << B_OCTDN | 1u << B_OCTUP;
     switch (ui.screen) {
     case SCR_MENU: draw_menu(); btn_live |= 1u << B_SEL; break;
@@ -2588,7 +2648,8 @@ static void draw_all(void)
     case SCR_SETTINGS: draw_settings(); btn_live |= 1u << B_SEL | 1u << B_SAVE; break;
     default: break;
     }
-    ui_keyboard();
+    if (!no_kb)
+        ui_keyboard();
 }
 
 /* the screen in two halves of 120 rows: the same drawing, each half keeping its own rows */

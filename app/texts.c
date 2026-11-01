@@ -344,10 +344,10 @@ static const char *const INV_WHY[NLANGS][4] = {
     {"la fondamentale est à la basse", "la tierce est à la basse", "la quinte est à la basse",
      "la septième est à la basse"},
 };
-static const char *const SOUND_NAMES[NLANGS][3] = {
-    {"Piano elettrico", "Organo", "Campane"}, {"Electric piano", "Organ", "Bells"},
-    {"Piano eléctrico", "Órgano", "Campanas"}, {"E-Piano", "Orgel", "Glocken"},
-    {"Piano électrique", "Orgue", "Cloches"},
+static const char *const SOUND_NAMES[NLANGS][NSOUNDS] = {
+    {"Pianoforte", "Piano elettrico", "Organo", "Campane"}, {"Piano", "Electric piano", "Organ", "Bells"},
+    {"Piano", "Piano eléctrico", "Órgano", "Campanas"}, {"Klavier", "E-Piano", "Orgel", "Glocken"},
+    {"Piano", "Piano électrique", "Orgue", "Cloches"},
 };
 static const char *const SPEED_NAMES[NLANGS][3] = {
     {"Lenta", "Media", "Veloce"}, {"Slow", "Medium", "Fast"}, {"Lenta", "Media", "Rápida"},
