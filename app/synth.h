@@ -15,3 +15,7 @@ void synth_panic(void);                    /* render's side: silence now (before
 /* the render: n stereo frames into lr (24-bit), gain the output's scale (MASTER and the 24-bit range) */
 void synth_render(int32_t *lr, uint32_t n, float gain);
 int synth_active(void);                    /* voices sounding (a test's check) */
+/* the SYNTH section: the teaching synthesizer (synthmath.h's parameters) */
+void synth_mode(int patch);                /* 1: the keys play the patch; 0: the lessons' sounds */
+void synth_set(int p, int v);              /* main loop: a parameter (P_*) */
+float synth_lfo(void);                     /* the LFO now, -1..1 (the picture's dot) */

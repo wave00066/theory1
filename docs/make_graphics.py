@@ -16,6 +16,7 @@ OUT = ROOT / "docs/img"
 FONTS = ROOT / "base/assets/fonts"
 BG0, BG1 = (12, 17, 28), (26, 40, 66)
 CYAN, ORANGE, GREEN, GRAY, WHITE = (70, 170, 255), (255, 150, 40), (80, 220, 120), (150, 160, 175), (240, 244, 250)
+PURPLE = (190, 110, 255)
 LANGS = ["Italiano", "English", "Español", "Deutsch", "Français"]
 
 
@@ -200,12 +201,14 @@ def main():
     sc = {l: screens(l, "app/tests/screens.txt") for l in range(5)}
     fl = {l: screens(l, "app/tests/flow.txt") for l in (0, 1)}
     cl = {l: screens(l, "app/tests/clefs.txt") for l in (0, 1)}
+    sy = {l: screens(l, "app/tests/synth_shots.txt") for l in (0, 1)}
     for lang, sfx in ((1, ""), (0, "-it")):
         s, f = sc[lang], fl[lang]
         en = lang == 1
         banner(s["01-menu"], "Music theory on the M-VAVE FM-1" if en else "Teoria musicale sull'M-VAVE FM-1",
                [("LESSONS" if en else "LEZIONI", CYAN), ("QUIZ", ORANGE), ("LAB" if en else "LABORATORIO", GREEN),
-                ("5 " + ("LANGUAGES" if en else "LINGUE"), (200, 200, 210))], OUT / f"banner{sfx}.png")
+                ("SYNTH" if en else "SINTESI", PURPLE), ("5 " + ("LANGUAGES" if en else "LINGUE"), (200, 200, 210))],
+               OUT / f"banner{sfx}.png")
         card_row([("LESSONS" if en else "LEZIONI", CYAN, s["10-armonia"],
                    ["Scales, modes, chords, harmony,", "keys: from any root"] if en else
                    ["Scale, modi, accordi, armonia,", "tonalità: da qualsiasi tonica"]),
@@ -231,6 +234,13 @@ def main():
                  ["Violino", "Basso", "Soprano", "Mezzosoprano", "Contralto", "Tenore", "Baritono"])
         clefs([cl[lang][f"c{i}"] for i in range(7)], names,
               "Middle C in the seven clefs" if en else "Il Do centrale nelle sette chiavi", OUT / f"clefs{sfx}.png")
+        y = sy[lang]
+        gallery(list(zip([y[k] for k in ("s1-list", "s2-sound", "s3-osc", "s4-filter", "s5-adsr", "s6-lfo", "s7-fm",
+                                          "s9-bass")],
+                         ["The chapters", "Sound", "The oscillator", "The filter", "ADSR envelope", "LFO",
+                          "FM synthesis", "Let's build a bass"] if en else
+                         ["I capitoli", "Il suono", "L'oscillatore", "Il filtro", "Inviluppo ADSR", "LFO",
+                          "Sintesi FM", "Costruiamo un basso"])), OUT / f"synth{sfx}.png")
     languages([sc[l]["05-scala"] for l in range(5)], OUT / "languages.png")
 
 

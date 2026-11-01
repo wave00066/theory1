@@ -4,7 +4,8 @@
 
 <p align="center"><a href="https://ko-fi.com/wave00066"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Offrimi un caffè su Ko-fi"></a></p>
 
-THEORY-1 è un firmware didattico per l'M-VAVE FM-1. Insegna la teoria musicale a ragazzi e principianti, usando i
+THEORY-1 è un firmware didattico per l'M-VAVE FM-1. Insegna la teoria musicale e come funziona un sintetizzatore a
+ragazzi e principianti, usando i
 tasti, le luci e il display del synth, in **italiano, inglese, spagnolo, tedesco e francese**. Le note sono scritte
 come **Do (C)**: nome italiano con la lettera inglese/americana accanto, oppure solo Do Re Mi, solo C D E o alla
 tedesca (C D E … H, Fis, Es).
@@ -20,6 +21,10 @@ tedesca (C D E … H, Fis, Es).
   Ogni risposta riceve un feedback, con aiuti, punteggio e record salvati.
 - **LABORATORIO**: suona quello che vuoi e THEORY-1 ti dice che nota, intervallo o accordo è, incluso il rivolto.
   Se scegli una scala, ti mostra i gradi e segnala in rosso le note fuori scala.
+- **SINTESI**: come funziona un sintetizzatore, in 18 capitoli: il suono, gli oscillatori, i filtri, gli inviluppi,
+  l'LFO, la FM, la sintesi additiva e wavetable, voci ed effetti, e poi un basso, un pad, un lead, uno stab e le
+  percussioni costruiti passo passo. I tasti suonano un vero synth didattico e K1-K4 ne muovono le manopole, mentre
+  lo schermo disegna cosa fanno.
 
 I tasti dell'FM-1 si illuminano con le note della lezione: forte la tonica, più tenui le altre note della scala, del
 modo o dell'accordo. Quando PLAY suona l'esempio, ogni tasto si accende forte mentre suona la sua nota: vedi la
@@ -43,6 +48,38 @@ Ci sono due quiz collegati:
   livello 2 con i tagli addizionali, livello 3 con diesis e bemolli.
 - **Orecchio: note**: THEORY-1 suona il Do di riferimento, poi **una nota**; trovala sui tasti. Livello 1 i tasti
   bianchi, livello 2 tutti e dodici, livello 3 due note di fila.
+
+## Imparare la sintesi
+
+<p align="center"><img src="docs/img/synth-it.png" alt="La sezione SINTESI: capitoli, suono, oscillatore, filtro, ADSR, LFO, FM, un basso costruito passo passo"></p>
+
+In **SINTESI** l'FM-1 diventa un sintetizzatore didattico. I tasti suonano un synth con due oscillatori (sinusoide,
+triangolo, dente di sega, quadra, impulso, rumore), un filtro (passa-basso, passa-banda e passa-alto, con risonanza),
+un inviluppo ADSR per il volume e uno per il filtro, un inviluppo di pitch, un LFO, la FM a due operatori, sorgenti
+additiva e wavetable, mono con glide o sei voci, drive e chorus. I 18 capitoli seguono il percorso di un corso di
+sintesi:
+
+| Parte | Capitoli |
+|---|---|
+| Le fondamenta | 1 Il suono · 2 Il sintetizzatore · 3 L'oscillatore · 4 Il filtro |
+| Inviluppi e modulazioni | 5 L'inviluppo ADSR · 6 L'inviluppo del filtro · 7 L'inviluppo di pitch · 8 L'LFO |
+| Tecniche di sintesi | 9 La sintesi FM · 10 Additiva e wavetable |
+| Voci ed effetti | 11 Mono, poly e glide · 12 Gli effetti |
+| Creiamo i suoni insieme | 13 Un basso · 14 Un pad · 15 Un lead · 16 Uno stab · 17 Le percussioni |
+| Il tuo synth | 18 Synth libero: tutte le manopole, in nove pagine |
+
+Ogni capitolo ha tre tipi di pagina:
+
+- **da leggere**: una spiegazione breve con un disegno: l'onda e le sue armoniche, lo schema a blocchi, la curva del
+  filtro sulle armoniche di un dente di sega, l'ADSR, l'LFO, gli operatori FM e le loro bande laterali, le barre
+  dell'additiva, la wavetable.
+- **da provare**: K1-K4 muovono quattro manopole e il disegno le segue mentre suoni.
+- **passo**: un obiettivo su una manopola ("gira K2 finché il cutoff arriva al 25%"). Un segno indica dove arrivare e,
+  quando ci sei, la manopola diventa verde: *Fatto! SEL: avanti*.
+
+Nei capitoli di *Creiamo i suoni insieme* ogni passo aggiunge un blocco al suono, partendo da un semplice dente di
+sega, come fa un sound designer. PLAY suona un esempio adatto al capitolo e FX riporta il suono di partenza del
+capitolo.
 
 ## Una domanda, passo per passo
 
@@ -77,16 +114,17 @@ sigle degli accordi (Cm7, G7, Bm7b5) sono sempre in lettere, come si scrivono su
 
 | Comando | Cosa fa |
 |---|---|
-| **SELECT** (encoder) | scorre le voci: pagina, scala, modo, accordo, risposta |
+| **SELECT** (encoder) | scorre le voci: pagina, scala, modo, accordo, risposta (in SINTESI: la pagina) |
 | **SEL** | entra, conferma, risponde, va alla domanda successiva |
 | **HOME** | torna indietro di un livello |
 | **PLAY** | ascolta l'esempio (nel quiz: la nota di riferimento o di nuovo il suono) |
 | **K1** o **PRESETS** | la tonica (nella lezione Pentagramma: la chiave). Nel menu quiz: il livello |
 | **K2 / K3** | in Armonia: il grado / triadi o settime. Nella lezione Pentagramma, K2: diesis, bemolle, naturale |
+| **K1-K4** | in SINTESI: le quattro manopole della pagina |
 | **ALGORITHM** | nelle lezioni: passa all'argomento successivo |
 | **ARP** | in Armonia: suona gli accordi di tutti i gradi |
 | **EDIT** | nel quiz: aiuto (si accendono i tasti giusti). Nelle lezioni: il sistema di nomi delle note |
-| **FX** | nel quiz: salta la domanda |
+| **FX** | nel quiz: salta la domanda. In SINTESI: di nuovo il suono di partenza del capitolo |
 | **GLO** | impostazioni |
 | **REC** | cerca e collega una tastiera o un piano Bluetooth MIDI (ALGORITHM sceglie, REC collega) |
 | **OCT− / OCT+** | spostano di un'ottava il suono dei tasti |
@@ -143,10 +181,13 @@ python3 docs/make_graphics.py                            # le immagini di questo
 |---|---|
 | `app/theory.c` | La teoria: grafia e nomi delle note (Do, Ré, C, H), le sette chiavi, intervalli, scale, modi, accordi, gradi, tonalità e riconoscimento degli accordi, con nomi e spiegazioni nelle 5 lingue. È C puro e si prova da solo. |
 | `app/texts.c` | Tutti gli altri testi dello schermo nelle 5 lingue |
-| `app/synth.c` | Il suono: un piccolo FM a 2 operatori e 8 voci (pianoforte, piano elettrico, organo, campane) |
+| `app/synth.c` | Il suono: un piccolo FM a 2 operatori e 8 voci (pianoforte, piano elettrico, organo, campane), e il synth didattico di SINTESI (oscillatori polyBLEP, filtro state-variable, inviluppi, LFO, FM, additiva, wavetable, drive, chorus; 6 voci) |
+| `app/synthmath.h` | I parametri del synth didattico e le curve da una manopola a un tempo, una frequenza o un livello |
+| `app/synthlab.c` | Le schermate di SINTESI: i capitoli, i disegni, le manopole e i passi |
+| `app/synth_lessons.h` | I capitoli, le pagine e i testi di SINTESI nelle 5 lingue, fatti da `app/tools/gen_synth.py` |
 | `app/app.c` | Le schermate, il disegno delle lettere accentate, le lezioni, il quiz, il laboratorio, le impostazioni, i tasti e il MIDI |
 | `app/staff_glyphs.h` | Le chiavi, la testa della nota, il diesis e il bemolle, dal font musicale [Bravura](https://github.com/steinbergmedia/bravura) (SIL OFL 1.1), fatti da `app/tools/make_glyphs.py` |
-| `app/tests/` | `theory_test.c`, `basic.txt` (tutti i quiz, il laboratorio, le impostazioni), `questions.txt` (13200 domande generate e controllate), `texts_fit.txt` (ogni pagina in ogni lingua e ogni chiave entra nello schermo), `screens.txt`, `flow.txt`, `clefs.txt`; `gen_tests.py` scrive i più lunghi |
+| `app/tests/` | `theory_test.c`, `basic.txt` (tutti i quiz, il laboratorio, le impostazioni), `questions.txt` (13200 domande generate e controllate), `texts_fit.txt` (ogni pagina in ogni lingua e ogni chiave entra nello schermo), `synth.txt` (ogni pagina di SINTESI in ogni lingua, l'obiettivo di ogni passo), `screens.txt`, `flow.txt`, `clefs.txt`; `gen_tests.py` scrive i più lunghi |
 | `docs/make_graphics.py` | Le immagini del README, fatte dalle schermate del simulatore |
 | `base/` | [fm1-base](https://github.com/charlesvestal/fm1-base) (submodule) con [felucca-bsp](https://github.com/hugelton/felucca-bsp) |
 

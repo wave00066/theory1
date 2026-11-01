@@ -11,6 +11,8 @@
 #include "synth.h"
 #include "theory.c"
 #include "texts.c"
+#include "synthmath.h"
+#include "synth_lessons.h"
 #include "staff_glyphs.h"
 
 /* ================================================================ settings === */
@@ -174,7 +176,8 @@ static void play_interval(int b, int semis, int together)
 }
 
 /* ================================================================ screens === */
-enum { SCR_MENU, SCR_TOPICS, SCR_LESSON, SCR_QSETUP, SCR_QUIZ, SCR_QEND, SCR_LAB, SCR_SETTINGS };
+enum { SCR_MENU, SCR_TOPICS, SCR_LESSON, SCR_QSETUP, SCR_QUIZ, SCR_QEND, SCR_LAB, SCR_SETTINGS, SCR_SYNLIST,
+       SCR_SYNPAGE };
 enum { T_BASICS, T_STAFF, T_INTERVALS, T_SCALES, T_MODES, T_CHORDS, T_HARMONY, T_KEYS, NTOPICS };
 static const uint8_t TOPIC_ITEMS[NTOPICS] = {8, STAFF_HI - STAFF_LO + 1, NINTERVALS, NSCALES, NMODES, NCHORDS, 9,
                                              NKEYSIG};
@@ -470,10 +473,9 @@ static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *
             continue;
         }
         if (cp >= 0xC0u && cp <= 0xFFu) {             /* an accented letter */
-            uint32_t i = cp - 0xC0u, gi;
+            uint32_t i = cp - 0xC0u;
             int m = LAT_MARK[i];
             one[0] = LAT_BASE[i];
-            gi = glyph(f, (uint8_t)one[0]);
             if (ui_draw) {
                 int32_t top;
                 if ((one[0] == 'i') && m && f->last >= 'a') {
@@ -668,7 +670,7 @@ static struct {
  * the keys' own pitches); not in the quiz, where it would give the answer away */
 static int ex_sounding(int k)
 {
-    return ui.screen == SCR_LESSON && pev_sounding[53 + k];
+    return (ui.screen == SCR_LESSON || ui.screen == SCR_SYNPAGE) && pev_sounding[53 + k];
 }
 static int ex_playing(void)
 {
@@ -821,17 +823,19 @@ static int lesson_clef(void) { return ui.root[T_STAFF] % clefs_in(cfg.clefs); }
 /* =========================================================== the screens === */
 static void draw_menu(void)
 {
-    static const uint16_t COL[4] = {RGB(70, 170, 255), RGB(255, 150, 40), RGB(80, 220, 120), RGB(170, 170, 180)};
-    const int names[4] = {S_M_LESSONS, S_M_QUIZ, S_M_LAB, S_M_SETTINGS};
-    const int subs[4] = {S_M_LESSONS_SUB, S_M_QUIZ_SUB, S_M_LAB_SUB, S_M_SETTINGS_SUB};
+    static const uint16_t COL[5] = {RGB(70, 170, 255), RGB(255, 150, 40), RGB(80, 220, 120), RGB(190, 110, 255),
+                                    RGB(170, 170, 180)};
+    const char *names[5] = {S(S_M_LESSONS), S(S_M_QUIZ), S(S_M_LAB), SSTR[SS_MENU][th_ui], S(S_M_SETTINGS)};
+    const char *subs[5] = {S(S_M_LESSONS_SUB), S(S_M_QUIZ_SUB), S(S_M_LAB_SUB), SSTR[SS_MENU_SUB][th_ui],
+                           S(S_M_SETTINGS_SUB)};
     int i;
     ui_header("THEORY-1", S(S_TAGLINE), C_GRAY);
-    for (i = 0; i < 4; i++) {
-        int32_t y = 30 + i * 39, sel = i == ui.menu;
-        cv_rect(4, y, 232, 36, sel ? COL_SELBG : COL_PANEL);
-        cv_rect(4, y, 4, 36, COL[i]);
-        t1_tx(16, y + 1, &FONT_M, S(names[i]), sel ? C_WHITE : C_GRAY);
-        t1_tx(16, y + 22, &FONT_XS, S(subs[i]), sel ? C_HI : C_DIM);
+    for (i = 0; i < 5; i++) {
+        int32_t y = 28 + i * 39, sel = i == ui.menu;
+        cv_rect(4, y, 232, 37, sel ? COL_SELBG : COL_PANEL);
+        cv_rect(4, y, 4, 37, COL[i]);
+        t1_tx(16, y + 1, &FONT_M, names[i], sel ? C_WHITE : C_GRAY);
+        t1_tx(16, y + 22, &FONT_XS, subs[i], sel ? C_HI : C_DIM);
     }
     hint(S(S_H_MENU));
     mk.scale = WHITE_PCS;
@@ -2290,6 +2294,8 @@ static void harmony_all(void)
 }
 
 /* a note in, from a key or MIDI: sounded (unless an outside keyboard sounds itself), and given to the screen */
+#include "synthlab.c"
+
 static void note_in(int note, int vel, int on, int outside)
 {
     if (note < 0 || note > 127)
@@ -2299,6 +2305,8 @@ static void note_in(int note, int vel, int on, int outside)
             synth_note_on(note, vel);
         if (ui.held[note] < 255)
             ui.held[note]++;
+        if (syn_is(ui.screen))
+            syn.note = (uint8_t)note;
         if (ui.screen == SCR_LAB) {
             int i;
             if (ui.nhist == 8)
@@ -2338,9 +2346,16 @@ static void midi_in(void)
 
 static void ui_go(int screen)
 {
+    int was = syn_is(ui.screen), now = syn_is(screen);
     ui.screen = (uint8_t)screen;
     ui.redraw = 1;
     play_stop();
+    if (was != now) {                         /* the keys play the SYNTH section's patch there, the lessons' sound
+                                               * elsewhere */
+        synth_mode(now);
+        if (now)
+            syn_send();
+    }
 }
 
 static void ui_back(void)
@@ -2349,6 +2364,7 @@ static void ui_back(void)
     case SCR_LESSON: ui_go(SCR_TOPICS); break;
     case SCR_QUIZ: case SCR_QEND: ui_go(SCR_QSETUP); break;
     case SCR_SETTINGS: settings_save(); ui_go(SCR_MENU); break;
+    case SCR_SYNPAGE: syn.sel = syn.ch; ui_go(SCR_SYNLIST); break;
     default: ui_go(SCR_MENU); break;
     }
 }
@@ -2357,7 +2373,21 @@ static void ui_enter(void)
 {
     switch (ui.screen) {
     case SCR_MENU:
-        ui_go(ui.menu == 0 ? SCR_TOPICS : ui.menu == 1 ? SCR_QSETUP : ui.menu == 2 ? SCR_LAB : SCR_SETTINGS);
+        ui_go(ui.menu == 0 ? SCR_TOPICS : ui.menu == 1 ? SCR_QSETUP : ui.menu == 2 ? SCR_LAB :
+              ui.menu == 3 ? SCR_SYNLIST : SCR_SETTINGS);
+        break;
+    case SCR_SYNLIST:
+        ui_go(SCR_SYNPAGE);
+        syn_chapter(syn.sel);
+        break;
+    case SCR_SYNPAGE:
+        if (syn.page + 1 < SCHAPS[syn.ch].n)
+            syn_page_go(1);
+        else {                                /* the chapter's end: the next one, chosen in the list */
+            app_say(SW(SS_END), "");
+            syn.sel = (uint8_t)((syn.ch + 1) % NSCHAP);
+            ui_go(SCR_SYNLIST);
+        }
         break;
     case SCR_TOPICS:
         ui.topic = ui.topic_sel;
@@ -2384,7 +2414,21 @@ static void ui_encoder(int e, int d)
     switch (ui.screen) {
     case SCR_MENU:
         if (e == EN_SELECT)
-            ui.menu = (uint8_t)t1_wrap(ui.menu + d, 4);
+            ui.menu = (uint8_t)t1_wrap(ui.menu + d, 5);
+        break;
+    case SCR_SYNLIST:
+        if (e == EN_SELECT || e == EN_ALGO)
+            syn.sel = (uint8_t)t1_wrap(syn.sel + d, NSCHAP);
+        break;
+    case SCR_SYNPAGE:
+        if (e == EN_SELECT)
+            syn_page_go(d < 0 ? -1 : 1);
+        else if (e >= EN_K1 && e <= EN_K4)
+            syn_knob(e - EN_K1, d);
+        else if (e == EN_ALGO) {
+            syn_chapter(t1_wrap(syn.ch + (d < 0 ? -1 : 1), NSCHAP));
+            syn.sel = syn.ch;
+        }
         break;
     case SCR_TOPICS:
         if (e == EN_SELECT || e == EN_ALGO)
@@ -2530,6 +2574,25 @@ static void ui_button(int b)
             q_finish(2);
         }
         break;
+    case SCR_SYNPAGE:
+        if (b == B_PLAY)
+            syn_demo();
+        else if (b == B_FX) {                 /* the chapter's sound again, on this page */
+            int pg = syn.page, i;
+            if (!SCHAPS[syn.ch].keep) {
+                for (i = 0; i < NPAR; i++)
+                    syn.p[i] = SCHAPS[syn.ch].patch[i];
+            } else
+                for (i = 0; i < NPAR; i++)
+                    syn.p[i] = SINIT[i];
+            syn_send();
+            for (i = 0; i <= pg; i++) {       /* and what the pages up to this one set */
+                syn.page = (uint8_t)i;
+                syn_page_enter();
+            }
+            app_say(SW(SS_RESTART), SCHAPS[syn.ch].title[th_ui]);
+        }
+        break;
     case SCR_LAB:
         if (b == B_PLAY)
             lab_scale_play();
@@ -2579,7 +2642,7 @@ static void ui_input(void)
     play_tick();
     if (pev_changed) {
         pev_changed = 0;
-        if (ui.screen == SCR_LESSON)
+        if (ui.screen == SCR_LESSON || ui.screen == SCR_SYNPAGE)
             ui.redraw = 1;
     }
 }
@@ -2614,7 +2677,14 @@ static void speak(void)
     if (ann_on() && ann_where()) {
         char t[160];
         const int where[8] = {S_TAGLINE, S_M_LESSONS, S_M_LESSONS, S_M_QUIZ, S_M_QUIZ, S_END, S_M_LAB, S_M_SETTINGS};
-        t1_strcpy(t, S(where[ui.screen & 7u]));
+        if (syn_is(ui.screen)) {
+            t1_strcpy(t, SW(SS_MENU));
+            if (ui.screen == SCR_SYNPAGE) {
+                str_cat(t, ". ");
+                str_cat(t, syn_pg()->text[th_ui]);
+            }
+        } else
+            t1_strcpy(t, S(where[ui.screen & 7u]));
         if (ui.screen == SCR_QUIZ) {
             str_cat(t, ". ");
             str_cat(t, q.l1);
@@ -2629,7 +2699,8 @@ static void speak(void)
 static void draw_all(void)
 {
     mk.scale = mk.root = mk.ok = mk.bad = mk.hint = 0;
-    no_kb = ui.screen == SCR_TOPICS || ui.screen == SCR_QSETUP || ui.screen == SCR_SETTINGS;
+    no_kb = ui.screen == SCR_MENU || ui.screen == SCR_TOPICS || ui.screen == SCR_QSETUP || ui.screen == SCR_SETTINGS ||
+            syn_is(ui.screen);
     btn_live = 1u << B_HOME | 1u << B_GLO | (FM1B_BLE_CENTRAL ? 1u << B_REC : 0u) | 1u << B_OCTDN | 1u << B_OCTUP;
     switch (ui.screen) {
     case SCR_MENU: draw_menu(); btn_live |= 1u << B_SEL; break;
@@ -2646,6 +2717,8 @@ static void draw_all(void)
     case SCR_QEND: draw_qend(); btn_live |= 1u << B_SEL; break;
     case SCR_LAB: draw_lab(); btn_live |= 1u << B_PLAY | 1u << B_EDIT; break;
     case SCR_SETTINGS: draw_settings(); btn_live |= 1u << B_SEL | 1u << B_SAVE; break;
+    case SCR_SYNLIST: draw_synlist(); btn_live |= 1u << B_SEL; break;
+    case SCR_SYNPAGE: draw_synpage(); btn_live |= 1u << B_SEL | 1u << B_PLAY | 1u << B_FX; break;
     default: break;
     }
     if (!no_kb)
@@ -2698,6 +2771,10 @@ void app_frame(void)
     }
     if (ui.msg_until != msg_was) {
         msg_was = ui.msg_until;
+        ui.redraw = 1;
+    }
+    if (ui.screen == SCR_SYNPAGE && syn_animated() && (int32_t)(now - syn.anim) >= 0) {
+        syn.anim = now + 70u;                /* a moving picture: about 14 frames a second */
         ui.redraw = 1;
     }
     if (ui.redraw) {
@@ -2755,6 +2832,12 @@ int app_expect(const char *what, int *got)
         *got = cfg.best[0];
     else if (!strcmp(what, "dirty"))
         *got = set_dirty;
+    else if (!strcmp(what, "synok"))
+        *got = syn.done;
+    else if (!strcmp(what, "synch"))
+        *got = syn.ch;
+    else if (!strcmp(what, "synpage"))
+        *got = syn.page;
     else
         return 0;
     return 1;
@@ -2766,6 +2849,34 @@ int app_host_cmd(const char *cmd, const char *a, const char *b, const char *c, c
 {
     int i;
     (void)b, (void)c, (void)d;
+    if (!strcmp(cmd, "synch")) {              /* the SYNTH section: chapter N, its first page */
+        if (!syn_is(ui.screen))
+            ui_go(SCR_SYNLIST);
+        syn.sel = (uint8_t)atoi(a);
+        ui_go(SCR_SYNPAGE);
+        syn_chapter(syn.sel);
+        return 1;
+    }
+    if (!strcmp(cmd, "synpage")) {
+        syn.page = (uint8_t)atoi(a);
+        syn_page_enter();
+        return 1;
+    }
+    if (!strcmp(cmd, "synsolve")) {           /* the step's goal, set on its knob */
+        const spage_t *g = syn_pg();
+        if (g->kind == 2) {
+            int i, k = 0;
+            if (g->gp >= P_H1 && g->gp <= P_H8)
+                syn.hsel = (uint8_t)(g->gp - P_H1);
+            for (i = 0; i < g->nk; i++)
+                if (g->knob[i] == g->gp || (g->knob[i] == V_HLVL && g->gp >= P_H1 && g->gp <= P_H8))
+                    k = i;
+            syn_set(g->gp, g->gv);
+            syn_knob(k, 0);
+            ui.redraw = 1;
+        }
+        return 1;
+    }
     if (!strcmp(cmd, "solve")) {
         if (ui.screen != SCR_QUIZ || q.done)
             return 1;

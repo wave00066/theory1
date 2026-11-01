@@ -4,7 +4,8 @@
 
 <p align="center"><a href="https://ko-fi.com/wave00066"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi"></a></p>
 
-THEORY-1 is a teaching firmware for the M-VAVE FM-1. It teaches music theory to students and beginners through
+THEORY-1 is a teaching firmware for the M-VAVE FM-1. It teaches music theory, and how a synthesizer works, to students
+and beginners through
 the synth's keys, lights and screen, in **English, Italian, Spanish, German and French**. Notes can be shown as
 **Do (C)** (solfège with the letter beside it), solfège only, letters only, or the German way (C D E … H, Fis, Es).
 
@@ -19,6 +20,9 @@ the synth's keys, lights and screen, in **English, Italian, Spanish, German and 
   with hints, a score and saved best scores.
 - **LAB**: play anything and THEORY-1 names the note, the interval or the chord, with its inversion. Pick a scale
   to see each note's degree, with the notes outside the scale in red.
+- **SYNTH**: how a synthesizer works, in 18 chapters: sound, oscillators, filters, envelopes, the LFO, FM, additive
+  and wavetable synthesis, voices and effects, then a bass, a pad, a lead, a stab and drums built step by step. The
+  keys play a real teaching synth and K1 to K4 move its knobs, while the screen draws what they do.
 
 The FM-1's keys light up with the lesson's notes: the root bright, the other notes of the scale, mode or chord
 softer. When PLAY plays the example, each key lights brightly as its note sounds, so you see the scale go up and down.
@@ -41,6 +45,35 @@ Two quizzes go with it:
   level 2 with the ledger lines, level 3 with sharps and flats.
 - **Ear: notes**: THEORY-1 plays the reference C, then **one note**; find it on the keys. Level 1 the white keys,
   level 2 all twelve, level 3 two notes in a row.
+
+## Learning synthesis
+
+<p align="center"><img src="docs/img/synth.png" alt="The SYNTH section: chapters, sound, oscillator, filter, ADSR, LFO, FM, a bass built step by step"></p>
+
+In **SYNTH** the FM-1 becomes a teaching synthesizer. Its keys play a synth with two oscillators (sine, triangle, saw,
+square, pulse, noise), a filter (low-, band- and high-pass, with resonance), an ADSR envelope for the volume and one for
+the filter, a pitch envelope, an LFO, two-operator FM, additive and wavetable sources, mono with glide or six voices,
+drive and chorus. The 18 chapters follow the path of a synthesis course:
+
+| Part | Chapters |
+|---|---|
+| The basics | 1 Sound · 2 The synthesizer · 3 The oscillator · 4 The filter |
+| Envelopes and modulation | 5 The ADSR envelope · 6 The filter envelope · 7 The pitch envelope · 8 The LFO |
+| Synthesis techniques | 9 FM synthesis · 10 Additive and wavetable |
+| Voices and effects | 11 Mono, poly and glide · 12 Effects |
+| Let's make sounds together | 13 A bass · 14 A pad · 15 A lead · 16 A stab · 17 Drums |
+| Your synth | 18 Free synth: every knob, on nine pages |
+
+Each chapter has three kinds of page:
+
+- **read**: a short explanation with a picture: the wave and its harmonics, the block diagram, the filter's curve over
+  a saw's harmonics, the ADSR, the LFO, the FM operators and their sidebands, the additive bars, the wavetable.
+- **try**: K1 to K4 move four knobs, and the picture follows them while you play.
+- **step**: a goal on one knob ("turn K2 until the cutoff reaches 25%"). A mark shows where to go, and when you get
+  there the knob turns green: *Done! SEL: next*.
+
+In the chapters of *Let's make sounds together* every step adds one block to the sound, starting from a plain saw, as a
+sound designer would. PLAY plays an example that fits the chapter, and FX brings back the chapter's starting sound.
 
 ## A question, step by step
 
@@ -74,16 +107,17 @@ In the lessons and the lab, **EDIT** steps through the naming systems without op
 
 | Control | What it does |
 |---|---|
-| **SELECT** (encoder) | moves through the items: page, scale, mode, chord, answer |
+| **SELECT** (encoder) | moves through the items: page, scale, mode, chord, answer (in SYNTH: the page) |
 | **SEL** | enters, confirms, answers, goes to the next question |
 | **HOME** | goes back one level |
 | **PLAY** | plays the example (in the quiz: the reference note, or the sound again) |
 | **K1** or **PRESETS** | the root (in the Staff lesson: the clef). In the quiz menu: the level |
 | **K2 / K3** | in Harmony: the degree / triads or sevenths. In the Staff lesson, K2: sharp, flat, natural |
+| **K1 to K4** | in SYNTH: the four knobs of the page |
 | **ALGORITHM** | in the lessons: the next topic |
 | **ARP** | in Harmony: plays the chords of every degree |
 | **EDIT** | in the quiz: a hint (the right keys light up). In the lessons: the note-name system |
-| **FX** | in the quiz: skips the question |
+| **FX** | in the quiz: skips the question. In SYNTH: the chapter's starting sound again |
 | **GLO** | settings |
 | **REC** | looks for a Bluetooth MIDI keyboard or piano and connects to it (ALGORITHM picks, REC connects) |
 | **OCT− / OCT+** | move the keys' sound an octave |
@@ -138,10 +172,13 @@ python3 docs/make_graphics.py                            # this README's picture
 |---|---|
 | `app/theory.c` | The theory: note spelling and names (Do, Ré, C, H), the seven clefs, intervals, scales, modes, chords, degrees, keys and chord recognition, with names and explanations in 5 languages. Plain C, tested on its own. |
 | `app/texts.c` | Every other word on the screen, in 5 languages |
-| `app/synth.c` | The sound: a small 2-operator FM synth, 8 voices (piano, electric piano, organ, bells) |
+| `app/synth.c` | The sound: a small 2-operator FM synth, 8 voices (piano, electric piano, organ, bells), and the SYNTH section's teaching synth (polyBLEP oscillators, state-variable filter, envelopes, LFO, FM, additive, wavetable, drive, chorus; 6 voices) |
+| `app/synthmath.h` | The teaching synth's parameters and the curves from a knob to a time, a frequency or a level |
+| `app/synthlab.c` | The SYNTH section's screens: the chapters, the pictures, the knobs and the steps |
+| `app/synth_lessons.h` | The SYNTH chapters, pages and words in 5 languages, made by `app/tools/gen_synth.py` |
 | `app/app.c` | The screens, the accented letters, the lessons, the quiz, the lab, the settings, the keys and MIDI |
 | `app/staff_glyphs.h` | The clefs, the notehead, the sharp and the flat, from the [Bravura](https://github.com/steinbergmedia/bravura) music font (SIL OFL 1.1), made by `app/tools/make_glyphs.py` |
-| `app/tests/` | `theory_test.c`, `basic.txt` (every quiz, the lab, the settings), `questions.txt` (13200 generated questions checked), `texts_fit.txt` (every page in every language, every clef, fits the screen), `screens.txt`, `flow.txt`, `clefs.txt`; `gen_tests.py` writes the long ones |
+| `app/tests/` | `theory_test.c`, `basic.txt` (every quiz, the lab, the settings), `questions.txt` (13200 generated questions checked), `texts_fit.txt` (every page in every language, every clef, fits the screen), `synth.txt` (every SYNTH page in every language, every step's goal), `screens.txt`, `flow.txt`, `clefs.txt`; `gen_tests.py` writes the long ones |
 | `docs/make_graphics.py` | The README's pictures, made from the simulator's screens |
 | `base/` | [fm1-base](https://github.com/charlesvestal/fm1-base) (a submodule) with [felucca-bsp](https://github.com/hugelton/felucca-bsp) |
 

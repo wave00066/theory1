@@ -1902,7 +1902,7 @@ midi USB 80 48 00
 wait 600
 tap HOME
 wait 50
-turn SELECT 1
+turn SELECT 2
 tap SEL
 wait 50
 expect screen 7

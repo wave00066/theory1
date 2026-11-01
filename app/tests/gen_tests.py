@@ -41,7 +41,7 @@ def basic():
           "midi USB 90 3E 64", "midi USB 90 41 64", "midi USB 90 45 64", "midi USB 90 48 64", "wait 50",
           "expect voices 4", "midi USB 80 3E 00", "midi USB 80 41 00", "midi USB 80 45 00", "midi USB 80 48 00",
           "wait 600", "tap HOME", "wait 50",
-          "turn SELECT 1", "tap SEL", "wait 50", "expect screen 7", "tap SEL", "wait 30", "expect lang 1",
+          "turn SELECT 2", "tap SEL", "wait 50", "expect screen 7", "tap SEL", "wait 30", "expect lang 1",
           "expect dirty 1", "tap HOME", "wait 50", "expect dirty 0", "reboot", "wait 900", "expect lang 1",
           "expect best0 100"]
     return L

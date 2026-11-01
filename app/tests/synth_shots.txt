@@ -1,0 +1,47 @@
+# the SYNTH section's screens for the README (docs/make_graphics.py)
+wait 600
+turn SELECT 3
+wait 30
+shot s0-menu.png
+tap SEL
+wait 30
+shot s1-list.png
+synch 0
+synpage 3
+key 4 down
+wait 40
+shot s2-sound.png
+key 4 up
+synch 2
+synpage 6
+synsolve
+wait 30
+shot s3-osc.png
+synch 3
+synpage 3
+turn K2 12
+wait 30
+shot s4-filter.png
+synch 4
+synpage 3
+wait 30
+shot s5-adsr.png
+synch 7
+synpage 2
+turn K2 30
+wait 300
+shot s6-lfo.png
+synch 8
+synpage 5
+turn K2 25
+wait 30
+shot s7-fm.png
+synch 9
+synpage 1
+wait 30
+shot s8-add.png
+synch 12
+synpage 4
+synsolve
+wait 30
+shot s9-bass.png
