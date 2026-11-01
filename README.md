@@ -11,9 +11,18 @@ the synth's keys, lights and screen, in **English, Italian, Spanish, German and 
 
 <p align="center"><img src="docs/img/features.png" alt="Lessons, quiz and lab"></p>
 
-- **LESSONS**: the basics, **reading notes on the staff** in up to 7 clefs, intervals, 9 scales, the 7 modes, 13 chord types, the chords built on every degree
-  (triads and sevenths, with roman numerals and harmonic function) and the circle of fifths with all 15 keys.
+- **LESSONS**: the basics, **reading notes on the staff** in up to 7 clefs, intervals, 9 scales, 21 modes, 13 chord types, the chords built on every degree
+  (triads and sevenths, with roman numerals and harmonic function), the circle of fifths with all 15 keys and 13
+  **scales of the world**.
   Everything works from any root and is spelled correctly (F major has Bb, not A#).
+  - **21 modes**: the 7 diatonic modes, the 7 modes of the melodic minor (Dorian b2, Lydian augmented, Lydian
+    dominant, Mixolydian b6, Locrian #2, the altered scale) and the 7 of the harmonic minor (Locrian #6, Ionian #5,
+    Dorian #4, Phrygian dominant, Lydian #2, super-Locrian bb7). Each shows the scale it comes from ("C altered = Db
+    melodic minor from C") and its typical note.
+  - **Scales of the world**: octatonic, Verdi's enigmatic, double harmonic (Hijaz Kar, Bhairav), Hungarian minor,
+    the Indian thaats Purvi, Marwa and Todi, the Japanese in sen, yo, hirajoshi, kumoi, iwato and Ryukyu; and a page
+    on the notes between the keys (maqam quarter tones, shrutis, gamelan).
+  - In the **LAB** you can pick any of them, and the **QUIZ** asks the new modes and scales at level 3.
 - **QUIZ**: 11 kinds of question, 10 questions each, 3 levels. You answer **by playing the keys** (notes on the
   staff, scales, modes, chords, intervals, note names, degrees), **by ear** (single notes, intervals, chords) or by
   choosing (keys). Every answer gets feedback,

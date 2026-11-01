@@ -127,6 +127,31 @@ int main(void)
     note_name_s(mode_parent(N("D"), 1), t, SYS_LETTERS), check("D dorian parent", t, "C");
     note_name_s(mode_parent(N("F#"), 2), t, SYS_LETTERS), check("F# phrygian parent", t, "D");
     note_name_s(mode_parent(N("Bb"), 3), t, SYS_LETTERS), check("Bb lydian parent", t, "F");
+    /* the modes of the melodic and the harmonic minor, the scales of the world */
+    mode_scale(7, &ms), scale_en(&ms, N("C"), b), check("C melodic minor mode", b, "C D Eb F G A B");
+    mode_scale(10, &ms), scale_en(&ms, N("C"), b), check("C lydian dominant", b, "C D E F# G A Bb");
+    mode_scale(13, &ms), scale_en(&ms, N("C"), b), check("C altered", b, "C Db Eb Fb Gb Ab Bb");
+    mode_scale(13, &ms), degree_labels(&ms, b), check("altered degrees", b, "1 b2 b3 b4 b5 b6 b7");
+    mode_scale(18, &ms), scale_en(&ms, N("E"), b), check("E phrygian dominant", b, "E F G# A B C D");
+    mode_scale(17, &ms), degree_labels(&ms, b), check("dorian #4 degrees", b, "1 2 b3 #4 5 6 b7");
+    mode_scale(20, &ms), degree_labels(&ms, b), check("ultralocrian degrees", b, "1 b2 b3 b4 b5 b6 bb7");
+    mode_scale(14, &ms), scale_en(&ms, N("A"), b), check("A harmonic minor mode", b, "A B C D E F G#");
+    note_name_s(mode_parent(N("C"), 13), t, SYS_LETTERS), check("C altered parent", t, "Db");
+    note_name_s(mode_parent(N("E"), 18), t, SYS_LETTERS), check("E phrygian dominant parent", t, "A");
+    note_name_s(mode_parent(N("G"), 10), t, SYS_LETTERS), check("G lydian dominant parent", t, "D");
+    scale_en(&SCALES[SC_OCTATONIC], N("C"), b), check("C octatonic", b, "C D Eb F Gb Ab A B");
+    scale_en(&SCALES[SC_ENIGMATIC], N("C"), b), check("C enigmatic", b, "C Db E F# G# A# B");
+    scale_en(&SCALES[SC_DOUBLEHARM], N("C"), b), check("C double harmonic", b, "C Db E F G Ab B");
+    scale_en(&SCALES[SC_HUNGARIAN], N("C"), b), check("C Hungarian minor", b, "C D Eb F# G Ab B");
+    scale_en(&SCALES[SC_TODI], N("C"), b), check("C Todi", b, "C Db Eb F# G Ab B");
+    scale_en(&SCALES[SC_INSEN], N("D"), b), check("D in sen", b, "D Eb G A C");
+    scale_en(&SCALES[SC_YO], N("D"), b), check("D yo", b, "D E G A B");
+    scale_en(&SCALES[SC_HIRAJOSHI], N("C"), b), check("C hirajoshi", b, "C D Eb G Ab");
+    scale_en(&SCALES[SC_IWATO], N("C"), b), check("C iwato", b, "C Db F Gb Bb");
+    scale_en(&SCALES[SC_RYUKYU], N("C"), b), check("C ryukyu", b, "C E F G B");
+    degree_labels(&SCALES[SC_OCTATONIC], b), check("octatonic degrees", b, "1 2 b3 4 b5 b6 6 7");
+    scale_steps(&SCALES[SC_ENIGMATIC], b), check("enigmatic steps", b, "S  T+S  T  T  T  S  S");
+    scale_steps(&SCALES[SC_HIRAJOSHI], b), check("hirajoshi steps", b, "T  S  2T  S  2T");
     note_name_s(mode_parent(N("A"), 5), t, SYS_LETTERS), check("A aeolian parent", t, "C");
     /* every mode, from every root, is its parent major's notes */
     for (m = 0; m < 7; m++)

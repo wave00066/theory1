@@ -225,7 +225,11 @@ typedef struct {
     const char *text[NLANGS];
 } scale_t;
 enum { SC_MAJOR, SC_NATMINOR, SC_HARMMINOR, SC_MELMINOR, SC_PENTA_MAJ, SC_PENTA_MIN, SC_BLUES, SC_WHOLE,
-       SC_CHROMATIC, NSCALES };
+       SC_CHROMATIC, NBASESCALES,
+       /* the scales of the world and the symmetric ones (the "World scales" lesson) */
+       SC_OCTATONIC = NBASESCALES, SC_ENIGMATIC, SC_DOUBLEHARM, SC_HUNGARIAN, SC_PURVI, SC_MARWA, SC_TODI, SC_INSEN,
+       SC_YO, SC_HIRAJOSHI, SC_KUMOI, SC_IWATO, SC_RYUKYU, NSCALES };
+#define NWORLD (NSCALES - NBASESCALES)
 static const scale_t SCALES[NSCALES] = {
     {{"maggiore", "major", "mayor", "Dur", "majeur"}, 7, {0, 2, 4, 5, 7, 9, 11}, {0, 1, 2, 3, 4, 5, 6},
      {"La scala di base: T T S T T T S. Su Do usa solo i tasti bianchi. Suono luminoso, 'allegro'.",
@@ -278,6 +282,91 @@ static const scale_t SCALES[NSCALES] = {
       "All 12 semitones of the octave. Not a key: the raw material of every scale.",
       "Los 12 semitonos de la octava. No es una tonalidad: es el material de todas las escalas.",
       "Alle 12 Halbtöne der Oktave. Keine Tonart: das Material aller Tonleitern.", "Les 12 demi-tons de l'octave. Pas une tonalité : le matériau de toutes les gammes."}},
+    {{"ottatonica", "octatonic", "octatónica", "oktatonisch", "octatonique"}, 8, {0, 2, 3, 5, 6, 8, 9, 11},
+     {0, 1, 2, 3, 4, 5, 5, 6},
+     {"8 note: tono, semitono, tono... Simmetrica: esiste in sole 3 versioni. Messiaen, jazz, musica di suspense.",
+      "8 notes: tone, semitone, tone... Symmetrical: only 3 versions exist. Messiaen, jazz, suspense film music.",
+      "8 notas: tono, semitono, tono... Simétrica: solo existen 3 versiones. Messiaen, jazz, música de suspense.",
+      "8 Töne: Ganzton, Halbton, Ganzton... Symmetrisch: nur 3 Versionen. Messiaen, Jazz, Spannungs-Filmmusik.",
+      "8 notes : ton, demi-ton, ton... Symétrique : seulement 3 versions. Messiaen, jazz, musiques de suspense."}},
+    {{"enigmatica", "enigmatic", "enigmática", "enigmatisch", "énigmatique"}, 7, {0, 1, 4, 6, 8, 10, 11},
+     {0, 1, 2, 3, 4, 5, 6},
+     {"La scala 'enigmatica' di Verdi (1888): S, T+S, T, T, T, S, S. Il centro è a toni interi, le estremità a semitoni.",
+      "Verdi's 'enigmatic' scale (1888): S, T+S, T, T, T, S, S. Whole tones in the middle, semitones at the ends.",
+      "La escala 'enigmática' de Verdi (1888): S, T+S, T, T, T, S, S. Tonos enteros en el centro, semitonos en los extremos.",
+      "Verdis 'rätselhafte' Tonleiter (1888): H, G+H, G, G, G, H, H. Ganztöne in der Mitte, Halbtöne an den Enden.",
+      "La gamme 'énigmatique' de Verdi (1888) : dT, T+dT, T, T, T, dT, dT. Des tons au centre, des demi-tons aux bords."}},
+    {{"doppia armonica", "double harmonic", "doble armónica", "doppelharmonisch", "double harmonique"}, 7,
+     {0, 1, 4, 5, 7, 8, 11}, {0, 1, 2, 3, 4, 5, 6},
+     {"1 b2 3 4 5 b6 7: due salti di tono e mezzo. Detta bizantina; nel mondo arabo è Hijaz Kar, in India il thaat Bhairav.",
+      "1 b2 3 4 5 b6 7: two leaps of a tone and a half. Also Byzantine; Hijaz Kar in Arabic music, thaat Bhairav in India.",
+      "1 b2 3 4 5 b6 7: dos saltos de tono y medio. También bizantina; Hijaz Kar en la música árabe, thaat Bhairav en India.",
+      "1 b2 3 4 5 b6 7: zwei Sprünge von anderthalb Tönen. Auch byzantinisch; arabisch Hijaz Kar, in Indien Thaat Bhairav.",
+      "1 b2 3 4 5 b6 7 : deux sauts d'un ton et demi. Dite byzantine ; Hijaz Kar en musique arabe, thaat Bhairav en Inde."}},
+    {{"ungherese minore", "Hungarian minor", "húngara menor", "ungarisch Moll", "hongroise mineure"}, 7,
+     {0, 2, 3, 6, 7, 8, 11}, {0, 1, 2, 3, 4, 5, 6},
+     {"1 2 b3 #4 5 b6 7: la minore armonica con la 4a alzata. Due salti di tono e mezzo: Liszt, Brahms, Bartók.",
+      "1 2 b3 #4 5 b6 7: harmonic minor with a raised 4th. Two tone-and-a-half leaps: Liszt, Brahms, Bartók.",
+      "1 2 b3 #4 5 b6 7: la menor armónica con la cuarta elevada. Dos saltos de tono y medio: Liszt, Brahms, Bartók.",
+      "1 2 b3 #4 5 b6 7: harmonisches Moll mit erhöhter Quarte. Zwei Sprünge von anderthalb Tönen: Liszt, Brahms, Bartók.",
+      "1 2 b3 #4 5 b6 7 : le mineur harmonique à quarte haussée. Deux sauts d'un ton et demi : Liszt, Brahms, Bartók."}},
+    {{"thaat Purvi", "thaat Purvi", "thaat Purvi", "Thaat Purvi", "thaat Purvi"}, 7, {0, 1, 4, 6, 7, 8, 11},
+     {0, 1, 2, 3, 4, 5, 6},
+     {"Uno dei 10 thaat indiani: 1 b2 3 #4 5 b6 7. In India la scala è lo scheletro del raga, che ha frasi e un'ora del giorno.",
+      "One of India's 10 thaats: 1 b2 3 #4 5 b6 7. In India a scale is a raga's skeleton; a raga has phrases and a time of day.",
+      "Uno de los 10 thaat indios: 1 b2 3 #4 5 b6 7. En India la escala es el esqueleto del raga, con frases y hora del día.",
+      "Einer der 10 indischen Thaats: 1 b2 3 #4 5 b6 7. Die Tonleiter ist das Gerüst des Raga, mit Phrasen und Tageszeit.",
+      "Un des 10 thaats indiens : 1 b2 3 #4 5 b6 7. En Inde, la gamme est le squelette du raga, avec phrases et heure."}},
+    {{"thaat Marwa", "thaat Marwa", "thaat Marwa", "Thaat Marwa", "thaat Marwa"}, 7, {0, 1, 4, 6, 7, 9, 11},
+     {0, 1, 2, 3, 4, 5, 6},
+     {"Thaat indiano: 1 b2 3 #4 5 6 7. Inquieto, senza una 'casa' stabile: il raga Marwa si canta al tramonto.",
+      "Indian thaat: 1 b2 3 #4 5 6 7. Restless, with no settled home: raga Marwa is sung at sunset.",
+      "Thaat indio: 1 b2 3 #4 5 6 7. Inquieto, sin 'casa' estable: el raga Marwa se canta al atardecer.",
+      "Indischer Thaat: 1 b2 3 #4 5 6 7. Unruhig, ohne festes Zuhause: Raga Marwa singt man bei Sonnenuntergang.",
+      "Thaat indien : 1 b2 3 #4 5 6 7. Inquiet, sans 'maison' stable : le raga Marwa se chante au coucher du soleil."}},
+    {{"thaat Todi", "thaat Todi", "thaat Todi", "Thaat Todi", "thaat Todi"}, 7, {0, 1, 3, 6, 7, 8, 11},
+     {0, 1, 2, 3, 4, 5, 6},
+     {"Thaat indiano: 1 b2 b3 #4 5 b6 7, serio, un raga del mattino. Altri thaat sono i nostri modi: Kafi è il dorico.",
+      "Indian thaat: 1 b2 b3 #4 5 b6 7, serious, a morning raga. Other thaats are our modes: Kafi is the Dorian.",
+      "Thaat indio: 1 b2 b3 #4 5 b6 7, serio, un raga de la mañana. Otros thaat son nuestros modos: Kafi es el dórico.",
+      "Indischer Thaat: 1 b2 b3 #4 5 b6 7, ernst, ein Morgen-Raga. Andere Thaats sind unsere Modi: Kafi ist Dorisch.",
+      "Thaat indien : 1 b2 b3 #4 5 b6 7, grave, un raga du matin. D'autres thaats sont nos modes : Kafi est le dorien."}},
+    {{"in sen", "in sen", "in sen", "In Sen", "in sen"}, 5, {0, 1, 5, 7, 10}, {0, 1, 3, 4, 6},
+     {"Pentatonica giapponese: 1 b2 4 5 b7. Scura e intima, senza sensibile. Si suona sullo shakuhachi e sul koto.",
+      "Japanese pentatonic: 1 b2 4 5 b7. Dark and intimate, no leading tone. Played on shakuhachi and koto.",
+      "Pentatónica japonesa: 1 b2 4 5 b7. Oscura e íntima, sin sensible. Se toca en el shakuhachi y el koto.",
+      "Japanische Pentatonik: 1 b2 4 5 b7. Dunkel und innig, ohne Leitton. Gespielt auf Shakuhachi und Koto.",
+      "Pentatonique japonaise : 1 b2 4 5 b7. Sombre et intime, sans sensible. Jouée au shakuhachi et au koto."}},
+    {{"yo", "yo", "yo", "Yo", "yo"}, 5, {0, 2, 5, 7, 9}, {0, 1, 3, 4, 5},
+     {"Pentatonica giapponese: 1 2 4 5 6. Senza semitoni: aperta e festosa, la scala dei canti popolari.",
+      "Japanese pentatonic: 1 2 4 5 6. No semitones: open and festive, the scale of folk songs.",
+      "Pentatónica japonesa: 1 2 4 5 6. Sin semitonos: abierta y festiva, la escala de las canciones populares.",
+      "Japanische Pentatonik: 1 2 4 5 6. Ohne Halbtöne: offen und festlich, die Tonleiter der Volkslieder.",
+      "Pentatonique japonaise : 1 2 4 5 6. Sans demi-tons : ouverte et festive, la gamme des chants populaires."}},
+    {{"hirajoshi", "hirajoshi", "hirajoshi", "Hirajoshi", "hirajoshi"}, 5, {0, 2, 3, 7, 8}, {0, 1, 2, 4, 5},
+     {"Pentatonica giapponese: 1 2 b3 5 b6. Malinconica, è la scala classica del koto.",
+      "Japanese pentatonic: 1 2 b3 5 b6. Melancholic, the classic koto scale.",
+      "Pentatónica japonesa: 1 2 b3 5 b6. Melancólica, la escala clásica del koto.",
+      "Japanische Pentatonik: 1 2 b3 5 b6. Melancholisch, die klassische Koto-Tonleiter.",
+      "Pentatonique japonaise : 1 2 b3 5 b6. Mélancolique, la gamme classique du koto."}},
+    {{"kumoi", "kumoi", "kumoi", "Kumoi", "kumoi"}, 5, {0, 2, 3, 7, 9}, {0, 1, 2, 4, 5},
+     {"Pentatonica giapponese: 1 2 b3 5 6. Dolce e malinconica, come un minore con la 6a maggiore.",
+      "Japanese pentatonic: 1 2 b3 5 6. Sweet and wistful, like a minor with a major 6th.",
+      "Pentatónica japonesa: 1 2 b3 5 6. Dulce y melancólica, como un menor con la sexta mayor.",
+      "Japanische Pentatonik: 1 2 b3 5 6. Süß und wehmütig, wie Moll mit großer Sexte.",
+      "Pentatonique japonaise : 1 2 b3 5 6. Douce et mélancolique, comme un mineur à sixte majeure."}},
+    {{"iwato", "iwato", "iwato", "Iwato", "iwato"}, 5, {0, 1, 5, 6, 10}, {0, 1, 3, 4, 6},
+     {"Pentatonica giapponese: 1 b2 4 b5 b7. Cupa e tesa, dal suono teatrale.",
+      "Japanese pentatonic: 1 b2 4 b5 b7. Dark and tense, with a theatrical sound.",
+      "Pentatónica japonesa: 1 b2 4 b5 b7. Sombría y tensa, de sonido teatral.",
+      "Japanische Pentatonik: 1 b2 4 b5 b7. Düster und gespannt, mit theatralischem Klang.",
+      "Pentatonique japonaise : 1 b2 4 b5 b7. Sombre et tendue, au son théâtral."}},
+    {{"ryukyu", "Ryukyu", "ryukyu", "Ryukyu", "ryukyu"}, 5, {0, 4, 5, 7, 11}, {0, 2, 3, 4, 6},
+     {"Pentatonica delle isole di Okinawa: 1 3 4 5 7. Luminosa, l'unica giapponese con la sensibile.",
+      "Pentatonic of the Okinawa islands: 1 3 4 5 7. Bright, the only Japanese one with a leading tone.",
+      "Pentatónica de las islas de Okinawa: 1 3 4 5 7. Luminosa, la única japonesa con sensible.",
+      "Pentatonik der Okinawa-Inseln: 1 3 4 5 7. Hell, die einzige japanische mit Leitton.",
+      "Pentatonique des îles d'Okinawa : 1 3 4 5 7. Lumineuse, la seule japonaise avec une sensible."}},
 };
 
 static nt_t scale_note(const scale_t *s, nt_t root, int i)
@@ -295,67 +384,172 @@ static void scale_steps(const scale_t *s, char *b)
         if (i)
             str_cat(b, "  ");
         str_cat(b, d == 1 ? (de ? "H" : fr ? "dT" : "S") : d == 2 ? (de ? "G" : "T") :
-                   d == 3 ? (de ? "G+H" : fr ? "T+dT" : "T+S") : "?");
+                   d == 3 ? (de ? "G+H" : fr ? "T+dT" : "T+S") : d == 4 ? (de ? "2G" : "2T") : "?");
     }
 }
 
 /* ------------------------------------------------------------------- modes --- */
-#define NMODES 7
+/* the modes: the rotations of the major scale (the 7 diatonic modes), of the melodic minor and of the harmonic minor */
+#define NMODES 21
+#define NDIATONIC 7
 typedef struct {
     const char *name[NLANGS];
     uint8_t ch;                         /* its characteristic degree (0-based) */
     const char *text[NLANGS];
+    uint8_t fam, rot;                   /* the scale it turns (SC_MAJOR, SC_MELMINOR, SC_HARMMINOR), from which degree */
 } mode_t_;
 static const mode_t_ MODES[NMODES] = {
     {{"ionico", "Ionian", "jónico", "Ionisch", "ionien"}, 3,
      {"È la scala maggiore. Luminoso e stabile.", "It is the major scale. Bright and stable.",
-      "Es la escala mayor. Luminoso y estable.", "Das ist die Dur-Tonleiter. Hell und stabil.", "C'est la gamme majeure. Clair et stable."}},
+      "Es la escala mayor. Luminoso y estable.", "Das ist die Dur-Tonleiter. Hell und stabil.", "C'est la gamme majeure. Clair et stable."}, SC_MAJOR, 0},
     {{"dorico", "Dorian", "dórico", "Dorisch", "dorien"}, 5,
      {"Minore, ma con la 6a maggiore: un minore 'sereno'. Funk, jazz, musica celtica.",
       "Minor, but with a major 6th: a 'calm' minor. Funk, jazz, Celtic music.",
       "Menor, pero con la sexta mayor: un menor 'sereno'. Funk, jazz, música celta.",
-      "Moll, aber mit großer Sexte: ein 'gelassenes' Moll. Funk, Jazz, keltische Musik.", "Mineur, mais avec la sixte majeure : un mineur 'serein'. Funk, jazz, musique celtique."}},
+      "Moll, aber mit großer Sexte: ein 'gelassenes' Moll. Funk, Jazz, keltische Musik.", "Mineur, mais avec la sixte majeure : un mineur 'serein'. Funk, jazz, musique celtique."}, SC_MAJOR, 1},
     {{"frigio", "Phrygian", "frigio", "Phrygisch", "phrygien"}, 1,
      {"Minore con la 2a minore: suono spagnolo, flamenco, metal.",
       "Minor with a minor 2nd: a Spanish sound, flamenco, metal.",
       "Menor con la segunda menor: sonido español, flamenco, metal.",
-      "Moll mit kleiner Sekunde: spanischer Klang, Flamenco, Metal.", "Mineur avec la seconde mineure : son espagnol, flamenco, metal."}},
+      "Moll mit kleiner Sekunde: spanischer Klang, Flamenco, Metal.", "Mineur avec la seconde mineure : son espagnol, flamenco, metal."}, SC_MAJOR, 2},
     {{"lidio", "Lydian", "lidio", "Lydisch", "lydien"}, 3,
      {"Maggiore con la 4a aumentata: sognante, magico. Tipico delle colonne sonore.",
       "Major with a raised 4th: dreamy, magical. A film-music favourite.",
       "Mayor con la cuarta aumentada: soñador, mágico. Típico de las bandas sonoras.",
-      "Dur mit übermäßiger Quarte: verträumt, magisch. Typisch für Filmmusik.", "Majeur avec la quarte augmentée : rêveur, magique. Typique des musiques de film."}},
+      "Dur mit übermäßiger Quarte: verträumt, magisch. Typisch für Filmmusik.", "Majeur avec la quarte augmentée : rêveur, magique. Typique des musiques de film."}, SC_MAJOR, 3},
     {{"misolidio", "Mixolydian", "mixolidio", "Mixolydisch", "mixolydien"}, 6,
      {"Maggiore con la 7a minore: rock, blues, musica popolare.",
       "Major with a minor 7th: rock, blues, folk music.",
       "Mayor con la séptima menor: rock, blues, música popular.",
-      "Dur mit kleiner Septime: Rock, Blues, Volksmusik.", "Majeur avec la septième mineure : rock, blues, musique folk."}},
+      "Dur mit kleiner Septime: Rock, Blues, Volksmusik.", "Majeur avec la septième mineure : rock, blues, musique folk."}, SC_MAJOR, 4},
     {{"eolio", "Aeolian", "eólico", "Äolisch", "éolien"}, 5,
      {"È la scala minore naturale. Malinconico.", "It is the natural minor scale. Melancholic.",
-      "Es la escala menor natural. Melancólico.", "Das ist das natürliche Moll. Melancholisch.", "C'est la gamme mineure naturelle. Mélancolique."}},
+      "Es la escala menor natural. Melancólico.", "Das ist das natürliche Moll. Melancholisch.", "C'est la gamme mineure naturelle. Mélancolique."}, SC_MAJOR, 5},
     {{"locrio", "Locrian", "locrio", "Lokrisch", "locrien"}, 4,
      {"Ha la 5a diminuita: instabile, il modo più 'scuro'. Si usa poco.",
       "It has a diminished 5th: unstable, the 'darkest' mode. Rarely used.",
       "Tiene la quinta disminuida: inestable, el modo más 'oscuro'. Se usa poco.",
-      "Mit verminderter Quinte: instabil, der 'dunkelste' Modus. Selten benutzt.", "Avec la quinte diminuée : instable, le mode le plus 'sombre'. Peu utilisé."}},
+      "Mit verminderter Quinte: instabil, der 'dunkelste' Modus. Selten benutzt.", "Avec la quinte diminuée : instable, le mode le plus 'sombre'. Peu utilisé."}, SC_MAJOR, 6},
+    {{"minore melodica", "melodic minor", "menor melódica", "Moll (melodisch)", "mineur mélodique"}, 6,
+     {"Minore con 6a e 7a maggiori, uguale in salita e discesa: la base dell'armonia jazz. Accordo: m(maj7).",
+      "Minor with major 6th and 7th, the same up and down: the root of jazz harmony. Chord: m(maj7).",
+      "Menor con sexta y séptima mayores, igual al subir y al bajar: la base del jazz. Acorde: m(maj7).",
+      "Moll mit großer Sexte und Septime, auf- und abwärts gleich: Basis der Jazzharmonik. Akkord: m(maj7).",
+      "Mineur à sixte et septième majeures, pareil en montant et en descendant : la base du jazz. Accord : m(maj7)."},
+     SC_MELMINOR, 0},
+    {{"dorico b2", "Dorian b2", "dórico b2", "Dorisch b2", "dorien b2"}, 1,
+     {"2° modo della melodica: un frigio con la 6a maggiore, più dolce. Accordo: m7.",
+      "2nd mode of melodic minor: a Phrygian with a major 6th, softer. Chord: m7.",
+      "2.º modo de la melódica: un frigio con la sexta mayor, más suave. Acorde: m7.",
+      "2. Modus von melodisch Moll: Phrygisch mit großer Sexte, weicher. Akkord: m7.",
+      "2e mode du mineur mélodique : un phrygien à sixte majeure, plus doux. Accord : m7."}, SC_MELMINOR, 1},
+    {{"lidio aumentato", "Lydian augmented", "lidio aumentado", "Lydisch übermäßig", "lydien augmenté"}, 4,
+     {"3° modo della melodica: lidio con la 5a aumentata. Colore etereo, sospeso. Accordo: maj7(#5).",
+      "3rd mode of melodic minor: Lydian with a raised 5th. Ethereal, floating. Chord: maj7(#5).",
+      "3.er modo de la melódica: lidio con la quinta aumentada. Color etéreo, suspendido. Acorde: maj7(#5).",
+      "3. Modus von melodisch Moll: Lydisch mit übermäßiger Quinte. Ätherisch, schwebend. Akkord: maj7(#5).",
+      "3e mode du mineur mélodique : lydien à quinte augmentée. Couleur éthérée, suspendue. Accord : maj7(#5)."},
+     SC_MELMINOR, 2},
+    {{"lidio dominante", "Lydian dominant", "lidio dominante", "Lydisch-dominant", "lydien dominant"}, 3,
+     {"4° modo della melodica: misolidio con la 4a aumentata (#4 e b7). Brillante, jazz. Accordo: 7(#11).",
+      "4th mode of melodic minor: Mixolydian with a raised 4th (#4 and b7). Bright and jazzy. Chord: 7(#11).",
+      "4.º modo de la melódica: mixolidio con la cuarta aumentada (#4 y b7). Brillante, jazz. Acorde: 7(#11).",
+      "4. Modus von melodisch Moll: Mixolydisch mit übermäßiger Quarte (#4, b7). Hell, jazzig. Akkord: 7(#11).",
+      "4e mode du mineur mélodique : mixolydien à quarte augmentée (#4 et b7). Brillant, jazzy. Accord : 7(#11)."},
+     SC_MELMINOR, 3},
+    {{"misolidio b6", "Mixolydian b6", "mixolidio b6", "Mixolydisch b6", "mixolydien b6"}, 5,
+     {"5° modo della melodica: maggiore con 6a e 7a minori, detto anche eolio dominante. Accordo: 7(b13).",
+      "5th mode of melodic minor: major with minor 6th and 7th, also Aeolian dominant. Chord: 7(b13).",
+      "5.º modo de la melódica: mayor con sexta y séptima menores, o eólico dominante. Acorde: 7(b13).",
+      "5. Modus von melodisch Moll: Dur mit kleiner Sexte und Septime, auch äolisch-dominant. Akkord: 7(b13).",
+      "5e mode du mineur mélodique : majeur à sixte et septième mineures, ou éolien dominant. Accord : 7(b13)."},
+     SC_MELMINOR, 4},
+    {{"locrio #2", "Locrian #2", "locrio #2", "Lokrisch #2", "locrien #2"}, 1,
+     {"6° modo della melodica: locrio con la 2a maggiore, meno cupo. Sul II grado del minore (ii-V). Accordo: m7b5.",
+      "6th mode of melodic minor: Locrian with a major 2nd, less dark. On the II of a minor key (ii-V). Chord: m7b5.",
+      "6.º modo de la melódica: locrio con la segunda mayor, menos oscuro. En el II del menor (ii-V). Acorde: m7b5.",
+      "6. Modus von melodisch Moll: Lokrisch mit großer Sekunde, heller. Auf der II. Stufe in Moll. Akkord: m7b5.",
+      "6e mode du mineur mélodique : locrien à seconde majeure, moins sombre. Sur le IIe du mineur. Accord : m7b5."},
+     SC_MELMINOR, 5},
+    {{"superlocrio", "super-Locrian", "superlocrio", "Superlokrisch", "superlocrien"}, 3,
+     {"7° modo della melodica, la scala alterata: tutto abbassato tranne la tonica. Massima tensione sul V7.",
+      "7th mode of melodic minor, the altered scale: all flattened but the root. Maximum tension on a V7.",
+      "7.º modo de la melódica, la escala alterada: todo bajado salvo la tónica. Máxima tensión sobre el V7.",
+      "7. Modus von melodisch Moll, die alterierte Skala: alles erniedrigt außer dem Grundton. Höchste Spannung auf V7.",
+      "7e mode du mineur mélodique, la gamme altérée : tout baissé sauf la tonique. Tension maximale sur le V7."},
+     SC_MELMINOR, 6},
+    {{"minore armonica", "harmonic minor", "menor armónica", "Moll (harmonisch)", "mineur harmonique"}, 6,
+     {"Minore con la 7a alzata, la sensibile: è la minore della musica classica. Accordo: m(maj7).",
+      "Minor with a raised 7th, the leading tone: the minor of classical music. Chord: m(maj7).",
+      "Menor con la séptima elevada, la sensible: el menor de la música clásica. Acorde: m(maj7).",
+      "Moll mit erhöhter 7. Stufe, dem Leitton: das Moll der Klassik. Akkord: m(maj7).",
+      "Mineur à septième haussée, la sensible : le mineur de la musique classique. Accord : m(maj7)."},
+     SC_HARMMINOR, 0},
+    {{"locrio #6", "Locrian #6", "locrio #6", "Lokrisch #6", "locrien #6"}, 5,
+     {"2° modo dell'armonica: locrio con la 6a maggiore. Colore dolce-amaro. Accordo: m7b5.",
+      "2nd mode of harmonic minor: Locrian with a major 6th. Bittersweet. Chord: m7b5.",
+      "2.º modo de la armónica: locrio con la sexta mayor. Color agridulce. Acorde: m7b5.",
+      "2. Modus von harmonisch Moll: Lokrisch mit großer Sexte. Bittersüß. Akkord: m7b5.",
+      "2e mode du mineur harmonique : locrien à sixte majeure. Aigre-doux. Accord : m7b5."}, SC_HARMMINOR, 1},
+    {{"ionico #5", "Ionian #5", "jónico #5", "Ionisch #5", "ionien #5"}, 4,
+     {"3° modo dell'armonica: maggiore con la 5a aumentata. Raro, luminoso e strano. Accordo: maj7(#5).",
+      "3rd mode of harmonic minor: major with a raised 5th. Rare, bright and strange. Chord: maj7(#5).",
+      "3.er modo de la armónica: mayor con la quinta aumentada. Raro, luminoso y extraño. Acorde: maj7(#5).",
+      "3. Modus von harmonisch Moll: Dur mit übermäßiger Quinte. Selten, hell und seltsam. Akkord: maj7(#5).",
+      "3e mode du mineur harmonique : majeur à quinte augmentée. Rare, lumineux et étrange. Accord : maj7(#5)."},
+     SC_HARMMINOR, 2},
+    {{"dorico #4", "Dorian #4", "dórico #4", "Dorisch #4", "dorien #4"}, 3,
+     {"4° modo dell'armonica, detto ucraino o rumeno: dorico con la 4a aumentata. Klezmer, Europa dell'Est.",
+      "4th mode of harmonic minor, Ukrainian or Romanian: Dorian with a raised 4th. Klezmer, Eastern Europe.",
+      "4.º modo de la armónica, ucraniano o rumano: dórico con la cuarta aumentada. Klezmer, Europa del Este.",
+      "4. Modus von harmonisch Moll, ukrainisch oder rumänisch: Dorisch mit erhöhter Quarte. Klezmer, Osteuropa.",
+      "4e mode du mineur harmonique, ukrainien ou roumain : dorien à quarte augmentée. Klezmer, Europe de l'Est."},
+     SC_HARMMINOR, 3},
+    {{"frigio dominante", "Phrygian dominant", "frigio dominante", "Phrygisch-dominant", "phrygien dominant"}, 2,
+     {"5° modo dell'armonica: frigio con la 3a maggiore, un salto di tono e mezzo. Flamenco, klezmer, maqam Hijaz.",
+      "5th mode of harmonic minor: Phrygian with a major 3rd, a tone-and-a-half leap. Flamenco, klezmer, maqam Hijaz.",
+      "5.º modo de la armónica: frigio con la tercera mayor, un salto de tono y medio. Flamenco, klezmer, maqam Hijaz.",
+      "5. Modus von harmonisch Moll: Phrygisch mit großer Terz, anderthalb Töne Sprung. Flamenco, Klezmer, Maqam Hijaz.",
+      "5e mode du mineur harmonique : phrygien à tierce majeure, saut d'un ton et demi. Flamenco, klezmer, maqam Hijaz."},
+     SC_HARMMINOR, 4},
+    {{"lidio #2", "Lydian #2", "lidio #2", "Lydisch #2", "lydien #2"}, 1,
+     {"6° modo dell'armonica: lidio con la 2a aumentata. Colore misterioso, da film fantasy.",
+      "6th mode of harmonic minor: Lydian with a raised 2nd. Mysterious, a fantasy-film colour.",
+      "6.º modo de la armónica: lidio con la segunda aumentada. Color misterioso, de película fantástica.",
+      "6. Modus von harmonisch Moll: Lydisch mit übermäßiger Sekunde. Geheimnisvoll, wie im Fantasy-Film.",
+      "6e mode du mineur harmonique : lydien à seconde augmentée. Couleur mystérieuse, de film fantastique."},
+     SC_HARMMINOR, 5},
+    {{"superlocrio bb7", "super-Locrian bb7", "superlocrio bb7", "Superlokrisch bb7", "superlocrien bb7"}, 6,
+     {"7° modo dell'armonica: tutto abbassato, la 7a due volte (bb7). Le note del suo accordo fanno un dim7.",
+      "7th mode of harmonic minor: all flattened, the 7th twice (bb7). Its chord tones make a dim7 chord.",
+      "7.º modo de la armónica: todo bajado, la séptima dos veces (bb7). Sus notas de acorde forman un dim7.",
+      "7. Modus von harmonisch Moll: alles erniedrigt, die Septime doppelt (bb7). Seine Akkordtöne bilden dim7.",
+      "7e mode du mineur harmonique : tout baissé, la septième deux fois (bb7). Ses notes forment un accord dim7."},
+     SC_HARMMINOR, 6},
 };
-/* mode m on root as a scale: the major scale's steps from its m-th degree */
+
+/* mode m on root as a scale: its parent scale's steps from its rot-th degree */
 static void mode_scale(int m, scale_t *out)
 {
     int i, l;
-    const scale_t *maj = &SCALES[SC_MAJOR];
+    const scale_t *par = &SCALES[MODES[m].fam];
+    const int r = MODES[m].rot;
     for (l = 0; l < NLANGS; l++) {
         out->name[l] = MODES[m].name[l];
         out->text[l] = MODES[m].text[l];
     }
     out->n = 7;
     for (i = 0; i < 7; i++) {
-        out->semi[i] = (uint8_t)((maj->semi[(m + i) % 7] - maj->semi[m] + 12) % 12);
+        out->semi[i] = (uint8_t)((par->semi[(r + i) % 7] - par->semi[r] + 12) % 12);
         out->let[i] = (uint8_t)i;
     }
 }
-/* the major scale the mode comes from: D dorian -> C major */
-static nt_t mode_parent(nt_t root, int m) { return spell(root, (12 - SCALES[SC_MAJOR].semi[m]) % 12, (7 - m) % 7); }
+/* the root of the scale the mode comes from: D dorian -> C (major), C altered -> Db (melodic minor) */
+static nt_t mode_parent(nt_t root, int m)
+{
+    const int r = MODES[m].rot;
+    return spell(root, (12 - SCALES[MODES[m].fam].semi[r]) % 12, (7 - r) % 7);
+}
 
 /* a scale's degrees as numbers against the major scale: "1 2 b3 4 5 6 b7" */
 static void degree_labels(const scale_t *s, char *b)

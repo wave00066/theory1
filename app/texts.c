@@ -77,8 +77,8 @@ static const char *const STR[NSTR][NLANGS] = {
     [S_STEPS] = {"Passi: ", "Steps: ", "Pasos: ", "Schritte: ", "Pas : "},
     [S_CHROM_STEPS] = {"Passi: 12 semitoni, tutti uguali", "Steps: 12 semitones, all equal",
                        "Pasos: 12 semitonos, todos iguales", "Schritte: 12 Halbtöne, alle gleich", "Pas : 12 demi-tons, tous égaux"},
-    [S_MODE_PARENT] = {"= %1 maggiore da %2.  Nota tipica: %3", "= %1 major from %2.  Typical note: %3",
-                       "= %1 mayor desde %2.  Nota típica: %3", "= %1 Dur ab %2.  Typischer Ton: %3", "= %1 majeur depuis %2.  Note typique : %3"},
+    [S_MODE_PARENT] = {"= %1 da %2.  Nota tipica: %3", "= %1 from %2.  Typical note: %3",
+                       "= %1 desde %2.  Nota típica: %3", "= %1 ab %2.  Typischer Ton: %3", "= %1 depuis %2.  Note typique : %3"},
     [S_STRUCTURE] = {"Struttura: %1 semitoni", "Structure: %1 semitones", "Estructura: %1 semitonos",
                      "Aufbau: %1 Halbtöne", "Structure : %1 demi-tons"},
     [S_FUNCTION] = {"Funzione: %1", "Function: %1", "Función: %1", "Funktion: %1", "Fonction : %1"},
@@ -292,24 +292,24 @@ static const char *const STR[NSTR][NLANGS] = {
 #define S(k) (STR[k][th_ui])
 
 /* the lists */
-static const char *const TOPIC_NAME[NLANGS][8] = {
-    {"Le basi", "Pentagramma", "Intervalli", "Scale", "Modi", "Accordi", "Armonia", "Tonalità"},
-    {"Basics", "The staff", "Intervals", "Scales", "Modes", "Chords", "Harmony", "Keys"},
-    {"Lo básico", "Pentagrama", "Intervalos", "Escalas", "Modos", "Acordes", "Armonía", "Tonalidades"},
-    {"Grundlagen", "Notensystem", "Intervalle", "Tonleitern", "Modi", "Akkorde", "Harmonik", "Tonarten"},
-    {"Les bases", "La portée", "Intervalles", "Gammes", "Modes", "Accords", "Harmonie", "Tonalités"},
+static const char *const TOPIC_NAME[NLANGS][9] = {
+    {"Le basi", "Pentagramma", "Intervalli", "Scale", "Modi", "Accordi", "Armonia", "Tonalità", "Scale del mondo"},
+    {"Basics", "The staff", "Intervals", "Scales", "Modes", "Chords", "Harmony", "Keys", "World scales"},
+    {"Lo básico", "Pentagrama", "Intervalos", "Escalas", "Modos", "Acordes", "Armonía", "Tonalidades", "Escalas del mundo"},
+    {"Grundlagen", "Notensystem", "Intervalle", "Tonleitern", "Modi", "Akkorde", "Harmonik", "Tonarten", "Skalen der Welt"},
+    {"Les bases", "La portée", "Intervalles", "Gammes", "Modes", "Accords", "Harmonie", "Tonalités", "Gammes du monde"},
 };
-static const char *const TOPIC_SUB[NLANGS][8] = {
-    {"note, toni, alterazioni", "leggere le note, 7 chiavi", "distanze tra due note", "maggiore, minori, blues...", "i 7 modi greci",
-     "triadi e settime", "accordi su ogni grado", "circolo delle quinte"},
-    {"notes, steps, sharps", "reading notes, 7 clefs", "distance between notes", "major, minors, blues...", "the 7 church modes",
-     "triads and sevenths", "a chord on each degree", "circle of fifths"},
-    {"notas, tonos, alteraciones", "leer notas, 7 claves", "distancia entre notas", "mayor, menores, blues...", "los 7 modos griegos",
-     "tríadas y séptimas", "acordes en cada grado", "círculo de quintas"},
-    {"Töne, Schritte, Vorzeichen", "Noten lesen, 7 Schlüssel", "Abstand zweier Töne", "Dur, Moll, Blues...", "die 7 Kirchentonarten",
-     "Drei- und Vierklänge", "Akkorde jeder Stufe", "Quintenzirkel"},
-    {"notes, tons, altérations", "lire les notes, 7 clés", "distance entre notes", "majeure, mineures, blues...", "les 7 modes",
-     "triades et septièmes", "un accord par degré", "cycle des quintes"},
+static const char *const TOPIC_SUB[NLANGS][9] = {
+    {"note, toni, alterazioni", "leggere le note, 7 chiavi", "distanze tra due note", "maggiore, minori, blues...", "21 modi: maggiore, melodica, armonica",
+     "triadi e settime", "accordi su ogni grado", "circolo delle quinte", "Giappone, India, Est Europa..."},
+    {"notes, steps, sharps", "reading notes, 7 clefs", "distance between notes", "major, minors, blues...", "21 modes: major, melodic, harmonic",
+     "triads and sevenths", "a chord on each degree", "circle of fifths", "Japan, India, Eastern Europe..."},
+    {"notas, tonos, alteraciones", "leer notas, 7 claves", "distancia entre notas", "mayor, menores, blues...", "21 modos: mayor, melódica, armónica",
+     "tríadas y séptimas", "acordes en cada grado", "círculo de quintas", "Japón, India, Europa del Este..."},
+    {"Töne, Schritte, Vorzeichen", "Noten lesen, 7 Schlüssel", "Abstand zweier Töne", "Dur, Moll, Blues...", "21 Modi: Dur, melodisch, harmonisch",
+     "Drei- und Vierklänge", "Akkorde jeder Stufe", "Quintenzirkel", "Japan, Indien, Osteuropa..."},
+    {"notes, tons, altérations", "lire les notes, 7 clés", "distance entre notes", "majeure, mineures, blues...", "21 modes : majeur, mélodique, harmonique",
+     "triades et septièmes", "un accord par degré", "cycle des quintes", "Japon, Inde, Europe de l'Est..."},
 };
 static const char *const QT_NAMES[NLANGS][12] = {
     {"Misto", "Nomi delle note", "Intervalli", "Scale", "Modi", "Accordi", "Gradi della scala",
@@ -370,7 +370,8 @@ typedef struct {
 #define PCB(x) (1u << (x))
 #define WHITE_PCS (PCB(0) | PCB(2) | PCB(4) | PCB(5) | PCB(7) | PCB(9) | PCB(11))
 #define BLACK_PCS (PCB(1) | PCB(3) | PCB(6) | PCB(8) | PCB(10))
-static const page_t BASICS[8] = {
+#define NBASICS 9
+static const page_t BASICS[NBASICS] = {
     {{"Le 7 note", "The 7 notes", "Las 7 notas", "Die 7 Stammtöne", "Les 7 notes"},
      {"Le note sono sette: Do Re Mi Fa Sol La Si (in lettere: C D E F G A B). Sono i tasti bianchi. Dopo il Si "
       "ricomincia il Do, più in alto: è l'ottava. PLAY: la scala di Do.",
@@ -451,6 +452,18 @@ static const page_t BASICS[8] = {
       "Die 'Heimat'-Tonleiter eines Stücks. Der Grundton ist der Ruhepunkt: die Melodie kehrt am Ende zu ihm "
       "zurück. Die Vorzeichen zeigen, welche Töne # oder b sind (Lektion Tonarten).", "La gamme 'maison' d'un morceau. La tonique est le point de repos : la mélodie y revient à la fin. L'armure dit quelles notes sont # ou b (leçon Tonalités)."},
      WHITE_PCS, PCB(0), {67, 71, 74, 72}, 4, 0},
+    {{"Oltre i 12 suoni", "Beyond 12 notes", "Más allá de 12 notas", "Mehr als 12 Töne", "Au-delà de 12 notes"},
+     {"Il piano divide l'ottava in 12 semitoni da 100 cent. Il maqam arabo usa anche quarti di tono (50 cent), l'India "
+      "22 sruti, il gamelan slendro 5 suoni quasi uguali: note che stanno tra i tasti.",
+      "The piano splits the octave into 12 semitones of 100 cents. Arabic maqam also uses quarter tones (50 cents), "
+      "India 22 shrutis, gamelan slendro 5 near-equal notes: notes that lie between the keys.",
+      "El piano divide la octava en 12 semitonos de 100 cents. El maqam árabe usa también cuartos de tono (50 cents), "
+      "la India 22 shrutis, el gamelán slendro 5 notas casi iguales: notas entre las teclas.",
+      "Das Klavier teilt die Oktave in 12 Halbtöne zu 100 Cent. Der arabische Maqam nutzt auch Vierteltöne (50 Cent), "
+      "Indien 22 Shrutis, das Gamelan-Slendro 5 fast gleiche Töne: Töne zwischen den Tasten.",
+      "Le piano divise l'octave en 12 demi-tons de 100 cents. Le maqam arabe utilise aussi des quarts de ton (50 "
+      "cents), l'Inde 22 shrutis, le gamelan slendro 5 notes presque égales : des notes entre les touches."},
+     PCB(3) | PCB(4), PCB(0), {60, 63, 64}, 3, 0},
 };
 
 /* a template with %1 %2 %3 filled in */

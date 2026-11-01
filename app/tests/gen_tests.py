@@ -6,7 +6,7 @@ the screen). Run it after adding a topic, a quiz type, a clef or a language:  py
 from pathlib import Path
 
 NQT, NLANGS = 12, 5
-TOPIC_ITEMS = [8, 17, 13, 9, 7, 13, 9, 15]      # basics, staff, intervals, scales, modes, chords, harmony, keys
+TOPIC_ITEMS = [9, 17, 13, 9, 21, 13, 9, 15, 13]   # basics, staff, intervals, scales, modes, chords, harmony, keys, world
 HERE = Path(__file__).resolve().parent
 
 

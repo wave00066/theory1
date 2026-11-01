@@ -26,6 +26,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -1011,6 +1013,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -2008,6 +2066,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
@@ -2733,6 +2819,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -3718,6 +3806,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -4715,6 +4859,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
@@ -5440,6 +5612,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -6425,6 +6599,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -7422,6 +7652,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
@@ -8147,6 +8405,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -9132,6 +9392,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -10129,6 +10445,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
@@ -10854,6 +11198,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -11839,6 +12185,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -12836,6 +13238,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
@@ -13561,6 +13991,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -14546,6 +14978,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -15543,6 +16031,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
@@ -16268,6 +16784,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -17253,6 +17771,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -18250,6 +18824,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
@@ -18975,6 +19577,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -19960,6 +20564,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -20957,6 +21617,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
@@ -21682,6 +22370,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -22667,6 +23357,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -23664,6 +24410,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20
@@ -24389,6 +25163,8 @@ turn SELECT 1
 wait 20
 turn SELECT 1
 wait 20
+turn SELECT 1
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT -20
@@ -25374,6 +26150,62 @@ turn SELECT 1
 wait 20
 turn K1 5
 wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
 turn ALGO 1
 wait 20
 turn SELECT 1
@@ -26371,6 +27203,34 @@ wait 20
 turn SELECT 1
 wait 20
 turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
 wait 20
 turn SELECT 1
 wait 20

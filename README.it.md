@@ -12,9 +12,18 @@ tedesca (C D E … H, Fis, Es).
 
 <p align="center"><img src="docs/img/features-it.png" alt="Lezioni, quiz e laboratorio"></p>
 
-- **LEZIONI**: le basi, **la lettura delle note sul pentagramma** fino a 7 chiavi, gli intervalli, 9 scale, i 7 modi, 13 tipi di accordo, gli accordi costruiti su ogni grado
-  (triadi e settime, con numeri romani e funzione armonica) e il circolo delle quinte con tutte le 15 tonalità.
+- **LEZIONI**: le basi, **la lettura delle note sul pentagramma** fino a 7 chiavi, gli intervalli, 9 scale, 21 modi, 13 tipi di accordo, gli accordi costruiti su ogni grado
+  (triadi e settime, con numeri romani e funzione armonica), il circolo delle quinte con tutte le 15 tonalità e 13
+  **scale del mondo**.
   Tutto parte da qualsiasi tonica ed è scritto correttamente (Fa maggiore ha il Sib, non il La#).
+  - **21 modi**: i 7 modi diatonici, i 7 modi della minore melodica (dorico b2, lidio aumentato, lidio dominante,
+    misolidio b6, locrio #2, superlocrio o scala alterata) e i 7 della minore armonica (locrio #6, ionico #5, dorico
+    #4, frigio dominante, lidio #2, superlocrio bb7). Ognuno mostra da quale scala nasce ("Do superlocrio = Reb minore
+    melodica da Do") e la sua nota tipica.
+  - **Scale del mondo**: ottatonica, enigmatica di Verdi, doppia armonica (Hijaz Kar, Bhairav), ungherese minore, i
+    thaat indiani Purvi, Marwa e Todi, le giapponesi in sen, yo, hirajoshi, kumoi, iwato e Ryukyu; e una pagina sulle
+    note che stanno tra i tasti (quarti di tono del maqam, sruti, gamelan).
+  - Nel **LABORATORIO** puoi sceglierle tutte, e il **QUIZ** chiede i nuovi modi e le nuove scale al livello 3.
 - **QUIZ**: 11 tipi di domande, da 10 domande ciascuna, su 3 livelli. Si risponde **suonando sui tasti** (note sul
   pentagramma, scale, modi, accordi, intervalli, nomi delle note, gradi). Poi ci sono domande **a orecchio** (note
   singole, intervalli, accordi) e sulle tonalità.

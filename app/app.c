@@ -178,9 +178,9 @@ static void play_interval(int b, int semis, int together)
 /* ================================================================ screens === */
 enum { SCR_MENU, SCR_TOPICS, SCR_LESSON, SCR_QSETUP, SCR_QUIZ, SCR_QEND, SCR_LAB, SCR_SETTINGS, SCR_SYNLIST,
        SCR_SYNPAGE };
-enum { T_BASICS, T_STAFF, T_INTERVALS, T_SCALES, T_MODES, T_CHORDS, T_HARMONY, T_KEYS, NTOPICS };
-static const uint8_t TOPIC_ITEMS[NTOPICS] = {8, STAFF_HI - STAFF_LO + 1, NINTERVALS, NSCALES, NMODES, NCHORDS, 9,
-                                             NKEYSIG};
+enum { T_BASICS, T_STAFF, T_INTERVALS, T_SCALES, T_MODES, T_CHORDS, T_HARMONY, T_KEYS, T_WORLD, NTOPICS };
+static const uint8_t TOPIC_ITEMS[NTOPICS] = {NBASICS, STAFF_HI - STAFF_LO + 1, NINTERVALS, NBASESCALES, NMODES, NCHORDS, 9,
+                                             NKEYSIG, NWORLD};
 
 /* the scales of the Harmony lesson: four scales and the five modes that are not one of them */
 #define NHSCALES 9
@@ -1005,26 +1005,29 @@ static void draw_lesson(void)
         hint(S(S_H_INTERVALS));
         break;
     }
-    case T_SCALES: {
+    case T_SCALES: case T_WORLD: {
+        const scale_t *sc = &SCALES[ui.topic == T_WORLD ? NBASESCALES + it : it];
         note_full(root, t);
         str_cat(t, " ");
-        str_cat(t, TR(SCALES[it].name));
-        ui_header(TOPIC_NAME[th_ui][T_SCALES], r, C_GRAY);
-        draw_scale_like(&SCALES[it], root, t, -1, 0);
+        str_cat(t, TR(sc->name));
+        ui_header(TOPIC_NAME[th_ui][ui.topic], r, C_GRAY);
+        draw_scale_like(sc, root, t, -1, 0);
         hint(S(S_H_SCALES));
         break;
     }
     case T_MODES: {
         scale_t s;
         nt_t par = mode_parent(root, it), ch;
-        char a[16], b[16];
+        char a[48], b[16];
         mode_scale(it, &s);
         ch = scale_note(&s, root, MODES[it].ch);
         note_full(root, t);
         str_cat(t, " ");
         str_cat(t, TR(MODES[it].name));
         ui_header(TOPIC_NAME[th_ui][T_MODES], r, C_GRAY);
-        note_name(par, a);
+        note_name(par, a);                   /* "Sol maggiore", "Reb minore melodica" */
+        str_cat(a, " ");
+        str_cat(a, TR(SCALES[MODES[it].fam].name));
         note_name(root, b);
         note_name(ch, v);
         t1_fmt(u, S(S_MODE_PARENT), a, b, v);
@@ -1368,14 +1371,16 @@ static void q_make1(int t)
         nt_t r;
         if (t == QT_SCALE) {
             static const uint8_t EASY[4] = {0, 10, 7, 3};   /* C G F D */
-            int sc = lv == 0 ? SC_MAJOR : lv == 1 ? (int)rnd(2) : (int)rnd(6);
-            r = ROOTS[lv == 0 ? q_pick(EASY, 4) : sc == SC_MAJOR || sc == SC_PENTA_MAJ ?
+            int sc = lv == 0 ? SC_MAJOR : lv == 1 ? (int)rnd(2) : rnd(3) ? (int)rnd(6) :   /* level 3: the world's too */
+                     NBASESCALES + (int)rnd(NWORLD);
+            r = ROOTS[lv == 0 ? q_pick(EASY, 4) : sc == SC_MAJOR || sc == SC_PENTA_MAJ || sc >= NBASESCALES ?
                 q_pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS) : q_pick(COMMON_MINOR_ROOTS, sizeof COMMON_MINOR_ROOTS)];
             s = SCALES[sc];
             t1_strcpy(q.l1, S(S_Q_SCALE));
         } else {
             static const uint8_t WHITE_MODE_ROOT[7] = {0, 3, 6, 7, 10, 13, 16};   /* C D E F G A B: white keys */
-            int m = (int)rnd(7);
+            int m = lv < 2 || rnd(2) ? (int)rnd(NDIATONIC) : (int)rnd(NMODES);   /* level 3: the melodic and the
+                                                                                    * harmonic minor's modes too */
             r = ROOTS[lv == 0 ? WHITE_MODE_ROOT[m] : lv == 1 ? q_pick(NATURAL_ROOTS, 7) :
                 q_pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS)];
             mode_scale(m, &s);
@@ -1960,15 +1965,17 @@ static void draw_qend(void)
 
 /* -------------------------------------------------------- the laboratory --- */
 #define NLABSCALES (1 + NSCALES + NMODES)
-static int lab_scale(scale_t *s)               /* 0: none */
+static int lab_scale(scale_t *s)               /* 0: none; then the scales, the 21 modes, the scales of the world */
 {
     int i = ui.lab_scale;
     if (i == 0)
         return 0;
-    if (i <= NSCALES)
+    if (i <= NBASESCALES)
         *s = SCALES[i - 1];
+    else if (i <= NBASESCALES + NMODES)
+        mode_scale(i - 1 - NBASESCALES, s);
     else
-        mode_scale(i - 1 - NSCALES, s);
+        *s = SCALES[i - 1 - NMODES];
     return 1;
 }
 
@@ -2253,6 +2260,7 @@ static void lesson_play(void)
     }
     case T_INTERVALS: play_interval(base_midi(root), INTERVALS[it].semis, 1); break;
     case T_SCALES: play_scale(&SCALES[it], root, 1); break;
+    case T_WORLD: play_scale(&SCALES[NBASESCALES + it], root, 1); break;
     case T_MODES: {
         scale_t s;
         mode_scale(it, &s);
