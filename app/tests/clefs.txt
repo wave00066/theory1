@@ -1,0 +1,23 @@
+# Middle C in the seven clefs, for the README (docs/make_graphics.py)
+wait 900
+staffshow 0 -2
+wait 60
+shot c0.png
+staffshow 1 10
+wait 60
+shot c1.png
+staffshow 2 0
+wait 60
+shot c2.png
+staffshow 3 2
+wait 60
+shot c3.png
+staffshow 4 4
+wait 60
+shot c4.png
+staffshow 5 6
+wait 60
+shot c5.png
+staffshow 6 8
+wait 60
+shot c6.png

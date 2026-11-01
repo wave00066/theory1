@@ -24,6 +24,9 @@ enum {
     S_EXT_BOTH, S_EXT_MUTE, S_ON, S_OFF, S_NOT_BUILT, S_CONNECTED, S_SEARCHING, S_REC_SEARCH, S_SEL_RESET,
     S_H_SETTINGS, S_SAY_RECORDS, S_SAY_RESET, S_SAY_OCTAVE, S_SAY_SAVED, S_SAY_ERROR, S_SAY_SEARCHING,
     S_SAY_CONNECTING, S_SAY_FOUND,
+    S_H_STAFF, S_CLEF_TEXT, S_POS_LINE, S_POS_SPACE, S_POS_ABOVE, S_POS_BELOW, S_POS_LEDGER_UP, S_POS_LEDGER_DOWN,
+    S_POS_OVER_LEDGER, S_POS_UNDER_LEDGER, S_MIDDLE_C, S_OUT_OF_KEYS, S_Q_STAFF, S_Q_EARNOTE1, S_Q_EARNOTE2,
+    S_Q_EARNOTES2, S_SET_CLEFS,
     NSTR
 };
 
@@ -250,40 +253,75 @@ static const char *const STR[NSTR][NLANGS] = {
     [S_SAY_SEARCHING] = {"CERCO...", "SEARCHING...", "BUSCANDO...", "SUCHE...", "RECHERCHE..."},
     [S_SAY_CONNECTING] = {"CONNETTO", "CONNECTING", "CONECTANDO", "VERBINDE", "CONNEXION"},
     [S_SAY_FOUND] = {"TROVATO", "FOUND", "ENCONTRADO", "GEFUNDEN", "TROUVÉ"},
+
+    [S_H_STAFF] = {"SELECT NOTA   K1 CHIAVE   K2 #/b   PLAY ASCOLTA", "SELECT NOTE   K1 CLEF   K2 #/b   PLAY LISTEN",
+                   "SELECT NOTA   K1 CLAVE   K2 #/b   PLAY ESCUCHA", "SELECT TON   K1 SCHLÜSSEL   K2 #/b   PLAY HÖREN",
+                   "SELECT NOTE   K1 CLÉ   K2 #/b   PLAY ÉCOUTER"},
+    [S_CLEF_TEXT] = {"La chiave segna la %1a linea: lì c'è il %2.", "The clef marks line %1: that line is %2.",
+                     "La clave marca la línea %1: ahí está %2.", "Der Schlüssel markiert die %1. Linie: dort liegt %2.",
+                     "La clé marque la %1e ligne : c'est %2."},
+    [S_POS_LINE] = {"%1a linea", "line %1", "línea %1", "%1. Linie", "%1e ligne"},
+    [S_POS_SPACE] = {"%1o spazio", "space %1", "espacio %1", "%1. Zwischenraum", "%1e interligne"},
+    [S_POS_ABOVE] = {"sopra il pentagramma", "above the staff", "encima del pentagrama", "über dem System",
+                     "au-dessus de la portée"},
+    [S_POS_BELOW] = {"sotto il pentagramma", "below the staff", "debajo del pentagrama", "unter dem System",
+                     "sous la portée"},
+    [S_POS_LEDGER_UP] = {"%1o taglio sopra", "ledger line %1 above", "línea adicional %1 arriba", "%1. Hilfslinie oben",
+                         "ligne suppl. %1 en haut"},
+    [S_POS_LEDGER_DOWN] = {"%1o taglio sotto", "ledger line %1 below", "línea adicional %1 abajo",
+                           "%1. Hilfslinie unten", "ligne suppl. %1 en bas"},
+    [S_POS_OVER_LEDGER] = {"sopra il %1o taglio", "above ledger line %1", "sobre la línea adicional %1",
+                           "über der %1. Hilfslinie", "sur la ligne suppl. %1"},
+    [S_POS_UNDER_LEDGER] = {"sotto il %1o taglio", "below ledger line %1", "bajo la línea adicional %1",
+                            "unter der %1. Hilfslinie", "sous la ligne suppl. %1"},
+    [S_MIDDLE_C] = {"il Do centrale", "middle C", "el Do central", "das eingestrichene C", "le do central"},
+    [S_OUT_OF_KEYS] = {"fuori dai tasti: OCT- / OCT+", "off the keys: OCT- / OCT+", "fuera de las teclas: OCT-/OCT+",
+                       "nicht auf den Tasten: OCT-/+", "hors du clavier : OCT- / OCT+"},
+    [S_Q_STAFF] = {"Che nota è? Suonala sui tasti.", "Which note is it? Play it on the keys.",
+                   "Qué nota es? Tócala en las teclas.", "Welcher Ton ist das? Spiel ihn.",
+                   "Quelle note est-ce ? Joue-la."},
+    [S_Q_EARNOTE1] = {"Ascolta: prima %1, poi la nota.", "Listen: first %1, then the note.",
+                      "Escucha: primero %1, luego la nota.", "Hör zu: erst %1, dann der Ton.",
+                      "Écoute : d'abord %1, puis la note."},
+    [S_Q_EARNOTE2] = {"Suona la nota che senti", "Play the note you hear", "Toca la nota que oyes",
+                      "Spiel den Ton, den du hörst", "Joue la note entendue"},
+    [S_Q_EARNOTES2] = {"Suona le 2 note, in ordine", "Play the 2 notes, in order", "Toca las 2 notas, en orden",
+                       "Spiel die 2 Töne der Reihe nach", "Joue les 2 notes, dans l'ordre"},
+    [S_SET_CLEFS] = {"Chiavi", "Clefs", "Claves", "Schlüssel", "Clés"},
 };
 #define S(k) (STR[k][th_ui])
 
 /* the lists */
-static const char *const TOPIC_NAME[NLANGS][7] = {
-    {"Le basi", "Intervalli", "Scale", "Modi", "Accordi", "Armonia", "Tonalità"},
-    {"Basics", "Intervals", "Scales", "Modes", "Chords", "Harmony", "Keys"},
-    {"Lo básico", "Intervalos", "Escalas", "Modos", "Acordes", "Armonía", "Tonalidades"},
-    {"Grundlagen", "Intervalle", "Tonleitern", "Modi", "Akkorde", "Harmonik", "Tonarten"},
-    {"Les bases", "Intervalles", "Gammes", "Modes", "Accords", "Harmonie", "Tonalités"},
+static const char *const TOPIC_NAME[NLANGS][8] = {
+    {"Le basi", "Pentagramma", "Intervalli", "Scale", "Modi", "Accordi", "Armonia", "Tonalità"},
+    {"Basics", "The staff", "Intervals", "Scales", "Modes", "Chords", "Harmony", "Keys"},
+    {"Lo básico", "Pentagrama", "Intervalos", "Escalas", "Modos", "Acordes", "Armonía", "Tonalidades"},
+    {"Grundlagen", "Notensystem", "Intervalle", "Tonleitern", "Modi", "Akkorde", "Harmonik", "Tonarten"},
+    {"Les bases", "La portée", "Intervalles", "Gammes", "Modes", "Accords", "Harmonie", "Tonalités"},
 };
-static const char *const TOPIC_SUB[NLANGS][7] = {
-    {"note, toni, alterazioni", "distanze tra due note", "maggiore, minori, blues...", "i 7 modi greci",
+static const char *const TOPIC_SUB[NLANGS][8] = {
+    {"note, toni, alterazioni", "leggere le note, 7 chiavi", "distanze tra due note", "maggiore, minori, blues...", "i 7 modi greci",
      "triadi e settime", "accordi su ogni grado", "circolo delle quinte"},
-    {"notes, steps, sharps", "distance between notes", "major, minors, blues...", "the 7 church modes",
+    {"notes, steps, sharps", "reading notes, 7 clefs", "distance between notes", "major, minors, blues...", "the 7 church modes",
      "triads and sevenths", "a chord on each degree", "circle of fifths"},
-    {"notas, tonos, alteraciones", "distancia entre notas", "mayor, menores, blues...", "los 7 modos griegos",
+    {"notas, tonos, alteraciones", "leer notas, 7 claves", "distancia entre notas", "mayor, menores, blues...", "los 7 modos griegos",
      "tríadas y séptimas", "acordes en cada grado", "círculo de quintas"},
-    {"Töne, Schritte, Vorzeichen", "Abstand zweier Töne", "Dur, Moll, Blues...", "die 7 Kirchentonarten",
+    {"Töne, Schritte, Vorzeichen", "Noten lesen, 7 Schlüssel", "Abstand zweier Töne", "Dur, Moll, Blues...", "die 7 Kirchentonarten",
      "Drei- und Vierklänge", "Akkorde jeder Stufe", "Quintenzirkel"},
-    {"notes, tons, altérations", "distance entre notes", "majeure, mineures, blues...", "les 7 modes",
+    {"notes, tons, altérations", "lire les notes, 7 clés", "distance entre notes", "majeure, mineures, blues...", "les 7 modes",
      "triades et septièmes", "un accord par degré", "cycle des quintes"},
 };
-static const char *const QT_NAMES[NLANGS][10] = {
+static const char *const QT_NAMES[NLANGS][12] = {
     {"Misto", "Nomi delle note", "Intervalli", "Scale", "Modi", "Accordi", "Gradi della scala",
-     "Orecchio: intervalli", "Orecchio: accordi", "Tonalità"},
+     "Orecchio: intervalli", "Orecchio: accordi", "Tonalità", "Lettura sul pentagramma", "Orecchio: note"},
     {"Mixed", "Note names", "Intervals", "Scales", "Modes", "Chords", "Scale degrees", "Ear: intervals",
-     "Ear: chords", "Keys"},
+     "Ear: chords", "Keys", "Staff reading", "Ear: notes"},
     {"Mixto", "Nombres de notas", "Intervalos", "Escalas", "Modos", "Acordes", "Grados de la escala",
-     "Oído: intervalos", "Oído: acordes", "Tonalidades"},
+     "Oído: intervalos", "Oído: acordes", "Tonalidades", "Lectura en el pentagrama", "Oído: notas"},
     {"Gemischt", "Notennamen", "Intervalle", "Tonleitern", "Modi", "Akkorde", "Stufen", "Gehör: Intervalle",
-     "Gehör: Akkorde", "Tonarten"},
+     "Gehör: Akkorde", "Tonarten", "Noten lesen", "Gehör: Töne"},
     {"Mélangé", "Noms des notes", "Intervalles", "Gammes", "Modes", "Accords", "Degrés de la gamme",
-     "Oreille : intervalles", "Oreille : accords", "Tonalités"},
+     "Oreille : intervalles", "Oreille : accords", "Tonalités", "Lecture sur la portée", "Oreille : notes"},
 };
 static const char *const LEVEL_NAMES[NLANGS][3] = {
     {"1 Facile", "2 Medio", "3 Difficile"}, {"1 Easy", "2 Medium", "3 Hard"},
@@ -314,6 +352,10 @@ static const char *const SOUND_NAMES[NLANGS][3] = {
 static const char *const SPEED_NAMES[NLANGS][3] = {
     {"Lenta", "Media", "Veloce"}, {"Slow", "Medium", "Fast"}, {"Lenta", "Media", "Rápida"},
     {"Langsam", "Mittel", "Schnell"}, {"Lente", "Moyenne", "Rapide"},
+};
+static const char *const CLEFSET_NAMES[NLANGS][3] = {
+    {"Violino", "Violino e basso", "Tutte e 7"}, {"Treble", "Treble and bass", "All 7"}, {"Sol", "Sol y fa", "Las 7"},
+    {"Violin", "Violin und Bass", "Alle 7"}, {"Sol", "Sol et fa", "Les 7"},
 };
 /* each language by its own name, and the note-name systems */
 static const char *const LANG_SELF[NLANGS] = {"Italiano", "English", "Español", "Deutsch", "Français"};

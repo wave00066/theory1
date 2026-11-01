@@ -9,11 +9,12 @@ tedesca (C D E … H, Fis, Es).
 
 <p align="center"><img src="docs/img/features-it.png" alt="Lezioni, quiz e laboratorio"></p>
 
-- **LEZIONI**: le basi, gli intervalli, 9 scale, i 7 modi, 13 tipi di accordo, gli accordi costruiti su ogni grado
+- **LEZIONI**: le basi, **la lettura delle note sul pentagramma** fino a 7 chiavi, gli intervalli, 9 scale, i 7 modi, 13 tipi di accordo, gli accordi costruiti su ogni grado
   (triadi e settime, con numeri romani e funzione armonica) e il circolo delle quinte con tutte le 15 tonalità.
   Tutto parte da qualsiasi tonica ed è scritto correttamente (Fa maggiore ha il Sib, non il La#).
-- **QUIZ**: 9 tipi di domande, da 10 domande ciascuna, su 3 livelli. Si risponde **suonando sui tasti** (scale,
-  accordi, intervalli, note, gradi). Poi ci sono domande **a orecchio** (intervalli e accordi) e sulle tonalità.
+- **QUIZ**: 11 tipi di domande, da 10 domande ciascuna, su 3 livelli. Si risponde **suonando sui tasti** (note sul
+  pentagramma, scale, accordi, intervalli, nomi delle note, gradi). Poi ci sono domande **a orecchio** (note
+  singole, intervalli, accordi) e sulle tonalità.
   Ogni risposta riceve un feedback, con aiuti, punteggio e record salvati.
 - **LABORATORIO**: suona quello che vuoi e THEORY-1 ti dice che nota, intervallo o accordo è, incluso il rivolto.
   Se scegli una scala, ti mostra i gradi e segnala in rosso le note fuori scala.
@@ -21,6 +22,23 @@ tedesca (C D E … H, Fis, Es).
 I tasti dell'FM-1 si illuminano con le note della lezione: arancio la tonica, poi le note della scala, il verde
 per le risposte giuste. In basso sul display c'è una tastiera con gli stessi colori. Funziona anche con una
 tastiera MIDI esterna via USB, il jack TRS o il **Bluetooth** (per esempio un piano digitale con Bluetooth MIDI).
+
+## Leggere il pentagramma
+
+<p align="center"><img src="docs/img/clefs-it.png" alt="Il Do centrale nelle chiavi di violino, basso, soprano, mezzosoprano, contralto, tenore e baritono"></p>
+
+La lezione **Pentagramma** mostra una nota alla volta su un pentagramma vero, con la sua chiave, fino a **due tagli
+addizionali** sopra e sotto. Girando SELECT la nota sale e scende. Vedi il nome e l'ottava (Sol4 / G4), la posizione
+("2a linea", "1o taglio sotto") e il tasto dell'FM-1 acceso, e **la senti**. K1 cambia chiave, K2 aggiunge diesis o
+bemolle. In **IMPOSTAZIONI → Chiavi** scegli quali studiare: **solo violino**, **violino e basso**, oppure **tutte e
+sette** (il setticlavio: violino, basso, soprano, mezzosoprano, contralto, tenore, baritono).
+
+Ci sono due quiz collegati:
+
+- **Lettura sul pentagramma**: compare una nota; suonala sui tasti, poi la senti. Livello 1 dentro il pentagramma,
+  livello 2 con i tagli addizionali, livello 3 con diesis e bemolli.
+- **Orecchio: note**: THEORY-1 suona il Do di riferimento, poi **una nota**; trovala sui tasti. Livello 1 i tasti
+  bianchi, livello 2 tutti e dodici, livello 3 due note di fila.
 
 ## Una domanda, passo per passo
 
@@ -59,8 +77,8 @@ sigle degli accordi (Cm7, G7, Bm7b5) sono sempre in lettere, come si scrivono su
 | **SEL** | entra, conferma, risponde, va alla domanda successiva |
 | **HOME** | torna indietro di un livello |
 | **PLAY** | ascolta l'esempio (nel quiz: la nota di riferimento o di nuovo il suono) |
-| **K1** o **PRESETS** | la tonica. Nel menu quiz: il livello |
-| **K2 / K3** | in Armonia: il grado / triadi o settime |
+| **K1** o **PRESETS** | la tonica (nella lezione Pentagramma: la chiave). Nel menu quiz: il livello |
+| **K2 / K3** | in Armonia: il grado / triadi o settime. Nella lezione Pentagramma, K2: diesis, bemolle, naturale |
 | **ALGORITHM** | nelle lezioni: passa all'argomento successivo |
 | **ARP** | in Armonia: suona gli accordi di tutti i gradi |
 | **EDIT** | nel quiz: aiuto (si accendono i tasti giusti). Nelle lezioni: il sistema di nomi delle note |
@@ -101,7 +119,7 @@ Sul computer, senza FM-1 né compilatore:
 
 ```sh
 git clone --recursive https://github.com/wave00066/theory1
-sh tests/run_tests.sh          # teoria, tutti i quiz, 10800 domande generate, ogni testo nelle 5 lingue
+sh tests/run_tests.sh          # teoria, tutti i quiz, 13200 domande generate, ogni testo nelle 5 lingue
 python3 base/tools/build.py app --host
 app/build/host/theory1_host app/tests/screens.txt OUT   # le schermate come PNG
 python3 docs/make_graphics.py                            # le immagini di questo README
@@ -111,11 +129,12 @@ python3 docs/make_graphics.py                            # le immagini di questo
 
 | File | Cosa contiene |
 |---|---|
-| `app/theory.c` | La teoria: grafia e nomi delle note (Do, Ré, C, H), intervalli, scale, modi, accordi, gradi, tonalità e riconoscimento degli accordi, con nomi e spiegazioni nelle 5 lingue. È C puro e si prova da solo. |
+| `app/theory.c` | La teoria: grafia e nomi delle note (Do, Ré, C, H), le sette chiavi, intervalli, scale, modi, accordi, gradi, tonalità e riconoscimento degli accordi, con nomi e spiegazioni nelle 5 lingue. È C puro e si prova da solo. |
 | `app/texts.c` | Tutti gli altri testi dello schermo nelle 5 lingue |
 | `app/synth.c` | Il suono: un piccolo FM a 2 operatori e 8 voci (piano elettrico, organo, campane) |
 | `app/app.c` | Le schermate, il disegno delle lettere accentate, le lezioni, il quiz, il laboratorio, le impostazioni, i tasti e il MIDI |
-| `app/tests/` | `theory_test.c`, `basic.txt` (tutti i quiz, il laboratorio, le impostazioni), `questions.txt` (10800 domande generate e controllate), `texts_fit.txt` (ogni pagina in ogni lingua entra nello schermo), `screens.txt`, `flow.txt` |
+| `app/staff_glyphs.h` | Le chiavi, la testa della nota, il diesis e il bemolle, dal font musicale [Bravura](https://github.com/steinbergmedia/bravura) (SIL OFL 1.1), fatti da `app/tools/make_glyphs.py` |
+| `app/tests/` | `theory_test.c`, `basic.txt` (tutti i quiz, il laboratorio, le impostazioni), `questions.txt` (13200 domande generate e controllate), `texts_fit.txt` (ogni pagina in ogni lingua e ogni chiave entra nello schermo), `screens.txt`, `flow.txt`, `clefs.txt`; `gen_tests.py` scrive i più lunghi |
 | `docs/make_graphics.py` | Le immagini del README, fatte dalle schermate del simulatore |
 | `base/` | [fm1-base](https://github.com/charlesvestal/fm1-base) (submodule) con [felucca-bsp](https://github.com/hugelton/felucca-bsp) |
 
@@ -125,4 +144,5 @@ l'accento disegnato sopra (o la cediglia sotto), e la ß tedesca è scritta "ss"
 ## Licenza e crediti
 
 MPL-2.0. THEORY-1 è costruito su fm1-base di Charles Vestal e su felucca-bsp di Leo Kuroshita (Hügelton
-Instruments). Non è affiliato a M-VAVE. M-VAVE e FM-1 sono marchi dei rispettivi proprietari.
+Instruments). I simboli del pentagramma vengono da Bravura di Steinberg Media Technologies (SIL Open Font License
+1.1, `LICENSES/OFL-1.1-Bravura.txt`). Non è affiliato a M-VAVE. M-VAVE e FM-1 sono marchi dei rispettivi proprietari.

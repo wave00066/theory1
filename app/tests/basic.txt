@@ -1,8 +1,8 @@
-# THEORY-1 in the host simulator: every quiz answered right scores 100,
-# a wrong note costs points, the lab names chords, the settings survive a reboot.
-#   base/tools/build.py app --host && app/build/host/theory1_host app/tests/basic.txt OUT_DIR
+# THEORY-1 in the host simulator (app/tests/gen_tests.py): every quiz answered right scores 100, a wrong
+# note costs points, the lab names chords, the settings survive a reboot.
 wait 900
 expect screen 0
+clefs 2
 turn SELECT 1
 tap SEL
 wait 50
@@ -55,7 +55,6 @@ expect done 1
 wait 2000
 expect screen 5
 expect score 100
-shot 30-fine-quiz.png
 expect best0 100
 tap HOME
 wait 50
@@ -462,6 +461,106 @@ wait 50
 expect screen 3
 seed 66
 quizof 9
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 73
+quizof 10
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 80
+quizof 11
 tap SEL
 wait 200
 expect screen 4
@@ -1013,6 +1112,106 @@ expect score 100
 tap HOME
 wait 50
 expect screen 3
+seed 174
+quizof 10
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 181
+quizof 11
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
 turn K1 1
 wait 30
 expect level 2
@@ -1516,6 +1715,106 @@ expect score 100
 tap HOME
 wait 50
 expect screen 3
+seed 275
+quizof 10
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 282
+quizof 11
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
 seed 5
 quizof 3
 tap SEL
@@ -1535,39 +1834,27 @@ seed 9
 quizof 8
 tap SEL
 wait 300
-shot 31-quiz-orecchio.png
 tap EDIT
 wait 50
-shot 32-quiz-aiuto.png
 wrong
 wait 200
 expect done 2
 expect score 0
-shot 33-quiz-sbagliato.png
 wait 3600
 expect qnum 2
 tap HOME
 wait 50
-seed 3
-quizof 9
+seed 21
+quizof 10
 tap SEL
 wait 200
-shot 34-quiz-tonalita.png
-tap HOME
-wait 50
-seed 4
-quizof 6
-turn K1 1
-tap SEL
-wait 200
-shot 35-quiz-gradi.png
-tap HOME
-wait 50
-seed 11
-quizof 2
-tap SEL
-wait 200
-shot 36-quiz-intervallo.png
+wrong
+wait 300
+expect errors 1
+solve
+wait 600
+expect done 1
+expect score 8
 tap HOME
 tap HOME
 wait 50
@@ -1576,21 +1863,16 @@ turn SELECT 1
 tap SEL
 wait 50
 expect screen 6
-shot 40-lab-vuoto.png
 key w4 down
 wait 30
-shot 41-lab-nota.png
 key w6 down
 wait 30
-shot 42-lab-intervallo.png
 key w8 down
 wait 30
-shot 43-lab-accordo.png
 expect voices 3
 key w4 up
 key w11 down
 wait 30
-shot 44-lab-rivolto.png
 key w6 up
 key w8 up
 key w11 up
@@ -1600,10 +1882,8 @@ key w8 down
 key w10 down
 key w12 down
 wait 30
-shot 45-lab-scala.png
 key b4 down
 wait 30
-shot 46-lab-fuori.png
 key w8 up
 key w10 up
 key w12 up
@@ -1614,7 +1894,6 @@ midi USB 90 41 64
 midi USB 90 45 64
 midi USB 90 48 64
 wait 50
-shot 47-lab-midi.png
 expect voices 4
 midi USB 80 3E 00
 midi USB 80 41 00
@@ -1631,7 +1910,6 @@ tap SEL
 wait 30
 expect lang 1
 expect dirty 1
-shot 50-impostazioni.png
 tap HOME
 wait 50
 expect dirty 0

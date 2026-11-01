@@ -164,6 +164,23 @@ def languages(shots, out):
     im.convert("RGB").save(out, optimize=True)
 
 
+def clefs(shots, names, title, out):
+    """middle C in the seven clefs: the staff part of each lesson screen, four and three to a row"""
+    W, H = 1280, 470
+    im = gradient(W, H).convert("RGBA")
+    d = ImageDraw.Draw(im)
+    text(d, (W / 2, 36), title, font(36), WHITE, "mm")
+    for i, s in enumerate(shots):
+        row, col = i // 4, i % 4
+        n = 4 if row == 0 else 3
+        crop = s.crop((0, 74, 240, 186))
+        x0 = (W - n * 290) // 2
+        x, y = x0 + col * 290 + 25, 74 + row * 200
+        shadow_paste(im, crop.convert("RGBA"), (x, y), r=10, blur=8)
+        text(d, (x + 120, y + 136), names[i], font(28), CYAN, "mm")
+    im.convert("RGB").save(out, optimize=True)
+
+
 def gallery(items, out):
     """items: (screen, caption) eight of them, 4 x 2"""
     W, H = 1280, 760
@@ -181,6 +198,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     sc = {l: screens(l, "app/tests/screens.txt") for l in range(5)}
     fl = {l: screens(l, "app/tests/flow.txt") for l in (0, 1)}
+    cl = {l: screens(l, "app/tests/clefs.txt") for l in (0, 1)}
     for lang, sfx in ((1, ""), (0, "-it")):
         s, f = sc[lang], fl[lang]
         en = lang == 1
@@ -202,12 +220,16 @@ def main():
               (["The right notes", "fill in, in green"] if en else ["Le note giuste", "si riempiono in verde"], GREEN),
               (["Right: points,", "and the answer heard"] if en else ["Giusto: punti", "e la risposta suonata"],
                ORANGE)], OUT / f"quiz-flow{sfx}.png")
-        caps = (["Basics", "Intervals", "Modes", "Chords", "Keys", "Ear training", "Key-signature quiz", "Settings"]
-                if en else ["Le basi", "Intervalli", "Modi", "Accordi", "Tonalità", "Orecchio", "Quiz tonalità",
-                            "Impostazioni"])
-        gallery(list(zip([s[k] for k in ("03-basi", "04-intervallo", "08-modo", "09-accordo", "12-tonalita",
-                                          "17-quiz-orecchio", "18-quiz-tonalita", "22-impostazioni")], caps)),
+        caps = (["The staff", "Bass clef", "Intervals", "Modes", "Chords", "Keys", "Staff-reading quiz", "Ear: notes"]
+                if en else ["Pentagramma", "Chiave di basso", "Intervalli", "Modi", "Accordi", "Tonalità",
+                            "Quiz di lettura", "Orecchio: note"])
+        gallery(list(zip([s[k] for k in ("03b-pentagramma", "03d-chiave-basso", "04-intervallo", "08-modo", "09-accordo",
+                                          "12-tonalita", "18c-quiz-lettura-giusto", "18d-quiz-orecchio-note")], caps)),
                 OUT / f"gallery{sfx}.png")
+        names = (["Treble", "Bass", "Soprano", "Mezzo", "Alto", "Tenor", "Baritone"] if en else
+                 ["Violino", "Basso", "Soprano", "Mezzosoprano", "Contralto", "Tenore", "Baritono"])
+        clefs([cl[lang][f"c{i}"] for i in range(7)], names,
+              "Middle C in the seven clefs" if en else "Il Do centrale nelle sette chiavi", OUT / f"clefs{sfx}.png")
     languages([sc[l]["05-scala"] for l in range(5)], OUT / "languages.png")
 
 

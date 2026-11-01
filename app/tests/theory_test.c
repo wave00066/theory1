@@ -276,6 +276,43 @@ int main(void)
         if (!ok)
             fails++, printf("FAIL language %d: a name or text missing\n", r);
     }
+    {   /* the clefs: the bottom and top lines, and where middle C is on each */
+        static const char *const BOTTOM[NCLEFS] = {"E4", "G2", "C4", "A3", "F3", "D3", "B2"};
+        static const char *const TOP[NCLEFS] = {"F5", "A3", "D5", "B4", "G4", "E4", "C4"};
+        static const int MIDDLE_C[NCLEFS] = {-2, 10, 0, 2, 4, 6, 8};
+        int c, midi;
+        for (c = 0; c < NCLEFS; c++) {
+            nt_t n = staff_note(c, 0, 0, &midi);
+            t[0] = LETTER_EN[n.letter][0];
+            t[1] = (char)('0' + staff_octave(c, 0));
+            t[2] = 0;
+            check("clef bottom line", t, BOTTOM[c]);
+            n = staff_note(c, 8, 0, &midi);
+            t[0] = LETTER_EN[n.letter][0];
+            t[1] = (char)('0' + staff_octave(c, 8));
+            check("clef top line", t, TOP[c]);
+            staff_note(c, MIDDLE_C[c], 0, &midi);
+            checks++;
+            if (midi != 60)
+                fails++, printf("FAIL clef %d: middle C at %d is MIDI %d\n", c, MIDDLE_C[c], midi);
+            for (i = 0; i < NLANGS; i++) {
+                checks++;
+                if (!CLEFS[c].name[i] || !CLEFS[c].name[i][0])
+                    fails++, printf("FAIL clef %d: no name in language %d\n", c, i);
+            }
+        }
+        /* the treble clef's two ledger lines: A3 below, C6 above; a sharp raises the MIDI note */
+        staff_note(CLEF_TREBLE, STAFF_LO, 0, &midi);
+        checks++, fails += midi != 57;
+        staff_note(CLEF_TREBLE, STAFF_HI, 0, &midi);
+        checks++, fails += midi != 84;
+        staff_note(CLEF_BASS, 4, 1, &midi);
+        checks++, fails += midi != 51;   /* D#3 */
+        th_names = NAMES_BOTH;
+        note_oct(staff_note(CLEF_TREBLE, 2, 0, 0), staff_octave(CLEF_TREBLE, 2), b);
+        check("G4 named", b, "Sol4 (G4)");
+        th_names = NAMES_SOLFEGE;
+    }
     printf("theory: %d checks, %d failed\n", checks, fails);
     return fails != 0;
 }

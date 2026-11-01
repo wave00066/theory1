@@ -11,11 +11,12 @@
 #include "synth.h"
 #include "theory.c"
 #include "texts.c"
+#include "staff_glyphs.h"
 
 /* ================================================================ settings === */
 #define SET_MAGIC 0x31454854u            /* "THE1" */
 enum { QT_MIXED, QT_NOTE, QT_INTERVAL, QT_SCALE, QT_MODE, QT_CHORD, QT_DEGREE, QT_EAR_INT, QT_EAR_CHORD, QT_KEYSIG,
-       NQT };
+       QT_STAFF, QT_EAR_NOTE, NQT };
 typedef struct {
     uint32_t magic;
     uint8_t names;                       /* NAMES_*: how notes are named */
@@ -26,8 +27,9 @@ typedef struct {
     uint8_t level;                       /* 0..2 */
     uint8_t qtype;                       /* QT_* */
     uint8_t ui;                          /* L_*: the language */
+    uint8_t clefs;                       /* CLEFSET_*: the clefs of the staff lesson and quiz */
     uint8_t best[NQT];                   /* each quiz's record, 0..100 */
-    uint8_t rsv[6];
+    uint8_t rsv[5];
 } settings_t;
 static settings_t cfg;
 static uint8_t set_dirty;
@@ -169,8 +171,9 @@ static void play_interval(int b, int semis, int together)
 
 /* ================================================================ screens === */
 enum { SCR_MENU, SCR_TOPICS, SCR_LESSON, SCR_QSETUP, SCR_QUIZ, SCR_QEND, SCR_LAB, SCR_SETTINGS };
-enum { T_BASICS, T_INTERVALS, T_SCALES, T_MODES, T_CHORDS, T_HARMONY, T_KEYS, NTOPICS };
-static const uint8_t TOPIC_ITEMS[NTOPICS] = {8, NINTERVALS, NSCALES, NMODES, NCHORDS, 9, NKEYSIG};
+enum { T_BASICS, T_STAFF, T_INTERVALS, T_SCALES, T_MODES, T_CHORDS, T_HARMONY, T_KEYS, NTOPICS };
+static const uint8_t TOPIC_ITEMS[NTOPICS] = {8, STAFF_HI - STAFF_LO + 1, NINTERVALS, NSCALES, NMODES, NCHORDS, 9,
+                                             NKEYSIG};
 
 /* the scales of the Harmony lesson: four scales and the five modes that are not one of them */
 #define NHSCALES 9
@@ -199,6 +202,7 @@ static struct {
     uint8_t screen, menu, topic, topic_sel;
     uint8_t item[NTOPICS], root[NTOPICS];
     uint8_t hdeg, hseventh;
+    int8_t staff_acc;                    /* the staff lesson's accidental: 0, +1, -1 */
     uint8_t qsel, set_sel;
     uint8_t lab_scale, lab_root;         /* lab_scale 0: none, 1..: SCALES, then modes */
     int8_t octave;
@@ -224,6 +228,8 @@ static struct {
     int8_t ref_pc;                       /* a note given (an interval's root) */
     nt_t ref;
     int8_t wrong_pc;                     /* the last wrong note, shown red */
+    int8_t clef, spos, acc;              /* QT_STAFF: the note on the staff */
+    uint8_t midi[4];                     /* QT_STAFF, QT_EAR_NOTE: the notes as heard */
     uint8_t errors, hints, hint_on;
     uint8_t nopt, correct, sel, gone;    /* K_CHOICE; gone: options struck out by a hint */
     char opt[4][40];
@@ -675,6 +681,74 @@ static void ui_lights(void)
     plat_lights_mid(0, mid);
 }
 
+/* ============================================================ the staff === */
+/* a staff symbol (staff_glyphs.h), its baseline point at (x, y), blended in colour c as the text is */
+static void sglyph(int32_t x, int32_t y, const sglyph_t *g, uint16_t c)
+{
+    uint32_t r = c >> 11, gg = (c >> 5) & 63u, b = c & 31u, gx, gy, bpr = (g->w + 1u) / 2u;
+    for (gy = 0; gy < g->h; gy++)
+        for (gx = 0; gx < g->w; gx++) {
+            uint32_t a = g->data[gy * bpr + gx / 2u];
+            int32_t px = x + g->dx + (int32_t)gx, py = y + g->dy + (int32_t)gy + cv_oy;
+            a = (gx & 1u) ? (a & 15u) : (a >> 4);
+            if (!a || (uint32_t)px >= cv_w || py < cv_y0 || py >= cv_y1)
+                continue;
+            if (a == 15u)
+                cv_px[(uint32_t)py * cv_w + (uint32_t)px] = swap16(c);
+            else {
+                uint32_t bg = swap16(cv_px[(uint32_t)py * cv_w + (uint32_t)px]);
+                uint32_t br = bg >> 11, bgg = (bg >> 5) & 63u, bb = bg & 31u;
+                cv_px[(uint32_t)py * cv_w + (uint32_t)px] = swap16(((r * a + br * (15u - a)) / 15u) << 11 |
+                                                                    ((gg * a + bgg * (15u - a)) / 15u) << 5 |
+                                                                    ((b * a + bb * (15u - a)) / 15u));
+            }
+        }
+}
+
+/* a staff with its clef, its bottom line at y (8 pixels a space), and a note at position pos (STAFF_LO .. STAFF_HI)
+ * with its accidental, at x; pos outside the range: no note */
+static void staff(int32_t yb, int clef, int pos, int acc, int32_t x, uint16_t note_col)
+{
+    const clef_t *c = &CLEFS[clef];
+    int i;
+    for (i = 0; i < 5; i++)                   /* the five lines */
+        cv_rect(8, yb - 8 * i, 224, 1, C_GRAY);
+    sglyph(14, yb - 8 * (c->line - 1), c->sign == SIGN_G ? &SG_G_CLEF : c->sign == SIGN_F ? &SG_F_CLEF : &SG_C_CLEF,
+           C_WHITE);
+    if (pos < STAFF_LO || pos > STAFF_HI)
+        return;
+    for (i = 10; i <= pos; i += 2)            /* ledger lines above and below, up to the note */
+        cv_rect(x - 4, yb - 4 * i, 18, 1, C_GRAY);
+    for (i = -2; i >= pos; i -= 2)
+        cv_rect(x - 4, yb - 4 * i, 18, 1, C_GRAY);
+    sglyph(x, yb - 4 * pos, &SG_HEAD, note_col);
+    if (acc)
+        sglyph(x - 11, yb - 4 * pos, acc > 0 ? &SG_SHARP : &SG_FLAT, note_col);
+}
+
+/* where a position is, in words: "2a linea", "1o taglio sotto" */
+static void pos_text(int pos, char *b)
+{
+    char n[4] = {0, 0, 0, 0};
+    if (pos >= 0 && pos <= 8) {
+        n[0] = (char)('1' + (pos % 2 ? (pos - 1) / 2 : pos / 2));
+        t1_fmt(b, S(pos % 2 ? S_POS_SPACE : S_POS_LINE), n, 0, 0);
+    } else if (pos == 9)
+        t1_strcpy(b, S(S_POS_ABOVE));
+    else if (pos == -1)
+        t1_strcpy(b, S(S_POS_BELOW));
+    else if (pos > 9) {
+        n[0] = (char)('0' + (pos - 8) / 2);
+        t1_fmt(b, S(pos % 2 ? S_POS_OVER_LEDGER : S_POS_LEDGER_UP), n, 0, 0);
+    } else {
+        n[0] = (char)('0' + (-pos) / 2);
+        t1_fmt(b, S(pos % 2 ? S_POS_UNDER_LEDGER : S_POS_LEDGER_DOWN), n, 0, 0);
+    }
+}
+
+/* the clef the staff lesson shows: the K1 choice among the clefs the settings allow */
+static int lesson_clef(void) { return ui.root[T_STAFF] % clefs_in(cfg.clefs); }
+
 /* =========================================================== the screens === */
 static void draw_menu(void)
 {
@@ -700,11 +774,11 @@ static void draw_topics(void)
     int i;
     ui_header(S(S_M_LESSONS), 0, 0);
     for (i = 0; i < NTOPICS; i++) {
-        int32_t y = 29 + i * 22, sel = i == ui.topic_sel;
+        int32_t y = 28 + i * 19, sel = i == ui.topic_sel;
         if (sel)
-            cv_rect(4, y, 232, 21, COL_SELBG);
-        t1_tx(10, y + 2, &FONT_B, TOPIC_NAME[th_ui][i], sel ? C_WHITE : C_HI);
-        text_r(230, y + 4, &FONT_XS, TOPIC_SUB[th_ui][i], sel ? C_HI : C_GRAY);
+            cv_rect(4, y, 232, 19, COL_SELBG);
+        t1_tx(10, y + 1, &FONT_B, TOPIC_NAME[th_ui][i], sel ? C_WHITE : C_HI);
+        text_r(230, y + 3, &FONT_XS, TOPIC_SUB[th_ui][i], sel ? C_HI : C_GRAY);
     }
     hint(S(S_H_TOPICS));
 }
@@ -802,6 +876,32 @@ static void draw_lesson(void)
         mk.scale = p->mask;
         mk.root = p->root;
         hint(S(S_H_BASICS));
+        break;
+    }
+    case T_STAFF: {
+        int clef = lesson_clef(), pos = it + STAFF_LO, midi, oct = staff_octave(clef, pos);
+        nt_t n = staff_note(clef, pos, ui.staff_acc, &midi), ref;
+        char a[24], b2[32];
+        int lo = 53 + 12 * ui.octave;
+        ui_header(TOPIC_NAME[th_ui][T_STAFF], r, C_GRAY);
+        t1_tx(8, 29, &FONT_B, TR(CLEFS[clef].name), C_WHITE);
+        ref = staff_note(clef, 2 * (CLEFS[clef].line - 1), 0, 0);
+        note_oct(ref, staff_octave(clef, 2 * (CLEFS[clef].line - 1)), a);
+        b2[0] = (char)('0' + CLEFS[clef].line);
+        b2[1] = 0;
+        t1_fmt(u, S(S_CLEF_TEXT), b2, a, 0);
+        text_wrap(8, 47, 226, &FONT_XS, u, C_HI, 13, 73);
+        staff(132, clef, pos, ui.staff_acc, 150, COL_ROOT);
+        note_oct(n, oct + (n.letter == 0 && n.acc < 0 ? 0 : 0), t);
+        t1_tx(8, 152, t1_tw(&FONT_M, t) <= 130 ? &FONT_M : &FONT_B, t, COL_ROOT);
+        pos_text(pos, a);
+        text_r(232, 154, &FONT_XS, a, C_HI);
+        if (midi == 60)
+            text_r(232, 168, &FONT_XS, S(S_MIDDLE_C), C_GRAY);
+        else if (midi < lo || midi > lo + 26)
+            text_r(232, 168, &FONT_XS, S(S_OUT_OF_KEYS), C_DIM);
+        mk.root = (uint16_t)PCB(pc_of(n));
+        hint(S(S_H_STAFF));
         break;
     }
     case T_INTERVALS: {
@@ -1033,8 +1133,10 @@ static void draw_qsetup(void)
     int i;
     char t[16];
     ui_header(S(S_M_QUIZ), S(S_RECORD), C_GRAY);
-    for (i = 0; i < NQT; i++) {
-        int32_t y = 28 + i * 14, sel = i == ui.qsel;
+    {
+    int first = clamp(ui.qsel - 4, 0, NQT - 10);  /* ten rows of the list, the chosen one in view */
+    for (i = first; i < first + 10 && i < NQT; i++) {
+        int32_t y = 28 + (i - first) * 14, sel = i == ui.qsel;
         if (sel)
             cv_rect(4, y, 232, 14, COL_SELBG);
         t1_tx(10, y + 1, &FONT_XS, QT_NAMES[th_ui][i], sel ? C_WHITE : C_HI);
@@ -1045,6 +1147,7 @@ static void draw_qsetup(void)
             t1_strcpy(t, "-");
         }
         text_r(230, y + 1, &FONT_XS, t, sel ? C_WHITE : C_GRAY);
+    }
     }
     cv_rect(4, 170, 232, 1, C_LINE);
     t1_tx(t1_tx(10, 172, &FONT_XS, S(S_LEVEL_K1), C_GRAY) + 8, 172, &FONT_XS, LEVEL_NAMES[th_ui][cfg.level], COL_ROOT);
@@ -1073,7 +1176,13 @@ static void q_play_listen(void)
 {
     if (q.listen_kind == 0)
         play_interval(q.listen[0], q.listen[1] - q.listen[0], 1);
-    else {
+    else if (q.listen_kind == 2) {            /* the reference C, a pause, then the notes */
+        uint32_t t = plat_ms() + 30u;
+        int i;
+        play_note(t, q.listen[0], 600u, 80);
+        for (i = 1; i < q.nlisten; i++)
+            play_note(t + 1000u + (uint32_t)(i - 1) * 750u, q.listen[i], 650u, 95);
+    } else {
         uint32_t t = plat_ms() + 30u;
         int i;
         for (i = 0; i < q.nlisten; i++)
@@ -1147,6 +1256,7 @@ static void q_make1(int t)
     q.n = 0;
     q.pos = 0;
     q.found = 0;
+    q.clef = -1;
     q.ref_pc = -1;
     q.wrong_pc = -1;
     q.errors = q.hints = q.hint_on = 0;
@@ -1300,6 +1410,47 @@ static void q_make1(int t)
         t1_strcpy(q.ans, TR(CHORDS[ty].name));
         break;
     }
+    case QT_STAFF: {                         /* a note on the staff: name it on the keys */
+        int clef = (int)rnd((uint32_t)clefs_in(cfg.clefs)), pos = lv == 0 ? (int)rnd(9) : STAFF_LO + (int)rnd(17), midi;
+        int acc = lv == 2 ? (int)rnd(3) - 1 : 0;
+        q.kind = K_ONE;
+        q.n = 1;
+        q.clef = (int8_t)clef;
+        q.spos = (int8_t)pos;
+        q.acc = (int8_t)acc;
+        q.nt[0] = staff_note(clef, pos, acc, &midi);
+        q.pc[0] = (uint8_t)pc_of(q.nt[0]);
+        q.midi[0] = (uint8_t)midi;
+        t1_strcpy(q.l1, S(S_Q_STAFF));
+        t1_strcpy(q.l2, TR(CLEFS[clef].name));
+        note_oct(q.nt[0], staff_octave(clef, pos), q.ans);
+        break;
+    }
+    case QT_EAR_NOTE: {                      /* a note heard after the reference C: play it; two at level 3 */
+        static const uint8_t NAT[7] = {0, 2, 4, 5, 7, 9, 11};
+        int k, n = lv == 2 ? 2 : 1;
+        nt_t c = {0, 0};
+        q.kind = n == 1 ? K_ONE : K_SEQ;
+        q.n = (uint8_t)n;
+        q.listen[0] = 60;
+        for (k = 0; k < n; k++) {
+            int pc;
+            do
+                pc = lv == 0 ? NAT[rnd(7)] : (int)rnd(12);
+            while (k > 0 && pc == q.pc[k - 1]);
+            q.pc[k] = (uint8_t)pc;
+            q.nt[k] = nt_of_pc(pc);
+            q.midi[k] = (uint8_t)(60 + pc);
+            q.listen[k + 1] = q.midi[k];
+        }
+        q.nlisten = (uint8_t)(n + 1);
+        q.listen_kind = 2;
+        note_full(c, a);
+        t1_fmt(q.l1, S(S_Q_EARNOTE1), a, 0, 0);
+        t1_strcpy(q.l2, S(n == 1 ? S_Q_EARNOTE2 : S_Q_EARNOTES2));
+        notes_text(q.nt, q.n, q.ans);
+        break;
+    }
     case QT_KEYSIG: default: {
         int maxc = lv == 0 ? 2 : lv == 1 ? 4 : 7, k, sub = (int)rnd(3), c;
         const char *pool[16];
@@ -1421,6 +1572,11 @@ static void q_finish(int right)
     if (q.kind == K_CHOICE) {                /* an ear question: heard again */
         if (q.nlisten)
             q_play_listen();
+        return;
+    }
+    if (q.type == QT_STAFF || q.type == QT_EAR_NOTE) {   /* the very notes, where they are */
+        for (i = 0; i < q.n; i++)
+            play_note(t + (uint32_t)i * 450u, q.midi[i], 700u, 95);
         return;
     }
     b = base_midi(q.nt[0]);                   /* the answer, heard: the note, the scale up, the chord */
@@ -1584,7 +1740,29 @@ static void draw_quiz(void)
     t1_fmt(s, S(S_Q_SCORE), u, 0, 0);
     ui_header(t, s, COL_ROOT);
     t1_tx(8, 29, &FONT_XS, q.l1, C_GRAY);
-    t1_tx(8, 42, fit_font(q.l2, 228), q.l2, q.kind == K_CHOICE && q.nlisten ? C_DIM : C_WHITE);
+    t1_tx(8, 42, q.type == QT_STAFF ? &FONT_B : fit_font(q.l2, 228), q.l2,
+          q.kind == K_CHOICE && q.nlisten ? C_DIM : C_WHITE);
+    if (q.type == QT_STAFF) {                 /* the note on its staff; then its name */
+        mk.scale = mk.root = mk.ok = mk.bad = mk.hint = 0;
+        staff(126, q.clef, q.spos, q.acc, 150, q.done == 1 ? COL_OK : q.done ? COL_BAD : C_WHITE);
+        if (q.wrong_pc >= 0 && !q.done)
+            mk.bad = (uint16_t)PCB(q.wrong_pc);
+        if (q.hint_on && !q.done)
+            mk.hint = (uint16_t)PCB(q.pc[0]);
+        if (q.done)
+            mk.ok = (uint16_t)PCB(q.pc[0]);
+        if (q.fb[0])
+            t1_tx(8, 150, t1_tw(&FONT_B, q.fb) <= 226 ? &FONT_B : &FONT_XS, q.fb, q.fb_col);
+        if (q.done) {
+            if (q.done == 1)
+                t1_strcpy(t, q.ans);
+            else
+                t1_fmt(t, S(S_F_ANSWER), q.ans, 0, 0);
+            t1_tx(8, 169, &FONT_XS, t, q.done == 1 ? C_HI : C_WHITE);
+        }
+        hint(S(q.done ? S_H_NEXT : S_H_QPLAY));
+        return;
+    }
     mk.scale = mk.root = mk.ok = mk.bad = mk.hint = 0;
     if (q.ref_pc >= 0)
         mk.root = (uint16_t)PCB(q.ref_pc);
@@ -1661,9 +1839,13 @@ static void draw_quiz(void)
     if (q.kind == K_CHOICE) {
         if (q.fb[0])
             t1_tx(8, 160, &FONT_B, q.fb, q.fb_col);
-        if (q.done && q.done != 1 && q.ans[0]) {
+        if (q.done && q.done != 1 && q.ans[0]) {   /* beside the verdict, or under it when that is too long */
+            int32_t x = 8 + t1_tw(&FONT_B, q.fb) + 10;
             t1_fmt(t, S(S_F_ANSWER), q.ans, 0, 0);
-            t1_tx(8 + t1_tw(&FONT_B, q.fb) + 10, 163, &FONT_XS, t, C_WHITE);
+            if (x + t1_tw(&FONT_XS, t) <= 236)
+                t1_tx(x, 163, &FONT_XS, t, C_WHITE);
+            else
+                t1_tx(8, 174, &FONT_XS, t, C_WHITE);
         }
     }
     if (q.done)                               /* the answer on the keys */
@@ -1914,20 +2096,21 @@ static void draw_lab(void)
 }
 
 /* -------------------------------------------------------------- settings --- */
-enum { ST_LANG, ST_NAMES, ST_SOUND, ST_SPEED, ST_EXT, ST_BLE, ST_DEVICE, ST_RESET, NST };
+enum { ST_LANG, ST_NAMES, ST_CLEFS, ST_SOUND, ST_SPEED, ST_EXT, ST_BLE, ST_DEVICE, ST_RESET, NST };
 static void draw_settings(void)
 {
-    static const int LABEL[NST] = {S_SET_LANG, S_SET_NAMES, S_SET_SOUND, S_SET_SPEED, S_SET_EXT, S_SET_BLE,
+    static const int LABEL[NST] = {S_SET_LANG, S_SET_NAMES, S_SET_CLEFS, S_SET_SOUND, S_SET_SPEED, S_SET_EXT, S_SET_BLE,
                                    S_SET_DEVICE, S_SET_RESET};
     int i;
     ui_header(S(S_M_SETTINGS), set_dirty ? "SAVE" : 0, COL_ROOT);
     for (i = 0; i < NST; i++) {
-        int32_t y = 29 + i * 19, sel = i == ui.set_sel;
+        int32_t y = 28 + i * 17, sel = i == ui.set_sel;
         const char *v = "";
         char dev[40];
         switch (i) {
         case ST_LANG: v = LANG_SELF[cfg.ui % NLANGS]; break;
         case ST_NAMES: v = NAMES_SELF[cfg.names % NNAMES]; break;
+        case ST_CLEFS: v = CLEFSET_NAMES[th_ui][cfg.clefs % NCLEFSETS]; break;
         case ST_SOUND: v = SOUND_NAMES[th_ui][cfg.sound % NSOUNDS]; break;
         case ST_SPEED: v = SPEED_NAMES[th_ui][cfg.speed % 3]; break;
         case ST_EXT: v = S(cfg.ext_mute ? S_EXT_MUTE : S_EXT_BOTH); break;
@@ -1945,9 +2128,9 @@ static void draw_settings(void)
         default: break;
         }
         if (sel)
-            cv_rect(4, y, 232, 18, COL_SELBG);
-        t1_tx(10, y + 3, &FONT_XS, S(LABEL[i]), sel ? C_WHITE : C_GRAY);
-        text_r(230, y + 3, &FONT_XS, v, sel ? COL_ROOT : C_HI);
+            cv_rect(4, y, 232, 17, COL_SELBG);
+        t1_tx(10, y + 1, &FONT_XS, S(LABEL[i]), sel ? C_WHITE : C_GRAY);
+        text_r(230, y + 1, &FONT_XS, v, sel ? COL_ROOT : C_HI);
     }
     hint(S(S_H_SETTINGS));
 }
@@ -1957,6 +2140,7 @@ static void settings_change(int d)
     switch (ui.set_sel) {
     case ST_LANG: cfg.ui = (uint8_t)((cfg.ui + NLANGS + d) % NLANGS); break;
     case ST_NAMES: cfg.names = (uint8_t)((cfg.names + NNAMES + d) % NNAMES); break;
+    case ST_CLEFS: cfg.clefs = (uint8_t)((cfg.clefs + NCLEFSETS + d) % NCLEFSETS); break;
     case ST_SOUND: cfg.sound = (uint8_t)((cfg.sound + NSOUNDS + d) % NSOUNDS); break;
     case ST_SPEED: cfg.speed = (uint8_t)((cfg.speed + 3 + d) % 3); break;
     case ST_EXT: cfg.ext_mute = (uint8_t)!cfg.ext_mute; break;
@@ -2001,6 +2185,12 @@ static void lesson_play(void)
         if (p->together)
             for (i = 0; i < p->nplay; i++)
                 play_note(t + 1700u + (uint32_t)i * step_ms(), p->play[i], step_ms(), 80);
+        break;
+    }
+    case T_STAFF: {
+        int midi;
+        staff_note(lesson_clef(), it + STAFF_LO, ui.staff_acc, &midi);
+        play_note(t, midi, 900u, 95);
         break;
     }
     case T_INTERVALS: play_interval(base_midi(root), INTERVALS[it].semis, 1); break;
@@ -2148,7 +2338,16 @@ static void ui_encoder(int e, int d)
         break;
     case SCR_LESSON: {
         int n = ui.topic == T_HARMONY ? NHSCALES : TOPIC_ITEMS[ui.topic];
-        if (e == EN_SELECT)
+        if (ui.topic == T_STAFF && (e == EN_SELECT || e == EN_K1 || e == EN_PRESET || e == EN_K2)) {
+            if (e == EN_SELECT)               /* the note up and down the staff: it stops at the ends */
+                ui.item[T_STAFF] = (uint8_t)clamp(ui.item[T_STAFF] + d, 0, n - 1);
+            else if (e == EN_K2)              /* natural, sharp, flat */
+                ui.staff_acc = (int8_t)(ui.staff_acc == 0 ? (d > 0 ? 1 : -1) : ui.staff_acc > 0 ? (d > 0 ? -1 : 0) :
+                                        (d > 0 ? 0 : 1));
+            else
+                ui.root[T_STAFF] = (uint8_t)t1_wrap(lesson_clef() + d, clefs_in(cfg.clefs));
+            lesson_play();                    /* every note shown is heard */
+        } else if (e == EN_SELECT)
             ui.item[ui.topic] = (uint8_t)t1_wrap(ui.item[ui.topic] + d, n);
         else if (e == EN_ALGO) {
             ui.topic = (uint8_t)t1_wrap(ui.topic + d, NTOPICS);
@@ -2449,7 +2648,7 @@ void app_frame(void)
 void app_init(void)
 {
     if (plat_store_load(OBJ_SETTINGS, &cfg, sizeof cfg) != (int)sizeof cfg || cfg.magic != SET_MAGIC ||
-        cfg.names >= NNAMES || cfg.ui >= NLANGS || cfg.sound >= NSOUNDS || cfg.speed > 2u || cfg.level > 2u)
+        cfg.names >= NNAMES || cfg.ui >= NLANGS || cfg.clefs >= NCLEFSETS || cfg.sound >= NSOUNDS || cfg.speed > 2u || cfg.level > 2u)
         settings_defaults();
     {
         int i;
@@ -2461,6 +2660,7 @@ void app_init(void)
     }
     settings_apply();
     ui.screen = SCR_MENU;
+    ui.item[T_STAFF] = (uint8_t)(2 - STAFF_LO);   /* the staff lesson starts on the second line (G4 in treble) */
 }
 
 /* =========================================================== host checks === */
@@ -2590,6 +2790,21 @@ int app_host_cmd(const char *cmd, const char *a, const char *b, const char *c, c
     if (!strcmp(cmd, "lang")) {
         cfg.ui = (uint8_t)(atoi(a) % NLANGS);
         settings_apply();
+        ui.redraw = 1;
+        return 1;
+    }
+    if (!strcmp(cmd, "staffshow")) {         /* staffshow CLEF POS: the staff lesson on that clef and note */
+        cfg.clefs = CLEFSET_ALL;
+        ui.root[T_STAFF] = (uint8_t)atoi(a);
+        ui.item[T_STAFF] = (uint8_t)(atoi(b) - STAFF_LO);
+        ui.staff_acc = 0;
+        ui.topic = ui.topic_sel = T_STAFF;
+        ui.screen = SCR_LESSON;
+        ui.redraw = 1;
+        return 1;
+    }
+    if (!strcmp(cmd, "clefs")) {
+        cfg.clefs = (uint8_t)(atoi(a) % NCLEFSETS);
         ui.redraw = 1;
         return 1;
     }

@@ -600,3 +600,60 @@ static int chord_find(uint32_t mask, int bass_pc, int *type, int *root_pc, int *
         }
     return 0;
 }
+
+/* ------------------------------------------------------------ the staff --- */
+/* The seven clefs (the Italian setticlavio): a sign (G, F or C) on a line (1 the bottom line .. 5 the top), and the
+ * note that line is then. A note on the staff is a position: 0 the bottom line, 1 the space above it, ... 8 the top
+ * line; -2 and -4 the ledger lines below, 10 and 12 above (two ledger lines at most). Notes are counted
+ * diatonically: d = octave * 7 + letter, C4 (middle C) = 28. */
+enum { SIGN_G, SIGN_F, SIGN_C };
+enum { CLEF_TREBLE, CLEF_BASS, CLEF_SOPRANO, CLEF_MEZZO, CLEF_ALTO, CLEF_TENOR, CLEF_BARITONE, NCLEFS };
+#define STAFF_LO (-4)
+#define STAFF_HI 12
+typedef struct {
+    uint8_t sign, line;
+    int8_t ref;                         /* the sign's note, diatonically: G4 32, F3 24, C4 28 */
+    const char *name[NLANGS];
+} clef_t;
+static const clef_t CLEFS[NCLEFS] = {
+    {SIGN_G, 2, 32, {"Chiave di violino", "Treble clef", "Clave de sol", "Violinschlüssel", "Clé de sol"}},
+    {SIGN_F, 4, 24, {"Chiave di basso", "Bass clef", "Clave de fa", "Bassschlüssel", "Clé de fa"}},
+    {SIGN_C, 1, 28, {"Chiave di soprano", "Soprano clef", "Clave de do en 1.a", "Sopranschlüssel", "Clé d'ut 1re"}},
+    {SIGN_C, 2, 28, {"Chiave di mezzosoprano", "Mezzo-soprano clef", "Clave de do en 2.a", "Mezzosopranschlüssel",
+                     "Clé d'ut 2e"}},
+    {SIGN_C, 3, 28, {"Chiave di contralto", "Alto clef", "Clave de do en 3.a", "Altschlüssel", "Clé d'ut 3e"}},
+    {SIGN_C, 4, 28, {"Chiave di tenore", "Tenor clef", "Clave de do en 4.a", "Tenorschlüssel", "Clé d'ut 4e"}},
+    {SIGN_F, 3, 24, {"Chiave di baritono", "Baritone clef", "Clave de fa en 3.a", "Baritonschlüssel", "Clé de fa 3e"}},
+};
+/* the clefs a player has chosen: the treble only, treble and bass, or all seven */
+enum { CLEFSET_TREBLE, CLEFSET_TWO, CLEFSET_ALL, NCLEFSETS };
+static int clefs_in(int set) { return set == CLEFSET_TREBLE ? 1 : set == CLEFSET_TWO ? 2 : NCLEFS; }
+
+/* the note at a position on a clef's staff (acc: its accidental), and its MIDI number */
+static nt_t staff_note(int clef, int pos, int acc, int *midi)
+{
+    int d = CLEFS[clef].ref - 2 * (CLEFS[clef].line - 1) + pos, oct = d / 7;
+    nt_t n;
+    n.letter = (int8_t)(d % 7);
+    n.acc = (int8_t)acc;
+    if (midi)
+        *midi = 12 * (oct + 1) + LETTER_PC[n.letter] + acc;
+    return n;
+}
+static int staff_octave(int clef, int pos) { return (CLEFS[clef].ref - 2 * (CLEFS[clef].line - 1) + pos) / 7; }
+
+/* "Sol4" / "Sol4 (G4)": a note with its octave (scientific: middle C is C4) */
+static void note_oct(nt_t n, int oct, char *b)
+{
+    char t[8], o[4] = {0, 0, 0, 0};
+    o[0] = (char)('0' + (oct < 0 ? 0 : oct > 9 ? 9 : oct));
+    note_name(n, b);
+    str_cat(b, o);
+    note_alt(n, t);
+    if (t[0]) {
+        str_cat(b, " (");
+        str_cat(b, t);
+        str_cat(b, o);
+        str_cat(b, ")");
+    }
+}
