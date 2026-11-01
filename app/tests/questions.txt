@@ -1,0 +1,5 @@
+# Every kind of question, at every level, made many times and checked (app.c qcheck): answers that match their
+# notes and read well, choices all different with the right one among them.
+wait 900
+seed 12345
+qcheck 400

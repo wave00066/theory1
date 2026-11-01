@@ -123,7 +123,7 @@ static const char *const STR[NSTR][NLANGS] = {
     [S_Q_EAR_CHORD] = {"Ascolta. Che accordo è?", "Listen. Which chord is it?", "Escucha. Qué acorde es?",
                        "Hör zu. Welcher Akkord ist das?"},
     [S_Q_REPLAY] = {"PLAY per riascoltare", "PLAY to hear it again", "PLAY para volver a oír", "PLAY: noch einmal"},
-    [S_Q_HOWMANY] = {"Quante alterazioni ha", "How many sharps or flats has", "Cuántas alteraciones tiene",
+    [S_Q_HOWMANY] = {"Quante alterazioni ha", "How many sharps or flats in", "Cuántas alteraciones tiene",
                      "Wie viele Vorzeichen hat"},
     [S_MAJOR_Q] = {"%1 maggiore?", "%1 major?", "%1 mayor?", "%1 Dur?"},
     [S_Q_NONE] = {"nessuna", "none", "ninguna", "keine"},
@@ -350,13 +350,13 @@ static const page_t BASICS[8] = {
       "schwarze Taste hat zwei Namen: Cis = Des. Das heißt 'enharmonisch'."},
      BLACK_PCS, PCB(1), {60, 61, 62, 63, 64}, 5, 0},
     {{"La tastiera dell'FM-1", "The FM-1 keyboard", "El teclado del FM-1", "Die FM-1-Tastatur"},
-     {"27 tasti: 16 bianchi e 11 neri, da Fa a Sol (più di 2 ottave). Il Do è l'ottavo tasto bianco. OCT- e OCT+ "
+     {"27 tasti: 16 bianchi e 11 neri, da Fa a Sol (più di 2 ottave). Il Do è il quinto tasto bianco. OCT- e OCT+ "
       "spostano il suono di un'ottava. Funziona anche una tastiera MIDI (USB, jack, Bluetooth).",
-      "27 keys: 16 white and 11 black, from F to G (over 2 octaves). C is the 8th white key. OCT- and OCT+ shift "
+      "27 keys: 16 white and 11 black, from F to G (over 2 octaves). C is the 5th white key. OCT- and OCT+ shift "
       "the sound by an octave. A MIDI keyboard works too (USB, jack, Bluetooth).",
-      "27 teclas: 16 blancas y 11 negras, de Fa a Sol (más de 2 octavas). El Do es la octava tecla blanca. OCT- y "
+      "27 teclas: 16 blancas y 11 negras, de Fa a Sol (más de 2 octavas). El Do es la quinta tecla blanca. OCT- y "
       "OCT+ mueven el sonido una octava. También funciona un teclado MIDI (USB, jack, Bluetooth).",
-      "27 Tasten: 16 weiße und 11 schwarze, von F bis G (über 2 Oktaven). C ist die 8. weiße Taste. OCT- und OCT+ "
+      "27 Tasten: 16 weiße und 11 schwarze, von F bis G (über 2 Oktaven). C ist die 5. weiße Taste. OCT- und OCT+ "
       "verschieben den Klang um eine Oktave. Auch ein MIDI-Keyboard geht (USB, Klinke, Bluetooth)."},
      PCB(0), PCB(0), {48, 60, 72}, 3, 0},
     {{"La scala", "The scale", "La escala", "Die Tonleiter"},

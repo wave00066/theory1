@@ -10,4 +10,5 @@ app/build/test/theory_test
 python3 base/tools/build.py app --host
 app/build/host/theory1_host app/tests/basic.txt app/build/test
 app/build/host/theory1_host app/tests/texts_fit.txt app/build/test   # every text fits, in every language
+app/build/host/theory1_host app/tests/questions.txt app/build/test   # 10800 questions made and checked
 echo "THEORY-1: all tests passed"

@@ -295,7 +295,7 @@ static void t1_upper(char *d, const char *s)
         uint8_t c = (uint8_t)*s;
         if (c >= 'a' && c <= 'z')
             c = (uint8_t)(c - 32);
-        else if (c >= 0xA0u && c <= 0xBEu && c != 0xB7u && d > (char *)0 && (uint8_t)s[-1] == 0xC3u)
+        else if (c >= 0xA0u && c <= 0xBEu && c != 0xB7u && s[-1] == '\xC3')   /* (never the first byte) */
             c = (uint8_t)(c - 32);
         *d = (char)c;
     }
@@ -945,7 +945,7 @@ static void draw_lesson(void)
         for (i = 0; i < 12; i++) {
             int32_t x = cx + CS[i] * (rr - 2) / 100, y = cy - CS[(i + 3) % 12] * (rr - 2) / 100;
             char lab[8];
-            note_name(POS_ROOT[i], lab);
+            note_name(i == pos ? k->root : POS_ROOT[i], lab);
             if (i == pos) {
                 int32_t dx, dy;
                 for (dy = -11; dy <= 11; dy++)
@@ -1095,8 +1095,23 @@ static void count_text(int c, char *b)
     str_cat(b, S(c > 0 ? (n == 1 ? S_SHARP_1 : S_SHARP_N) : (n == 1 ? S_FLAT_1 : S_FLAT_N)));
 }
 
-/* a question of type t at the chosen level */
-static void q_make(int t)
+/* notes a student should not meet in an answer: a double sharp or flat, and before level 3 E#, B#, Fb, Cb
+ * (right as theory, but a question in an easier key teaches the same thing) */
+static int awkward(const nt_t *n, int count, int lv)
+{
+    int i;
+    for (i = 0; i < count; i++) {
+        if (n[i].acc > 1 || n[i].acc < -1)
+            return 1;
+        if (lv < 2 && ((n[i].acc == 1 && (n[i].letter == 2 || n[i].letter == 6)) ||
+                       (n[i].acc == -1 && (n[i].letter == 3 || n[i].letter == 0))))
+            return 1;
+    }
+    return 0;
+}
+
+/* a question of type t at the chosen level, once (q_make draws again until the answer reads well) */
+static void q_make1(int t)
 {
     int lv = cfg.level, i;
     char a[40], b[40];
@@ -1112,6 +1127,8 @@ static void q_make(int t)
     q.nlisten = 0;
     q.done = 0;
     q.l1[0] = q.l2[0] = q.ans[0] = q.fb[0] = 0;
+    q.ref.letter = 0;                         /* C: the reference note when a question has no other */
+    q.ref.acc = 0;
     switch (t) {
     case QT_NOTE: {
         nt_t n = ROOTS[lv == 0 ? q_pick(NATURAL_ROOTS, 7) : rnd(NROOTS)];
@@ -1318,6 +1335,14 @@ static void q_make(int t)
         break;
     }
     }
+}
+
+static void q_make(int t)
+{
+    int tries = 0;
+    do
+        q_make1(t);
+    while (q.kind != K_CHOICE && awkward(q.nt, q.n, cfg.level) && ++tries < 50);
 }
 
 static void q_new(void)
@@ -2174,8 +2199,7 @@ static void ui_button(int b)
         }
         return;
     }
-    case B_SAVE:
-        set_dirty = 1;
+    case B_SAVE:                              /* (nothing changed: nothing written) */
         settings_save();
         app_say(S(set_dirty ? S_SAY_ERROR : S_SAY_SAVED), "");
         return;
@@ -2197,7 +2221,8 @@ static void ui_button(int b)
                 q_play_listen();
             else if (q.ref_pc >= 0)
                 q_play_ref();
-            else                              /* the key's root, as a reference */
+            else if (q.kind != K_CHOICE)      /* the key's root (the note quiz: C), as a reference; a key-signature
+                                               * question gets nothing: its root would be the answer */
                 play_note(plat_ms() + 20u, base_midi(q.ref), 700u, 90);
         } else if (b == B_EDIT)
             q_hint();
@@ -2380,6 +2405,14 @@ void app_init(void)
     if (plat_store_load(OBJ_SETTINGS, &cfg, sizeof cfg) != (int)sizeof cfg || cfg.magic != SET_MAGIC ||
         cfg.names >= NNAMES || cfg.ui >= NLANGS || cfg.sound >= NSOUNDS || cfg.speed > 2u || cfg.level > 2u)
         settings_defaults();
+    {
+        int i;
+        for (i = 0; i < NQT; i++)            /* a record past 100: none */
+            if (cfg.best[i] > 100u)
+                cfg.best[i] = 0;
+        cfg.ext_mute = (uint8_t)(cfg.ext_mute != 0);
+        cfg.ble_off = (uint8_t)(cfg.ble_off != 0);
+    }
     settings_apply();
     ui.screen = SCR_MENU;
 }
@@ -2463,6 +2496,41 @@ int app_host_cmd(const char *cmd, const char *a, const char *b, const char *c, c
         fake.i = 0;
         fake.note[0] = (uint8_t)(60 + i);
         fake.next = plat_ms();
+        return 1;
+    }
+    if (!strcmp(cmd, "qcheck")) {             /* qcheck N: N questions of every type at every level, each checked */
+        int n = atoi(a), t, lv, k, bad = 0, lv0 = cfg.level;
+        for (lv = 0; lv < 3; lv++)
+            for (t = 1; t < NQT; t++)
+                for (k = 0; k < n; k++) {
+                    int j, m, ok = 1;
+                    cfg.level = (uint8_t)lv;
+                    q_make(t);
+                    if (!q.l1[0] || !q.l2[0])
+                        ok = 0;
+                    if (q.kind == K_CHOICE) {    /* different options, the right one among them once */
+                        for (j = 0; j < q.nopt; j++)
+                            for (m = j + 1; m < q.nopt; m++)
+                                if (t1_streq(q.opt[j], q.opt[m]))
+                                    ok = 0;
+                        if (q.nopt < 2 || q.correct >= q.nopt || !t1_streq(q.opt[q.correct], q.ans))
+                            ok = 0;
+                    } else {                     /* the pitch classes are the spelled notes', and read well */
+                        for (j = 0; j < q.n; j++)
+                            if (q.pc[j] != pc_of(q.nt[j]))
+                                ok = 0;
+                        if (q.n < 1 || awkward(q.nt, q.n, lv))
+                            ok = 0;
+                    }
+                    if (!ok) {
+                        bad++;
+                        fprintf(stderr, "QUESTION BAD (type %d level %d): %s / %s\n", t, lv, q.l1, q.l2);
+                    }
+                }
+        cfg.level = (uint8_t)lv0;
+        q.done = 0;
+        cut_count += bad;
+        printf("  qcheck: %d questions, %d bad\n", n * 3 * (NQT - 1), bad);
         return 1;
     }
     if (!strcmp(cmd, "seed")) {
