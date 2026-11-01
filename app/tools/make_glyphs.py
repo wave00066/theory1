@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MPL-2.0
 """The staff's symbols for THEORY-1 (app/staff_glyphs.h), from Bravura (Steinberg, SIL OFL 1.1: LICENSES/):
 
     npm pack @vexflow-fonts/bravura@1.0.2 && tar xzf vexflow-fonts-bravura-1.0.2.tgz

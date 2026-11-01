@@ -12,7 +12,7 @@ the synth's keys, lights and screen, in **English, Italian, Spanish, German and 
   (triads and sevenths, with roman numerals and harmonic function) and the circle of fifths with all 15 keys.
   Everything works from any root and is spelled correctly (F major has Bb, not A#).
 - **QUIZ**: 11 kinds of question, 10 questions each, 3 levels. You answer **by playing the keys** (notes on the
-  staff, scales, chords, intervals, note names, degrees), **by ear** (single notes, intervals, chords) or by
+  staff, scales, modes, chords, intervals, note names, degrees), **by ear** (single notes, intervals, chords) or by
   choosing (keys). Every answer gets feedback,
   with hints, a score and saved best scores.
 - **LAB**: play anything and THEORY-1 names the note, the interval or the chord, with its inversion. Pick a scale
@@ -95,21 +95,29 @@ get stars and your best score. Answers with double sharps or flats never come up
 
 ## Install
 
-1. Get `theory1.fwsc` from the latest run of the *Build and attest firmware* workflow in **Actions** (artifact
-   `packages`), or from *Releases* when there is one.
+1. Get `theory1-X.Y.fwsc` from this repository's [*Releases*](https://github.com/wave00066/theory1/releases), or
+   `theory1.fwsc` from the latest run of the *Build and attest firmware* workflow in **Actions** (artifact `packages`).
 2. Connect the FM-1 to a computer with a USB **data** cable, directly, without a hub.
-3. Install it with the [FM-1 Firmware Hub](https://thefirmwarehub.com/)'s web installer in Chrome or Edge, or from a
-   terminal: `python3 base/tools/fm1_install.py theory1.fwsc`.
-4. Don't unplug the cable while it writes.
+3. From a terminal, in a copy of this repository (`git clone --recursive`):
+   ```sh
+   pip install mido python-rtmidi
+   python3 base/tools/fm1_install.py theory1-X.Y.fwsc
+   ```
+   The [FM-1 Firmware Hub](https://thefirmwarehub.com/)'s web installer only installs the firmwares in its own
+   catalogue; THEORY-1 can be installed from there once it is listed.
+4. Don't unplug the cable while it writes. The FM-1 restarts by itself when it is done.
 
 **Back to the official firmware:** download `FM-1.fwsc` (V15) from M-VAVE's download page and install it with
-M-UPGRADE or the installer. If THEORY-1 ever fails to start twice, the FM-1 comes up in fm1-base's safe mode, from
-which any firmware can be installed again. This is unofficial firmware: you install it at your own risk.
+M-UPGRADE, the Firmware Hub or `fm1_install.py`. If THEORY-1 ever fails to start
+twice, the FM-1 comes up in fm1-base's safe mode, from which any firmware can be installed again. THEORY-1 writes
+only its own settings (one 4 KB sector) and never touches the bootloader. This is unofficial firmware, not yet tested
+on every unit: you install it at your own risk.
 
 ## Build
 
 The firmware is built in the cloud by GitHub Actions, where the chip's compiler (JieLi) and its SDK are fetched:
-every push to `main` builds `theory1.fwsc` as an artifact, and a tag `vX.Y` makes a signed release.
+every push to `main` builds `theory1.fwsc` as an artifact, and a tag `vX.Y` makes a signed release with
+`theory1-X.Y.fwsc`.
 
 On a computer, with no FM-1 and no compiler:
 
@@ -139,6 +147,19 @@ The FM-1's fonts are ASCII only: an accented letter (è, ñ, ü, é, ç) is its 
 
 ## Licence and credits
 
-MPL-2.0. THEORY-1 is built on Charles Vestal's fm1-base and Leo Kuroshita's (Hügelton Instruments) felucca-bsp. The
-staff's symbols come from Bravura by Steinberg Media Technologies (SIL Open Font License 1.1,
-`LICENSES/OFL-1.1-Bravura.txt`). It is not affiliated with M-VAVE. M-VAVE and FM-1 are trademarks of their owners.
+THEORY-1's own code (`app/`, `docs/`, `tests/`) is under the **Mozilla Public License 2.0** ([`LICENSE`](LICENSE)).
+A firmware package (`.fwsc`) also contains:
+
+| Part | By | Licence |
+|---|---|---|
+| [fm1-base](https://github.com/charlesvestal/fm1-base) (`base/`) | Charles Vestal and contributors | MPL-2.0; a few files in `base/ble/` are `MPL-2.0 AND Apache-2.0` |
+| [felucca-bsp](https://github.com/hugelton/felucca-bsp) (`base/bsp/`) | Leo Kuroshita (Hügelton Instruments) and contributors | MPL-2.0 (see `base/bsp/NOTICE`) |
+| Barlow Semi Condensed, the screen's font | The Barlow Project Authors | SIL OFL 1.1 ([`LICENSES/OFL-1.1-Barlow.txt`](LICENSES/OFL-1.1-Barlow.txt)) |
+| The clefs, notehead, sharp and flat (`app/staff_glyphs.h`), from Bravura | Steinberg Media Technologies GmbH | SIL OFL 1.1 ([`LICENSES/OFL-1.1-Bravura.txt`](LICENSES/OFL-1.1-Bravura.txt)) |
+| JieLi AC79 SDK files (`uboot.boot`, `cfg_tool.bin`, `eq_cfg_hw.bin`) and Bluetooth libraries (binary), added at build time | Zhuhai Jieli Technology Co., Ltd. | Apache-2.0 ([`LICENSES/Apache-2.0.txt`](LICENSES/Apache-2.0.txt)) |
+
+None of the JieLi files is in this repository: the build fetches them from the SDK. The full details are in
+fm1-base's [`LICENSING.md`](https://github.com/charlesvestal/fm1-base/blob/main/LICENSING.md) and
+[`CREDITS.md`](https://github.com/charlesvestal/fm1-base/blob/main/CREDITS.md).
+
+THEORY-1 is not affiliated with or endorsed by M-VAVE or JieLi. M-VAVE and FM-1 are trademarks of their owners.

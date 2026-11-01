@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MPL-2.0
 """THEORY-1's README pictures, from the host simulator's own screens:
 
     python3 base/tools/build.py app --host

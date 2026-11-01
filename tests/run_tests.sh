@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: MPL-2.0
 # THEORY-1's tests, on a computer (no FM-1, no toolchain): the theory engine against known answers, then the whole
 # firmware in fm1-base's host simulator (every quiz in every level answered, the lab, the settings,
 # every page in four languages with no text off the screen).

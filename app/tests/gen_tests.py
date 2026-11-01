@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MPL-2.0
 """Writes THEORY-1's long host-simulator scripts: basic.txt (every quiz at every level answered, a few mistakes, the
 lab, the settings across a reboot) and texts_fit.txt (every page in every language, clef and naming: no text off
 the screen). Run it after adding a topic, a quiz type, a clef or a language:  python3 app/tests/gen_tests.py"""
