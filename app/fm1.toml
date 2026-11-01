@@ -1,0 +1,15 @@
+# THEORY-1's build settings (base/tools/build.py)
+name = "THEORY1"               # the build's files: app/build/theory1.fwsc
+id_prefix = "FM-1_58"          # package identity: dev FM-1_5800, releases FM-1_58XXYYZZ
+usb_manufacturer = "THEORY-1"
+usb_product = "THEORY-1 FM-1"  # "FM-1" in the name: the installers find it
+o2 = ["synth.c"]               # the sound, at -O2
+words = "words.tsv"
+font_full = ["M"]              # lower case in the medium font too: note names (Fa#, Sib) in big type
+ble = true                     # Bluetooth MIDI
+ble_central = true             # and the FM-1 connects to a Bluetooth MIDI keyboard or piano (REC)
+# the site (tools/make_site.py, tools/publish_site.sh)
+tagline = "music theory lessons and quizzes on the FM-1, in four languages"
+repo = "https://github.com/wave00066/theory1"
+licence = "MPL-2.0"
+credits = "Built on fm1-base (Charles Vestal) and felucca-bsp (Leo Kuroshita, Hügelton Instruments)."

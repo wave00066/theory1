@@ -1,0 +1,1641 @@
+# THEORY-1 in the host simulator: every quiz answered right scores 100,
+# a wrong note costs points, the lab names chords, the settings survive a reboot.
+#   base/tools/build.py app --host && app/build/host/theory1_host app/tests/basic.txt OUT_DIR
+wait 900
+expect screen 0
+turn SELECT 1
+tap SEL
+wait 50
+expect screen 3
+expect level 0
+seed 3
+quizof 0
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+shot 30-fine-quiz.png
+expect best0 100
+tap HOME
+wait 50
+expect screen 3
+seed 10
+quizof 1
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 17
+quizof 2
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 24
+quizof 3
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 31
+quizof 4
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 38
+quizof 5
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 45
+quizof 6
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 52
+quizof 7
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 59
+quizof 8
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 66
+quizof 9
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+turn K1 1
+wait 30
+expect level 1
+seed 104
+quizof 0
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 111
+quizof 1
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 118
+quizof 2
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 125
+quizof 3
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 132
+quizof 4
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 139
+quizof 5
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 146
+quizof 6
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 153
+quizof 7
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 160
+quizof 8
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 167
+quizof 9
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+turn K1 1
+wait 30
+expect level 2
+seed 205
+quizof 0
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 212
+quizof 1
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 219
+quizof 2
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 226
+quizof 3
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 233
+quizof 4
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 240
+quizof 5
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 247
+quizof 6
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 254
+quizof 7
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 261
+quizof 8
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 268
+quizof 9
+tap SEL
+wait 200
+expect screen 4
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+solve
+wait 1400
+expect done 1
+wait 2000
+expect screen 5
+expect score 100
+tap HOME
+wait 50
+expect screen 3
+seed 5
+quizof 3
+tap SEL
+wait 200
+wrong
+wait 300
+expect errors 1
+solve
+wait 1400
+expect done 1
+expect score 8
+wait 2000
+expect qnum 2
+tap HOME
+wait 50
+seed 9
+quizof 8
+tap SEL
+wait 300
+shot 31-quiz-orecchio.png
+tap EDIT
+wait 50
+shot 32-quiz-aiuto.png
+wrong
+wait 200
+expect done 2
+expect score 0
+shot 33-quiz-sbagliato.png
+wait 3600
+expect qnum 2
+tap HOME
+wait 50
+seed 3
+quizof 9
+tap SEL
+wait 200
+shot 34-quiz-tonalita.png
+tap HOME
+wait 50
+seed 4
+quizof 6
+turn K1 1
+tap SEL
+wait 200
+shot 35-quiz-gradi.png
+tap HOME
+wait 50
+seed 11
+quizof 2
+tap SEL
+wait 200
+shot 36-quiz-intervallo.png
+tap HOME
+tap HOME
+wait 50
+expect screen 0
+turn SELECT 1
+tap SEL
+wait 50
+expect screen 6
+shot 40-lab-vuoto.png
+key w4 down
+wait 30
+shot 41-lab-nota.png
+key w6 down
+wait 30
+shot 42-lab-intervallo.png
+key w8 down
+wait 30
+shot 43-lab-accordo.png
+expect voices 3
+key w4 up
+key w11 down
+wait 30
+shot 44-lab-rivolto.png
+key w6 up
+key w8 up
+key w11 up
+wait 30
+turn SELECT 1
+key w8 down
+key w10 down
+key w12 down
+wait 30
+shot 45-lab-scala.png
+key b4 down
+wait 30
+shot 46-lab-fuori.png
+key w8 up
+key w10 up
+key w12 up
+key b4 up
+wait 1500
+midi USB 90 3E 64
+midi USB 90 41 64
+midi USB 90 45 64
+midi USB 90 48 64
+wait 50
+shot 47-lab-midi.png
+expect voices 4
+midi USB 80 3E 00
+midi USB 80 41 00
+midi USB 80 45 00
+midi USB 80 48 00
+wait 600
+tap HOME
+wait 50
+turn SELECT 1
+tap SEL
+wait 50
+expect screen 7
+tap SEL
+wait 30
+expect lang 1
+expect dirty 1
+shot 50-impostazioni.png
+tap HOME
+wait 50
+expect dirty 0
+reboot
+wait 900
+expect lang 1
+expect best0 100

@@ -1,0 +1,7107 @@
+# Every lesson page, quiz type and level, the lab and the settings, in every language and two
+# ways of naming notes: no text may run off the screen (app_host_fails).
+wait 900
+lang 0
+names 0
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 1
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 8
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 15
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 14
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 21
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 28
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 27
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 34
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 41
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 40
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 47
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 54
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 53
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 60
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 67
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 66
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 73
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 80
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 79
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 86
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 93
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 92
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 99
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 106
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 105
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 112
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 119
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 118
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 125
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 132
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30
+lang 0
+names 3
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 4
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 11
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 18
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 17
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 24
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 31
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 30
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 37
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 44
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 43
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 50
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 57
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 56
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 63
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 70
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 69
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 76
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 83
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 82
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 89
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 96
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 95
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 102
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 109
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 108
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 115
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 122
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 121
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 128
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 135
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30
+lang 1
+names 0
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 2
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 9
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 16
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 15
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 22
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 29
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 28
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 35
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 42
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 41
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 48
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 55
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 54
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 61
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 68
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 67
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 74
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 81
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 80
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 87
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 94
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 93
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 100
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 107
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 106
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 113
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 120
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 119
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 126
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 133
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30
+lang 1
+names 3
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 5
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 12
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 19
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 18
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 25
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 32
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 31
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 38
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 45
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 44
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 51
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 58
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 57
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 64
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 71
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 70
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 77
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 84
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 83
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 90
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 97
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 96
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 103
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 110
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 109
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 116
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 123
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 122
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 129
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 136
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30
+lang 2
+names 0
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 3
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 10
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 17
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 16
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 23
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 30
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 29
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 36
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 43
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 42
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 49
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 56
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 55
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 62
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 69
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 68
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 75
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 82
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 81
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 88
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 95
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 94
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 101
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 108
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 107
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 114
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 121
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 120
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 127
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 134
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30
+lang 2
+names 3
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 6
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 13
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 20
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 19
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 26
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 33
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 32
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 39
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 46
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 45
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 52
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 59
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 58
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 65
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 72
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 71
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 78
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 85
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 84
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 91
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 98
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 97
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 104
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 111
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 110
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 117
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 124
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 123
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 130
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 137
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30
+lang 3
+names 0
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 4
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 11
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 18
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 17
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 24
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 31
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 30
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 37
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 44
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 43
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 50
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 57
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 56
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 63
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 70
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 69
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 76
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 83
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 82
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 89
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 96
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 95
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 102
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 109
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 108
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 115
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 122
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 121
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 128
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 135
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30
+lang 3
+names 3
+wait 30
+tap SEL
+wait 30
+tap SEL
+wait 30
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn SELECT 1
+wait 20
+turn K1 5
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn SELECT 1
+wait 20
+turn K3 1
+turn K2 1
+wait 20
+turn K3 1
+wait 20
+turn ALGO 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn SELECT 1
+wait 20
+turn ALGO 1
+wait 20
+tap HOME
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+seed 7
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 14
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 21
+quizof 0
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 20
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 27
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 34
+quizof 1
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 33
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 40
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 47
+quizof 2
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 46
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 53
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 60
+quizof 3
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 59
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 66
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 73
+quizof 4
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 72
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 79
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 86
+quizof 5
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 85
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 92
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 99
+quizof 6
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 98
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 105
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 112
+quizof 7
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 111
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 118
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 125
+quizof 8
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 124
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 131
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+seed 138
+quizof 9
+tap SEL
+wait 100
+wrong
+wait 200
+solve
+wait 1300
+tap HOME
+wait 30
+turn K1 1
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+turn SELECT 1
+key w4 down
+key w6 down
+key w8 down
+key b2 down
+wait 20
+key w4 up
+key w6 up
+key w8 up
+key b2 up
+key b4 down
+wait 20
+key b4 up
+wait 20
+tap HOME
+wait 30
+turn SELECT 1
+tap SEL
+wait 30
+turn SELECT 6
+wait 30
+tap HOME
+wait 30
+turn SELECT 1
+wait 30

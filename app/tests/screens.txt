@@ -1,0 +1,120 @@
+# THEORY-1's screens: base/tools/build.py app --host, then
+#   app/build/host/theory1_host app/tests/screens.txt OUT_DIR
+# (the language: "lang N" first, 0 Italian, 1 English, 2 Spanish, 3 German)
+wait 900
+shot 01-menu.png
+tap SEL
+wait 50
+shot 02-lezioni.png
+tap SEL
+wait 50
+turn SELECT 1
+wait 50
+shot 03-basi.png
+turn ALGO 1
+turn SELECT 4
+turn K1 3
+wait 50
+shot 04-intervallo.png
+turn ALGO 1
+turn K1 3
+wait 50
+shot 05-scala.png
+turn SELECT 2
+turn K1 8
+wait 50
+shot 06-scala-armonica.png
+turn SELECT 6
+turn K1 -11
+wait 50
+shot 07-cromatica.png
+turn ALGO 1
+turn SELECT 1
+turn K1 -3
+wait 50
+shot 08-modo.png
+turn ALGO 1
+turn SELECT 7
+turn K1 10
+wait 50
+shot 09-accordo.png
+turn ALGO 1
+turn K2 4
+wait 50
+shot 10-armonia.png
+turn K3 1
+turn SELECT 2
+turn K1 13
+turn K2 -2
+wait 50
+shot 11-armonia-armonica.png
+turn ALGO 1
+turn SELECT 4
+wait 50
+shot 12-tonalita.png
+turn SELECT 6
+wait 50
+shot 13-tonalita-bemolli.png
+tap HOME
+tap HOME
+wait 50
+turn SELECT 1
+tap SEL
+wait 50
+shot 14-quiz-menu.png
+seed 7
+quizof 3
+turn K1 1
+tap SEL
+wait 300
+wrong
+wait 300
+solve
+wait 250
+shot 15-quiz-scala.png
+wait 1500
+shot 16-quiz-giusto.png
+tap HOME
+seed 9
+quizof 8
+tap SEL
+wait 300
+tap EDIT
+wrong
+wait 200
+shot 17-quiz-orecchio.png
+tap HOME
+seed 3
+quizof 9
+tap SEL
+wait 200
+shot 18-quiz-tonalita.png
+tap HOME
+tap HOME
+wait 50
+turn SELECT 1
+tap SEL
+wait 50
+key w4 down
+key w6 down
+key w8 down
+wait 30
+shot 19-lab-accordo.png
+key w4 up
+key w11 down
+turn SELECT 1
+wait 30
+shot 20-lab-rivolto.png
+key w6 up
+key w8 up
+key w11 up
+key b3 down
+wait 30
+shot 21-lab-nota.png
+key b3 up
+tap HOME
+wait 50
+turn SELECT 1
+tap SEL
+wait 50
+shot 22-impostazioni.png
