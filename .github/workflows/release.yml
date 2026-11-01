@@ -17,6 +17,8 @@ name: Build and attest firmware
 on:
   push:
     tags: ['v[0-9]*']
+    branches: ['main']        # every push to main builds theory1.fwsc too (an artifact, no release)
+    paths-ignore: ['**.md', 'docs/**']
   workflow_dispatch:
 
 permissions:
