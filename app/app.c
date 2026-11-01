@@ -29,33 +29,33 @@ typedef struct {
     uint8_t best[NQT];                   /* each quiz's record, 0..100 */
     uint8_t rsv[6];
 } settings_t;
-static settings_t set;
+static settings_t cfg;
 static uint8_t set_dirty;
 
 static void settings_defaults(void)
 {
     uint32_t i;
-    uint8_t *p = (uint8_t *)&set;
-    for (i = 0; i < sizeof set; i++)
+    uint8_t *p = (uint8_t *)&cfg;
+    for (i = 0; i < sizeof cfg; i++)
         p[i] = 0;
-    set.magic = SET_MAGIC;
-    set.speed = 1;
+    cfg.magic = SET_MAGIC;
+    cfg.speed = 1;
 }
 
-int theory_ble_off(void) { return set.ble_off; }
+int theory_ble_off(void) { return cfg.ble_off; }
 
 static void settings_apply(void)
 {
-    th_names = set.names;
-    th_ui = set.ui;
-    synth_sound(set.sound);
+    th_names = cfg.names;
+    th_ui = cfg.ui;
+    synth_sound(cfg.sound);
 }
 
 static void settings_save(void)
 {
     if (!set_dirty)
         return;
-    if (plat_store_save(OBJ_SETTINGS, &set, sizeof set) == 0)
+    if (plat_store_save(OBJ_SETTINGS, &cfg, sizeof cfg) == 0)
         set_dirty = 0;
 }
 
@@ -107,7 +107,7 @@ static void play_note(uint32_t at, int note, uint32_t dur, int vel)
     play_ev(at + dur, note, 0, 0);
 }
 
-static uint32_t step_ms(void) { return set.speed == 0 ? 520u : set.speed == 1 ? 360u : 240u; }
+static uint32_t step_ms(void) { return cfg.speed == 0 ? 520u : cfg.speed == 1 ? 360u : 240u; }
 
 static void play_tick(void)
 {
@@ -234,13 +234,13 @@ static struct {
     char fb[64];                         /* the feedback line */
     uint16_t fb_col;
 } q;
-static uint32_t rng = 0x12345678u;
+static uint32_t t1_rng = 0x12345678u;
 static uint32_t rnd(uint32_t n)
 {
-    rng ^= rng << 13;
-    rng ^= rng >> 17;
-    rng ^= rng << 5;
-    return n ? rng % n : 0;
+    t1_rng ^= t1_rng << 13;
+    t1_rng ^= t1_rng >> 17;
+    t1_rng ^= t1_rng << 5;
+    return n ? t1_rng % n : 0;
 }
 
 /* ============================================================ text helpers === */
@@ -267,7 +267,7 @@ static void int_str(char *b, int v)
     cat_int(b, v);
 }
 
-static int bits(uint32_t m)                  /* set bits (no compiler builtin: the chip's runtime may lack one) */
+static int t1_bits(uint32_t m)                  /* set bits (no compiler builtin: the chip's runtime may lack one) */
 {
     int n = 0;
     for (; m; m &= m - 1u)
@@ -275,13 +275,13 @@ static int bits(uint32_t m)                  /* set bits (no compiler builtin: t
     return n;
 }
 
-static void str_cpy(char *d, const char *s)
+static void t1_strcpy(char *d, const char *s)
 {
     d[0] = 0;
     str_cat(d, s);
 }
 
-static int str_eq(const char *a, const char *b)
+static int t1_streq(const char *a, const char *b)
 {
     while (*a && *a == *b)
         a++, b++;
@@ -289,7 +289,7 @@ static int str_eq(const char *a, const char *b)
 }
 
 /* capitals for a header, accented letters too (UTF-8 C3 A0..BE -> C3 80..9E) */
-static void upper(char *d, const char *s)
+static void t1_upper(char *d, const char *s)
 {
     for (; *s; s++, d++) {
         uint8_t c = (uint8_t)*s;
@@ -378,7 +378,7 @@ static void glyph_rows(int32_t x, int32_t y, const felucca_font_t *f, uint32_t c
 }
 
 /* a mark above the ink at row top, centred on cx; k the size (1, or 2 in the big font) */
-static void mark(int32_t cx, int32_t top, int m, int32_t k, uint16_t c)
+static void t1_mark(int32_t cx, int32_t top, int m, int32_t k, uint16_t c)
 {
     static const int8_t DOT[7][10] = {
         {0},
@@ -404,7 +404,7 @@ static void mark(int32_t cx, int32_t top, int m, int32_t k, uint16_t c)
 }
 
 /* draws (draw 1) or measures (draw 0) text; returns the end x, or the width */
-static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *s, uint16_t c, int draw)
+static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *s, uint16_t c, int ui_draw)
 {
     int32_t x0 = x, k = f->h >= 22 ? 2 : 1;
     char one[2] = {0, 0};
@@ -412,19 +412,19 @@ static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *
         uint32_t cp = u8next(&s);
         if (cp == 1u || cp == 2u || cp == 0xB0u) {   /* a small circle, raised; crossed for '\x02' */
             int32_t r = f->h >= 15 ? 3 : 2, cx = x + r + 1, cy = y + r + 1, dx, dy;
-            for (dy = -r; draw && dy <= r; dy++)
+            for (dy = -r; ui_draw && dy <= r; dy++)
                 for (dx = -r; dx <= r; dx++) {
                     int32_t d2 = dx * dx + dy * dy;
                     if (d2 <= r * r + r && d2 >= (r - 1) * (r - 1))
                         cv_pset(cx + dx, cy + dy, c);
                 }
-            if (draw && cp == 2u)
+            if (ui_draw && cp == 2u)
                 cv_line(cx - r - 1, cy + r + 1, cx + r + 1, cy - r - 1, c);
             x += 2 * r + 3;
             continue;
         }
         if (cp == 0xDFu) {                            /* the sharp s: ss */
-            x = draw ? cv_text(x, y, f, "ss", c) : x + text_w(f, "ss");
+            x = ui_draw ? cv_text(x, y, f, "ss", c) : x + text_w(f, "ss");
             continue;
         }
         if (cp >= 0xC0u && cp <= 0xFFu) {             /* an accented letter */
@@ -432,7 +432,7 @@ static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *
             int m = LAT_MARK[i];
             one[0] = LAT_BASE[i];
             gi = glyph(f, (uint8_t)one[0]);
-            if (draw) {
+            if (ui_draw) {
                 int32_t top;
                 if ((one[0] == 'i') && m && f->last >= 'a') {
                     top = ink_top(f, 'x');
@@ -442,7 +442,7 @@ static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *
                     top = ink_top(f, (uint8_t)one[0]);
                 }
                 if (m && y + top - 3 * k >= y - 1)
-                    mark(x - f->pad + (int32_t)f->bw[gi] / 2, y + top, m, k, c);
+                    t1_mark(x - f->pad + (int32_t)f->bw[gi] / 2, y + top, m, k, c);
             }
             x += text_w(f, one);
             continue;
@@ -450,31 +450,31 @@ static int32_t tx_do(int32_t x, int32_t y, const felucca_font_t *f, const char *
         if (cp >= 0x80u)                              /* other marks (inverted ? and !): left out */
             continue;
         one[0] = (char)cp;
-        x = draw ? cv_text(x, y, f, one, c) : x + text_w(f, one);
+        x = ui_draw ? cv_text(x, y, f, one, c) : x + text_w(f, one);
     }
-    return draw ? x : x - x0;
+    return ui_draw ? x : x - x0;
 }
 static int cut_count;
 static void text_cut(const char *s);
-static int32_t tx(int32_t x, int32_t y, const felucca_font_t *f, const char *s, uint16_t c)
+static int32_t t1_tx(int32_t x, int32_t y, const felucca_font_t *f, const char *s, uint16_t c)
 {
     int32_t e = tx_do(x, y, f, s, c, 1);
     if (e > 240 || x < 0)
         text_cut(s);
     return e;
 }
-static int32_t tw(const felucca_font_t *f, const char *s) { return tx_do(0, 0, f, s, 0, 0); }
+static int32_t t1_tw(const felucca_font_t *f, const char *s) { return tx_do(0, 0, f, s, 0, 0); }
 
-static void text_c(int32_t y, const felucca_font_t *f, const char *s, uint16_t c) { tx((240 - tw(f, s)) / 2, y, f, s, c); }
+static void text_c(int32_t y, const felucca_font_t *f, const char *s, uint16_t c) { t1_tx((240 - t1_tw(f, s)) / 2, y, f, s, c); }
 static void text_r(int32_t xr, int32_t y, const felucca_font_t *f, const char *s, uint16_t c)
 {
-    tx(xr - tw(f, s), y, f, s, c);
+    t1_tx(xr - t1_tw(f, s), y, f, s, c);
 }
 
 /* words wrapped into width w (draw 0: only measured); returns the y after the last line, ymax + 999 if it did not
  * all fit */
 static int32_t wrap_do(int32_t x, int32_t y, int32_t w, const felucca_font_t *f, const char *s, uint16_t c,
-                       int32_t lh, int32_t ymax, int draw)
+                       int32_t lh, int32_t ymax, int ui_draw)
 {
     char line[120], word[48], t[170];
     int ln = 0;
@@ -488,28 +488,28 @@ static int32_t wrap_do(int32_t x, int32_t y, int32_t w, const felucca_font_t *f,
         word[wn] = 0;
         if (!wn)
             break;
-        str_cpy(t, line);
+        t1_strcpy(t, line);
         if (ln)
             str_cat(t, " ");
         str_cat(t, word);
-        if (ln && (tw(f, t) > w || ln + wn + 1 > 118)) {
+        if (ln && (t1_tw(f, t) > w || ln + wn + 1 > 118)) {
             if (y + lh > ymax + 2)
                 return ymax + 999;
-            if (draw)
-                tx(x, y, f, line, c);
+            if (ui_draw)
+                t1_tx(x, y, f, line, c);
             y += lh;
-            str_cpy(line, word);
+            t1_strcpy(line, word);
             ln = wn;
         } else {
-            str_cpy(line, t);
+            t1_strcpy(line, t);
             ln = ln + (ln ? 1 : 0) + wn;
         }
     }
     if (ln) {
         if (y + lh > ymax + 2)
             return ymax + 999;
-        if (draw)
-            tx(x, y, f, line, c);
+        if (ui_draw)
+            t1_tx(x, y, f, line, c);
         y += lh;
     }
     return y;
@@ -543,40 +543,40 @@ static void para(int32_t x, int32_t y, int32_t w, const char *s, uint16_t c, int
 /* the biggest of M, B and XS that fits */
 static const felucca_font_t *fit_font(const char *s, int32_t w)
 {
-    return tw(&FONT_M, s) <= w ? &FONT_M : tw(&FONT_B, s) <= w ? &FONT_B : &FONT_XS;
+    return t1_tw(&FONT_M, s) <= w ? &FONT_M : t1_tw(&FONT_B, s) <= w ? &FONT_B : &FONT_XS;
 }
 
 /* a box with a note in it, and its letter name under it when that is shown */
 static void note_box(int32_t x, int32_t y, int32_t w, int32_t h, const char *s, const char *sub, uint16_t bg,
                      uint16_t fg, uint16_t border)
 {
-    const felucca_font_t *f = tw(&FONT_B, s) <= w - 2 ? &FONT_B : &FONT_XS;
+    const felucca_font_t *f = t1_tw(&FONT_B, s) <= w - 2 ? &FONT_B : &FONT_XS;
     cv_rect(x, y, w, h, border);
     cv_rect(x + 1, y + 1, w - 2, h - 2, bg);
     if (sub && sub[0] && h >= 30) {
-        tx(x + (w - tw(f, s)) / 2, y + 2, f, s, fg);
-        tx(x + (w - tw(&FONT_XS, sub)) / 2, y + h - 15, &FONT_XS, sub, COL_ALT);
+        t1_tx(x + (w - t1_tw(f, s)) / 2, y + 2, f, s, fg);
+        t1_tx(x + (w - t1_tw(&FONT_XS, sub)) / 2, y + h - 15, &FONT_XS, sub, COL_ALT);
     } else {
-        tx(x + (w - tw(f, s)) / 2, y + (h - (int32_t)f->h) / 2, f, s, fg);
+        t1_tx(x + (w - t1_tw(f, s)) / 2, y + (h - (int32_t)f->h) / 2, f, s, fg);
     }
 }
 static int32_t box_h(void) { return th_names == NAMES_BOTH ? 34 : 24; }
 
 /* the header: a title, a value on the right */
-static void header(const char *title, const char *right, uint16_t rc)
+static void ui_header(const char *title, const char *right, uint16_t rc)
 {
     char t[64];
     if (plat_ms() < ui.msg_until) {         /* a message for a moment */
-        int32_t x = tx(8, 4, &FONT_B, ui.msg[0], C_WHITE);
-        tx(x + 8, 4, &FONT_B, ui.msg[1], C_HI);
+        int32_t x = t1_tx(8, 4, &FONT_B, ui.msg[0], C_WHITE);
+        t1_tx(x + 8, 4, &FONT_B, ui.msg[1], C_HI);
     } else {
         int32_t x;
-        upper(t, title);
-        x = tx(8, 4, &FONT_B, t, C_WHITE);
+        t1_upper(t, title);
+        x = t1_tx(8, 4, &FONT_B, t, C_WHITE);
         if (FM1B_BLE_CENTRAL && plat_ble_device() == BLE_DEV_READY)
-            x = tx(x + 6, 7, &FONT_T, "BT", COL_SCALE);
+            x = t1_tx(x + 6, 7, &FONT_T, "BT", COL_SCALE);
         if (right)
-            text_r(232, tw(&FONT_B, right) <= 224 - x ? 4 : 7, tw(&FONT_B, right) <= 224 - x ? &FONT_B : &FONT_XS,
+            text_r(232, t1_tw(&FONT_B, right) <= 224 - x ? 4 : 7, t1_tw(&FONT_B, right) <= 224 - x ? &FONT_B : &FONT_XS,
                    right, rc);
     }
     cv_rect(0, 24, 240, 1, C_LINE);
@@ -588,7 +588,7 @@ static void hint(const char *s) { text_c(188, &FONT_T, s, C_GRAY); }
 static struct {
     uint16_t scale, root, ok, bad, hint;
 } mk;
-static void keyboard(void)
+static void ui_keyboard(void)
 {
     static const uint8_t WK[16] = PLAT_WHITE_KEYS, BK[11] = PLAT_BLACK_KEYS;
     static const uint8_t AT[11] = {0, 1, 2, 4, 5, 7, 8, 9, 11, 12, 14};
@@ -635,7 +635,7 @@ static void keyboard(void)
 
 /* the LEDs follow the footer: bright the root, the right and held notes; dim the scale and the hint */
 static uint32_t btn_live;                    /* the buttons that do something here: they glow */
-static void lights(void)
+static void ui_lights(void)
 {
     uint32_t bright = 0, dim = 0, mid = 0, k;
     for (k = 0; k < NKEYS; k++) {
@@ -659,28 +659,28 @@ static void draw_menu(void)
     const int names[4] = {S_M_LESSONS, S_M_QUIZ, S_M_LAB, S_M_SETTINGS};
     const int subs[4] = {S_M_LESSONS_SUB, S_M_QUIZ_SUB, S_M_LAB_SUB, S_M_SETTINGS_SUB};
     int i;
-    header("THEORY-1", S(S_TAGLINE), C_GRAY);
+    ui_header("THEORY-1", S(S_TAGLINE), C_GRAY);
     for (i = 0; i < 4; i++) {
         int32_t y = 30 + i * 39, sel = i == ui.menu;
         cv_rect(4, y, 232, 36, sel ? COL_SELBG : COL_PANEL);
         cv_rect(4, y, 4, 36, COL[i]);
-        tx(16, y + 1, &FONT_M, S(names[i]), sel ? C_WHITE : C_GRAY);
-        tx(16, y + 22, &FONT_XS, S(subs[i]), sel ? C_HI : C_DIM);
+        t1_tx(16, y + 1, &FONT_M, S(names[i]), sel ? C_WHITE : C_GRAY);
+        t1_tx(16, y + 22, &FONT_XS, S(subs[i]), sel ? C_HI : C_DIM);
     }
     hint(S(S_H_MENU));
     mk.scale = WHITE_PCS;
-    mk.root = PC(0);
+    mk.root = PCB(0);
 }
 
 static void draw_topics(void)
 {
     int i;
-    header(S(S_M_LESSONS), 0, 0);
+    ui_header(S(S_M_LESSONS), 0, 0);
     for (i = 0; i < NTOPICS; i++) {
         int32_t y = 29 + i * 22, sel = i == ui.topic_sel;
         if (sel)
             cv_rect(4, y, 232, 21, COL_SELBG);
-        tx(10, y + 2, &FONT_B, TOPIC_NAME[th_ui][i], sel ? C_WHITE : C_HI);
+        t1_tx(10, y + 2, &FONT_B, TOPIC_NAME[th_ui][i], sel ? C_WHITE : C_HI);
         text_r(230, y + 4, &FONT_XS, TOPIC_SUB[th_ui][i], sel ? C_HI : C_GRAY);
     }
     hint(S(S_H_TOPICS));
@@ -702,7 +702,7 @@ static void note_row(int32_t y, const nt_t *n, int count, const char *const *lab
         note_alt(n[i], a);
         note_box(x, yy, w, bh, t, a, bg, C_WHITE, i == 0 && root_box ? COL_ROOT : C_LINE);
         if (labels && labels[i])
-            tx(x + (w - tw(&FONT_XS, labels[i])) / 2, yy + bh + 1, &FONT_XS, labels[i], C_GRAY);
+            t1_tx(x + (w - t1_tw(&FONT_XS, labels[i])) / 2, yy + bh + 1, &FONT_XS, labels[i], C_GRAY);
     }
 }
 
@@ -733,13 +733,13 @@ static void draw_scale_like(const scale_t *s, nt_t root, const char *title, int 
     uint16_t m = 0;
     for (i = 0; i < s->n; i++) {
         n[i] = scale_note(s, root, i);
-        m |= (uint16_t)PC(pc_of(n[i]));
+        m |= (uint16_t)PCB(pc_of(n[i]));
     }
-    tx(8, 29, fit_font(title, 224), title, C_WHITE);
+    t1_tx(8, 29, fit_font(title, 224), title, C_WHITE);
     if (s->n == 12) {
         note_row(56, n, 12, 0, -1, 0, 1);
         y = 56 + 2 * (box_h() + 4);
-        tx(8, y, &FONT_XS, S(S_CHROM_STEPS), C_HI);
+        t1_tx(8, y, &FONT_XS, S(S_CHROM_STEPS), C_HI);
         y += 14;
     } else {
         degree_labels(s, deg);
@@ -747,9 +747,9 @@ static void draw_scale_like(const scale_t *s, nt_t root, const char *title, int 
         note_row(56, n, s->n, lab, char_deg, RGB(150, 70, 10), char_deg < 0);
         y = 56 + box_h() + 15;
         scale_steps(s, steps);
-        str_cpy(t, S(S_STEPS));
+        t1_strcpy(t, S(S_STEPS));
         str_cat(t, steps);
-        tx(8, y, &FONT_XS, t, C_HI);
+        t1_tx(8, y, &FONT_XS, t, C_HI);
         y += 13;
     }
     if (extra) {
@@ -757,7 +757,7 @@ static void draw_scale_like(const scale_t *s, nt_t root, const char *title, int 
     }
     para(8, y + 2, 226, TR(s->text), C_GRAY, 184);
     mk.scale = m;
-    mk.root = (uint16_t)PC(pc_of(root));
+    mk.root = (uint16_t)PCB(pc_of(root));
 }
 
 static void draw_lesson(void)
@@ -765,7 +765,7 @@ static void draw_lesson(void)
     char t[96], r[48], u[96], v[32];
     int it = ui.item[ui.topic];
     nt_t root = ROOTS[ui.root[ui.topic]];
-    str_cpy(r, TOPIC_NAME[th_ui][ui.topic]);
+    t1_strcpy(r, TOPIC_NAME[th_ui][ui.topic]);
     str_cat(r, " ");
     cat_int(r, it + 1);
     str_cat(r, "/");
@@ -773,8 +773,8 @@ static void draw_lesson(void)
     switch (ui.topic) {
     case T_BASICS: {
         const page_t *p = &BASICS[it];
-        header(TOPIC_NAME[th_ui][T_BASICS], r, C_GRAY);
-        tx(8, 29, fit_font(TR(p->title), 224), TR(p->title), C_WHITE);
+        ui_header(TOPIC_NAME[th_ui][T_BASICS], r, C_GRAY);
+        t1_tx(8, 29, fit_font(TR(p->title), 224), TR(p->title), C_WHITE);
         para(8, 60, 226, TR(p->text), C_HI, 184);
         mk.scale = p->mask;
         mk.root = p->root;
@@ -785,8 +785,8 @@ static void draw_lesson(void)
         const interval_t *iv = &INTERVALS[it];
         nt_t top = interval_top(root, it);
         int32_t i, x;
-        header(TOPIC_NAME[th_ui][T_INTERVALS], r, C_GRAY);
-        tx(8, 29, fit_font(TR(iv->name), 150), TR(iv->name), C_WHITE);
+        ui_header(TOPIC_NAME[th_ui][T_INTERVALS], r, C_GRAY);
+        t1_tx(8, 29, fit_font(TR(iv->name), 150), TR(iv->name), C_WHITE);
         int_str(t, iv->semis);
         str_cat(t, " ");
         str_cat(t, S(iv->semis == 1 ? S_SEMITONE : S_SEMITONES));
@@ -803,14 +803,14 @@ static void draw_lesson(void)
             str_cat(t, " ");
             str_cat(t, S(S_ABOVE));
         }
-        tx(8, 80, fit_font(t, 226) == &FONT_M ? &FONT_B : fit_font(t, 226), t, C_WHITE);
-        str_cpy(t, S(S_SYMBOL));
+        t1_tx(8, 80, fit_font(t, 226) == &FONT_M ? &FONT_B : fit_font(t, 226), t, C_WHITE);
+        t1_strcpy(t, S(S_SYMBOL));
         str_cat(t, ": ");
         str_cat(t, iv->abbr);
-        tx(8, 98, &FONT_XS, t, C_GRAY);
+        t1_tx(8, 98, &FONT_XS, t, C_GRAY);
         para(8, 114, 226, TR(iv->text), C_GRAY, 184);
-        mk.root = (uint16_t)PC(pc_of(root));
-        mk.ok = (uint16_t)PC(pc_of(top));
+        mk.root = (uint16_t)PCB(pc_of(root));
+        mk.ok = (uint16_t)PCB(pc_of(top));
         hint(S(S_H_INTERVALS));
         break;
     }
@@ -818,7 +818,7 @@ static void draw_lesson(void)
         note_full(root, t);
         str_cat(t, " ");
         str_cat(t, TR(SCALES[it].name));
-        header(TOPIC_NAME[th_ui][T_SCALES], r, C_GRAY);
+        ui_header(TOPIC_NAME[th_ui][T_SCALES], r, C_GRAY);
         draw_scale_like(&SCALES[it], root, t, -1, 0);
         hint(S(S_H_SCALES));
         break;
@@ -832,11 +832,11 @@ static void draw_lesson(void)
         note_full(root, t);
         str_cat(t, " ");
         str_cat(t, TR(MODES[it].name));
-        header(TOPIC_NAME[th_ui][T_MODES], r, C_GRAY);
+        ui_header(TOPIC_NAME[th_ui][T_MODES], r, C_GRAY);
         note_name(par, a);
         note_name(root, b);
         note_name(ch, v);
-        fmt(u, S(S_MODE_PARENT), a, b, v);
+        t1_fmt(u, S(S_MODE_PARENT), a, b, v);
         draw_scale_like(&s, root, t, MODES[it].ch, u);
         hint(S(S_H_MODES));
         break;
@@ -848,14 +848,14 @@ static void draw_lesson(void)
         const char *lab[4];
         int i;
         uint16_t m = 0;
-        header(TOPIC_NAME[th_ui][T_CHORDS], r, C_GRAY);
+        ui_header(TOPIC_NAME[th_ui][T_CHORDS], r, C_GRAY);
         chord_name(it, root, t);
-        tx(8, 29, fit_font(t, 226), t, C_WHITE);
+        t1_tx(8, 29, fit_font(t, 226), t, C_WHITE);
         for (i = 0; i < c->n; i++) {
             n[i] = chord_note(it, root, i);
-            m |= (uint16_t)PC(pc_of(n[i]));
+            m |= (uint16_t)PCB(pc_of(n[i]));
         }
-        str_cpy(f, c->formula);
+        t1_strcpy(f, c->formula);
         split_labels(f, lab, 4);
         note_row(56, n, c->n, lab, -1, 0, 1);
         v[0] = 0;
@@ -864,13 +864,13 @@ static void draw_lesson(void)
                 str_cat(v, " + ");
             cat_int(v, c->semi[i] - c->semi[i - 1]);
         }
-        fmt(t, S(S_STRUCTURE), v, 0, 0);
-        tx(8, 56 + box_h() + 16, &FONT_XS, t, C_HI);
+        t1_fmt(t, S(S_STRUCTURE), v, 0, 0);
+        t1_tx(8, 56 + box_h() + 16, &FONT_XS, t, C_HI);
         chord_symbol(it, root, u);
         text_r(232, 56 + box_h() + 13, &FONT_B, u, COL_ROOT);
         para(8, 56 + box_h() + 32, 226, TR(c->text), C_GRAY, 184);
         mk.scale = m;
-        mk.root = (uint16_t)PC(pc_of(root));
+        mk.root = (uint16_t)PCB(pc_of(root));
         hint(S(S_H_CHORDS));
         break;
     }
@@ -882,7 +882,7 @@ static void draw_lesson(void)
         note_name(root, t);
         str_cat(t, " ");
         str_cat(t, TR(s.name));
-        header(TOPIC_NAME[th_ui][T_HARMONY], t, COL_ROOT);
+        ui_header(TOPIC_NAME[th_ui][T_HARMONY], t, COL_ROOT);
         for (d = 0; d < 7; d++) {
             int ty = degree_chord(&s, d, n), i, sel = d == ui.hdeg;
             int32_t y = 28 + d * 18;
@@ -890,41 +890,41 @@ static void draw_lesson(void)
             if (sel)
                 cv_rect(2, y, 236, 18, COL_SELBG);
             roman(d, ty, u);
-            tx(8, y + 1, &FONT_B, u, sel ? C_WHITE : C_HI);
+            t1_tx(8, y + 1, &FONT_B, u, sel ? C_WHITE : C_HI);
             if (ty >= 0) {
                 chord_symbol(ty, cr, u);
-                tx(78, y + 1, &FONT_B, u, sel ? COL_ROOT : C_WHITE);
+                t1_tx(78, y + 1, &FONT_B, u, sel ? COL_ROOT : C_WHITE);
                 for (i = 0; i < n; i++)
                     cn[i] = chord_note(ty, cr, i);
                 notes_text(cn, n, u);
-                tx(150, y + 3, &FONT_XS, u, sel ? C_WHITE : C_GRAY);
+                t1_tx(150, y + 3, &FONT_XS, u, sel ? C_WHITE : C_GRAY);
                 if (sel)
                     for (i = 0; i < n; i++)
-                        m |= (uint16_t)PC(pc_of(cn[i]));
+                        m |= (uint16_t)PCB(pc_of(cn[i]));
             }
         }
         {                                    /* the chosen degree: its name and its function */
             nt_t cr = scale_note(&s, root, ui.hdeg);
             int ty = degree_chord(&s, ui.hdeg, n);
-            str_cpy(t, degree_name(&s, ui.hdeg));
+            t1_strcpy(t, degree_name(&s, ui.hdeg));
             str_cat(t, ": ");
             if (ty >= 0) {
                 chord_name(ty, cr, u);
                 str_cat(t, u);
-                if (tw(&FONT_XS, t) > 226) {     /* a long name: the symbol instead */
-                    str_cpy(t, degree_name(&s, ui.hdeg));
+                if (t1_tw(&FONT_XS, t) > 226) {     /* a long name: the symbol instead */
+                    t1_strcpy(t, degree_name(&s, ui.hdeg));
                     str_cat(t, ": ");
                     chord_symbol(ty, cr, u);
                     str_cat(t, u);
                 }
             }
-            tx(8, 156, &FONT_XS, t, C_WHITE);
+            t1_tx(8, 156, &FONT_XS, t, C_WHITE);
             if (it < 4)
-                fmt(t, S(S_FUNCTION), FN_NAME[th_ui][degree_fn(ui.hdeg)], 0, 0);
+                t1_fmt(t, S(S_FUNCTION), FN_NAME[th_ui][degree_fn(ui.hdeg)], 0, 0);
             else
-                str_cpy(t, S(S_MODE_CHORDS));
-            tx(8, 170, &FONT_XS, t, C_HI);
-            mk.root = (uint16_t)PC(pc_of(cr));
+                t1_strcpy(t, S(S_MODE_CHORDS));
+            t1_tx(8, 170, &FONT_XS, t, C_HI);
+            mk.root = (uint16_t)PCB(pc_of(cr));
         }
         mk.scale = m;
         hint(S(ui.hseventh ? S_H_HARMONY4 : S_H_HARMONY3));
@@ -938,7 +938,7 @@ static void draw_lesson(void)
         int pos = k->count >= 0 ? k->count % 12 : (12 + k->count) % 12, i, n = k->count < 0 ? -k->count : k->count;
         int32_t cx = 60, cy = 96, rr = 46;
         nt_t rel = relative_minor(k->root);
-        header(TOPIC_NAME[th_ui][T_KEYS], r, C_GRAY);
+        ui_header(TOPIC_NAME[th_ui][T_KEYS], r, C_GRAY);
         for (i = 0; i < 12; i++)             /* the circle: a 12-gon is near enough at this size */
             cv_line(cx + CS[i] * rr / 100, cy - CS[(i + 3) % 12] * rr / 100, cx + CS[(i + 1) % 12] * rr / 100,
                     cy - CS[(i + 4) % 12] * rr / 100, C_LINE);
@@ -953,30 +953,30 @@ static void draw_lesson(void)
                         if (dx * dx * 121 + dy * dy * 225 <= 121 * 225)
                             cv_pset(x + dx, y + dy, COL_ROOT);
             }
-            tx(x - tw(&FONT_T, lab) / 2, y - 5, &FONT_T, lab, i == pos ? C_BLACK : C_WHITE);
+            t1_tx(x - t1_tw(&FONT_T, lab) / 2, y - 5, &FONT_T, lab, i == pos ? C_BLACK : C_WHITE);
         }
-        tx(cx - tw(&FONT_T, S(S_FIFTHS)) / 2, cy - 5, &FONT_T, S(S_FIFTHS), C_DIM);
+        t1_tx(cx - t1_tw(&FONT_T, S(S_FIFTHS)) / 2, cy - 5, &FONT_T, S(S_FIFTHS), C_DIM);
         note_full(k->root, u);
-        fmt(t, S(S_KEY_MAJ), u, 0, 0);
-        tx(124, 29, tw(&FONT_B, t) <= 112 ? &FONT_B : &FONT_XS, t, C_WHITE);
+        t1_fmt(t, S(S_KEY_MAJ), u, 0, 0);
+        t1_tx(124, 29, t1_tw(&FONT_B, t) <= 112 ? &FONT_B : &FONT_XS, t, C_WHITE);
         if (n == 0)
-            str_cpy(t, S(S_NO_ALT));
+            t1_strcpy(t, S(S_NO_ALT));
         else {
             int_str(t, n);
             str_cat(t, " ");
             str_cat(t, S(k->count > 0 ? (n == 1 ? S_SHARP_1 : S_SHARP_N) : (n == 1 ? S_FLAT_1 : S_FLAT_N)));
         }
-        tx(124, 48, tw(&FONT_B, t) <= 112 ? &FONT_B : &FONT_XS, t,
+        t1_tx(124, 48, t1_tw(&FONT_B, t) <= 112 ? &FONT_B : &FONT_XS, t,
            k->count > 0 ? COL_ROOT : k->count < 0 ? COL_SCALE : C_HI);
         key_alterations(k->count, u);
         text_wrap(124, 66, 112, &FONT_XS, u, C_HI, 13, 108);
         note_full(rel, u);
-        fmt(t, S(S_RELATIVE), u, 0, 0);
+        t1_fmt(t, S(S_RELATIVE), u, 0, 0);
         text_wrap(124, text_wrap(124, 108, 112, &FONT_XS, t, C_WHITE, 13, 134) + 3, 112, &FONT_XS,
                   S(k->count >= 0 ? S_CW : S_CCW), C_GRAY, 13, 184);
         {                                    /* the order of the sharps or the flats */
             char nn[8];
-            str_cpy(t, S(k->count >= 0 ? S_SHARPS : S_FLATS));
+            t1_strcpy(t, S(k->count >= 0 ? S_SHARPS : S_FLATS));
             for (i = 0; i < 7; i++) {
                 str_cat(t, " ");
                 note_name(k->count >= 0 ? SHARP_ORDER[i] : FLAT_ORDER[i], nn);
@@ -988,9 +988,9 @@ static void draw_lesson(void)
             int j;
             uint16_t m = 0;
             for (j = 0; j < 7; j++)
-                m |= (uint16_t)PC(pc_of(scale_note(&SCALES[SC_MAJOR], k->root, j)));
+                m |= (uint16_t)PCB(pc_of(scale_note(&SCALES[SC_MAJOR], k->root, j)));
             mk.scale = m;
-            mk.root = (uint16_t)PC(pc_of(k->root));
+            mk.root = (uint16_t)PCB(pc_of(k->root));
         }
         hint(S(S_H_KEYS));
         break;
@@ -1005,32 +1005,32 @@ static void draw_qsetup(void)
 {
     int i;
     char t[16];
-    header(S(S_M_QUIZ), S(S_RECORD), C_GRAY);
+    ui_header(S(S_M_QUIZ), S(S_RECORD), C_GRAY);
     for (i = 0; i < NQT; i++) {
         int32_t y = 28 + i * 14, sel = i == ui.qsel;
         if (sel)
             cv_rect(4, y, 232, 14, COL_SELBG);
-        tx(10, y + 1, &FONT_XS, QT_NAMES[th_ui][i], sel ? C_WHITE : C_HI);
-        if (set.best[i]) {
-            int_str(t, set.best[i]);
+        t1_tx(10, y + 1, &FONT_XS, QT_NAMES[th_ui][i], sel ? C_WHITE : C_HI);
+        if (cfg.best[i]) {
+            int_str(t, cfg.best[i]);
             str_cat(t, "/100");
         } else {
-            str_cpy(t, "-");
+            t1_strcpy(t, "-");
         }
         text_r(230, y + 1, &FONT_XS, t, sel ? C_WHITE : C_GRAY);
     }
     cv_rect(4, 170, 232, 1, C_LINE);
-    tx(tx(10, 172, &FONT_XS, S(S_LEVEL_K1), C_GRAY) + 8, 172, &FONT_XS, LEVEL_NAMES[th_ui][set.level], COL_ROOT);
+    t1_tx(t1_tx(10, 172, &FONT_XS, S(S_LEVEL_K1), C_GRAY) + 8, 172, &FONT_XS, LEVEL_NAMES[th_ui][cfg.level], COL_ROOT);
     hint(S(S_H_QSETUP));
 }
 
 static void q_feedback(const char *s, uint16_t c)
 {
-    str_cpy(q.fb, s);
+    t1_strcpy(q.fb, s);
     q.fb_col = c;
 }
 
-static uint8_t pick(const uint8_t *list, int n) { return list[rnd((uint32_t)n)]; }
+static uint8_t q_pick(const uint8_t *list, int n) { return list[rnd((uint32_t)n)]; }
 static const uint8_t NATURAL_ROOTS[7] = {0, 3, 6, 7, 10, 13, 16};
 
 static int qtype_now;
@@ -1061,17 +1061,17 @@ static void q_choices(const char *right, const char *const *pool, int npool, int
 {
     char tmp[4][40];
     int n = 1, tries = 0, i, j = 1;
-    str_cpy(tmp[0], right);
+    t1_strcpy(tmp[0], right);
     if (max > 4)
         max = 4;
     while (n < max && tries++ < 300) {
         const char *c = pool[rnd((uint32_t)npool)];
         int dup = 0;
         for (i = 0; i < n; i++)
-            if (str_eq(tmp[i], c))
+            if (t1_streq(tmp[i], c))
                 dup = 1;
         if (!dup)
-            str_cpy(tmp[n++], c);
+            t1_strcpy(tmp[n++], c);
     }
     q.kind = K_CHOICE;
     q.nopt = (uint8_t)n;
@@ -1079,7 +1079,7 @@ static void q_choices(const char *right, const char *const *pool, int npool, int
     q.sel = 0;
     q.gone = 0;
     for (i = 0; i < n; i++)
-        str_cpy(q.opt[i], i == q.correct ? tmp[0] : tmp[j++]);
+        t1_strcpy(q.opt[i], i == q.correct ? tmp[0] : tmp[j++]);
 }
 
 /* "3 diesis", "1 flat", "keine" */
@@ -1087,7 +1087,7 @@ static void count_text(int c, char *b)
 {
     int n = c < 0 ? -c : c;
     if (c == 0) {
-        str_cpy(b, S(S_Q_NONE));
+        t1_strcpy(b, S(S_Q_NONE));
         return;
     }
     int_str(b, n);
@@ -1098,7 +1098,7 @@ static void count_text(int c, char *b)
 /* a question of type t at the chosen level */
 static void q_make(int t)
 {
-    int lv = set.level, i;
+    int lv = cfg.level, i;
     char a[40], b[40];
     q.type = (uint8_t)t;
     q.kind = K_SEQ;
@@ -1114,34 +1114,34 @@ static void q_make(int t)
     q.l1[0] = q.l2[0] = q.ans[0] = q.fb[0] = 0;
     switch (t) {
     case QT_NOTE: {
-        nt_t n = ROOTS[lv == 0 ? pick(NATURAL_ROOTS, 7) : rnd(NROOTS)];
+        nt_t n = ROOTS[lv == 0 ? q_pick(NATURAL_ROOTS, 7) : rnd(NROOTS)];
         q.kind = K_ONE;
         q.n = 1;
         q.nt[0] = n;
         q.pc[0] = (uint8_t)pc_of(n);
-        str_cpy(q.l1, S(S_Q_NOTE));
+        t1_strcpy(q.l1, S(S_Q_NOTE));
         note_full(n, q.l2);
         if (lv > 0 && n.acc) {               /* the other name too: the enharmonic */
             nt_t e = spell(n, 0, n.acc > 0 ? 1 : 6);
             note_full(e, a);
-            fmt(q.ans, S(S_Q_SAMEKEY), a, 0, 0);
+            t1_fmt(q.ans, S(S_Q_SAMEKEY), a, 0, 0);
         }
         break;
     }
     case QT_INTERVAL: {
         static const uint8_t L1[4] = {3, 4, 5, 7}, L2[8] = {1, 2, 3, 4, 5, 7, 8, 9},
                              L3[11] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-        int iv = lv == 0 ? pick(L1, 4) : lv == 1 ? pick(L2, 8) : pick(L3, 11);
-        nt_t r = ROOTS[lv == 0 ? pick(NATURAL_ROOTS, 7) : rnd(NROOTS)], top = interval_top(r, iv);
+        int iv = lv == 0 ? q_pick(L1, 4) : lv == 1 ? q_pick(L2, 8) : q_pick(L3, 11);
+        nt_t r = ROOTS[lv == 0 ? q_pick(NATURAL_ROOTS, 7) : rnd(NROOTS)], top = interval_top(r, iv);
         q.kind = K_ONE;
         q.n = 1;
         q.nt[0] = top;
         q.pc[0] = (uint8_t)pc_of(top);
         q.ref = r;
         q.ref_pc = (int8_t)pc_of(r);
-        str_cpy(q.l1, S(S_Q_INT1));
+        t1_strcpy(q.l1, S(S_Q_INT1));
         note_full(r, a);
-        fmt(q.l2, S(S_Q_INT2), TR(INTERVALS[iv].name), a, 0);
+        t1_fmt(q.l2, S(S_Q_INT2), TR(INTERVALS[iv].name), a, 0);
         note_full(top, q.ans);
         break;
     }
@@ -1151,17 +1151,17 @@ static void q_make(int t)
         if (t == QT_SCALE) {
             static const uint8_t EASY[4] = {0, 10, 7, 3};   /* C G F D */
             int sc = lv == 0 ? SC_MAJOR : lv == 1 ? (int)rnd(2) : (int)rnd(6);
-            r = ROOTS[lv == 0 ? pick(EASY, 4) : sc == SC_MAJOR || sc == SC_PENTA_MAJ ?
-                pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS) : pick(COMMON_MINOR_ROOTS, sizeof COMMON_MINOR_ROOTS)];
+            r = ROOTS[lv == 0 ? q_pick(EASY, 4) : sc == SC_MAJOR || sc == SC_PENTA_MAJ ?
+                q_pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS) : q_pick(COMMON_MINOR_ROOTS, sizeof COMMON_MINOR_ROOTS)];
             s = SCALES[sc];
-            str_cpy(q.l1, S(S_Q_SCALE));
+            t1_strcpy(q.l1, S(S_Q_SCALE));
         } else {
             static const uint8_t WHITE_MODE_ROOT[7] = {0, 3, 6, 7, 10, 13, 16};   /* C D E F G A B: white keys */
             int m = (int)rnd(7);
-            r = ROOTS[lv == 0 ? WHITE_MODE_ROOT[m] : lv == 1 ? pick(NATURAL_ROOTS, 7) :
-                pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS)];
+            r = ROOTS[lv == 0 ? WHITE_MODE_ROOT[m] : lv == 1 ? q_pick(NATURAL_ROOTS, 7) :
+                q_pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS)];
             mode_scale(m, &s);
-            str_cpy(q.l1, S(S_Q_MODE));
+            t1_strcpy(q.l1, S(S_Q_MODE));
         }
         note_full(r, q.l2);
         str_cat(q.l2, " ");
@@ -1177,17 +1177,17 @@ static void q_make(int t)
     }
     case QT_CHORD: {
         int ty = lv == 0 ? (int)rnd(2) : lv == 1 ? (int)rnd(NTRIADS) : (int)rnd(NCHORDS);
-        nt_t r = ROOTS[lv == 0 ? pick(NATURAL_ROOTS, 7) : pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS)];
+        nt_t r = ROOTS[lv == 0 ? q_pick(NATURAL_ROOTS, 7) : q_pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS)];
         q.kind = K_SET;
         q.n = CHORDS[ty].n;
         for (i = 0; i < q.n; i++) {
             q.nt[i] = chord_note(ty, r, i);
             q.pc[i] = (uint8_t)pc_of(q.nt[i]);
         }
-        str_cpy(q.l1, S(S_Q_CHORD));
+        t1_strcpy(q.l1, S(S_Q_CHORD));
         chord_name(ty, r, q.l2);
         chord_symbol(ty, r, a);
-        str_cpy(q.ans, S(S_SYMBOL));
+        t1_strcpy(q.ans, S(S_SYMBOL));
         str_cat(q.ans, ": ");
         str_cat(q.ans, a);
         q.ref = r;
@@ -1197,10 +1197,10 @@ static void q_make(int t)
         static const uint8_t EASY[3] = {0, 10, 7};   /* C G F */
         static const uint8_t PRIMARY[3] = {0, 3, 4}; /* I IV V */
         static const char *const NUM[7] = {"I", "II", "III", "IV", "V", "VI", "VII"};
-        int harm = lv == 2 && rnd(2), sev = lv == 2 && rnd(2), d = lv == 0 ? pick(PRIMARY, 3) : (int)rnd(7), ty;
+        int harm = lv == 2 && rnd(2), sev = lv == 2 && rnd(2), d = lv == 0 ? q_pick(PRIMARY, 3) : (int)rnd(7), ty;
         const scale_t *s = &SCALES[harm ? SC_HARMMINOR : SC_MAJOR];
-        nt_t r = ROOTS[lv == 0 ? pick(EASY, 3) : harm ? pick(COMMON_MINOR_ROOTS, sizeof COMMON_MINOR_ROOTS) :
-                       pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS)], cr;
+        nt_t r = ROOTS[lv == 0 ? q_pick(EASY, 3) : harm ? q_pick(COMMON_MINOR_ROOTS, sizeof COMMON_MINOR_ROOTS) :
+                       q_pick(COMMON_MAJOR_ROOTS, sizeof COMMON_MAJOR_ROOTS)], cr;
         ty = degree_chord(s, d, sev ? 4 : 3);
         cr = scale_note(s, r, d);
         q.kind = K_SET;
@@ -1210,11 +1210,11 @@ static void q_make(int t)
             q.pc[i] = (uint8_t)pc_of(q.nt[i]);
         }
         note_full(r, a);
-        fmt(q.l1, S(harm ? S_Q_DEG_MIN : S_Q_DEG_MAJ), a, 0, 0);
-        fmt(q.l2, S(sev ? S_Q_DEG_SEV : S_Q_DEG_TRI), NUM[d], 0, 0);
+        t1_fmt(q.l1, S(harm ? S_Q_DEG_MIN : S_Q_DEG_MAJ), a, 0, 0);
+        t1_fmt(q.l2, S(sev ? S_Q_DEG_SEV : S_Q_DEG_TRI), NUM[d], 0, 0);
         chord_name(ty, cr, a);
         chord_symbol(ty, cr, b);
-        str_cpy(q.ans, a);
+        t1_strcpy(q.ans, a);
         str_cat(q.ans, " - ");
         str_cat(q.ans, b);
         q.ref = r;
@@ -1224,7 +1224,7 @@ static void q_make(int t)
         static const uint8_t L1[5] = {3, 4, 5, 7, 12}, L2[9] = {1, 2, 3, 4, 5, 7, 8, 9, 12},
                              L3[12] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
         const uint8_t *L = lv == 0 ? L1 : lv == 1 ? L2 : L3;
-        int nl = lv == 0 ? 5 : lv == 1 ? 9 : 12, iv = pick(L, nl), root = 55 + (int)rnd(10);
+        int nl = lv == 0 ? 5 : lv == 1 ? 9 : 12, iv = q_pick(L, nl), root = 55 + (int)rnd(10);
         const char *pool[12];
         for (i = 0; i < nl; i++)
             pool[i] = TR(INTERVALS[L[i]].name);
@@ -1232,17 +1232,17 @@ static void q_make(int t)
         q.listen[1] = (uint8_t)(root + INTERVALS[iv].semis);
         q.nlisten = 2;
         q.listen_kind = 0;
-        str_cpy(q.l1, S(S_Q_EAR_INT));
-        str_cpy(q.l2, S(S_Q_REPLAY));
+        t1_strcpy(q.l1, S(S_Q_EAR_INT));
+        t1_strcpy(q.l2, S(S_Q_REPLAY));
         q_choices(TR(INTERVALS[iv].name), pool, nl, 4);
-        str_cpy(q.ans, TR(INTERVALS[iv].name));
+        t1_strcpy(q.ans, TR(INTERVALS[iv].name));
         break;
     }
     case QT_EAR_CHORD: {
         static const uint8_t L1[2] = {CH_MAJ, CH_MIN}, L2[4] = {CH_MAJ, CH_MIN, CH_DIM, CH_AUG},
                              L3[7] = {CH_MAJ, CH_MIN, CH_MAJ7, CH_DOM7, CH_MIN7, CH_HALFDIM, CH_DIM7};
         const uint8_t *L = lv == 0 ? L1 : lv == 1 ? L2 : L3;
-        int nl = lv == 0 ? 2 : lv == 1 ? 4 : 7, ty = pick(L, nl), root = 55 + (int)rnd(9);
+        int nl = lv == 0 ? 2 : lv == 1 ? 4 : 7, ty = q_pick(L, nl), root = 55 + (int)rnd(9);
         const char *pool[7];
         for (i = 0; i < nl; i++)
             pool[i] = TR(CHORDS[L[i]].name);
@@ -1250,10 +1250,10 @@ static void q_make(int t)
         for (i = 0; i < q.nlisten; i++)
             q.listen[i] = (uint8_t)(root + CHORDS[ty].semi[i]);
         q.listen_kind = 1;
-        str_cpy(q.l1, S(S_Q_EAR_CHORD));
-        str_cpy(q.l2, S(S_Q_REPLAY));
+        t1_strcpy(q.l1, S(S_Q_EAR_CHORD));
+        t1_strcpy(q.l2, S(S_Q_REPLAY));
         q_choices(TR(CHORDS[ty].name), pool, nl, 4);
-        str_cpy(q.ans, TR(CHORDS[ty].name));
+        t1_strcpy(q.ans, TR(CHORDS[ty].name));
         break;
     }
     case QT_KEYSIG: default: {
@@ -1268,52 +1268,52 @@ static void q_make(int t)
         note_full(KEYSIGS[k].root, a);
         if (sub == 0) {                      /* how many? */
             int x;
-            str_cpy(q.l1, S(S_Q_HOWMANY));
-            fmt(q.l2, S(S_MAJOR_Q), a, 0, 0);
+            t1_strcpy(q.l1, S(S_Q_HOWMANY));
+            t1_fmt(q.l2, S(S_MAJOR_Q), a, 0, 0);
             for (x = -maxc; x <= maxc && np < 16; x++) {
                 count_text(x, names[np]);
                 if (x == c)
-                    str_cpy(b, names[np]);
+                    t1_strcpy(b, names[np]);
                 pool[np] = names[np];
                 np++;
             }
         } else if (sub == 1) {               /* the relative minor */
             char m[24];
-            str_cpy(q.l1, S(S_Q_REL));
-            fmt(q.l2, S(S_MAJOR_Q), a, 0, 0);
+            t1_strcpy(q.l1, S(S_Q_REL));
+            t1_fmt(q.l2, S(S_MAJOR_Q), a, 0, 0);
             note_full(relative_minor(KEYSIGS[k].root), m);
-            fmt(b, S(S_MINOR_OF), m, 0, 0);
+            t1_fmt(b, S(S_MINOR_OF), m, 0, 0);
             for (i = 0; i < NKEYSIG && np < 16; i++) {
                 int cc = KEYSIGS[i].count < 0 ? -KEYSIGS[i].count : KEYSIGS[i].count;
                 if (cc > maxc + 1)
                     continue;
                 note_full(relative_minor(KEYSIGS[i].root), m);
-                fmt(names[np], S(S_MINOR_OF), m, 0, 0);
+                t1_fmt(names[np], S(S_MINOR_OF), m, 0, 0);
                 pool[np] = names[np];
                 np++;
             }
         } else {                             /* which key has these? */
             char m[24];
-            str_cpy(q.l1, S(S_Q_WHICH));
+            t1_strcpy(q.l1, S(S_Q_WHICH));
             if (c == 0)
-                str_cpy(q.l2, S(S_Q_NOALT_Q));
+                t1_strcpy(q.l2, S(S_Q_NOALT_Q));
             else {
                 count_text(c, q.l2);
                 str_cat(q.l2, "?");
             }
-            fmt(b, S(S_MAJOR_OF), a, 0, 0);
+            t1_fmt(b, S(S_MAJOR_OF), a, 0, 0);
             for (i = 0; i < NKEYSIG && np < 16; i++) {
                 int cc = KEYSIGS[i].count < 0 ? -KEYSIGS[i].count : KEYSIGS[i].count;
                 if (cc > maxc + 1)
                     continue;
                 note_full(KEYSIGS[i].root, m);
-                fmt(names[np], S(S_MAJOR_OF), m, 0, 0);
+                t1_fmt(names[np], S(S_MAJOR_OF), m, 0, 0);
                 pool[np] = names[np];
                 np++;
             }
         }
         q_choices(b, pool, np, 4);
-        str_cpy(q.ans, b);
+        t1_strcpy(q.ans, b);
         q.ref = KEYSIGS[k].root;
         break;
     }
@@ -1335,7 +1335,7 @@ static void q_new(void)
 
 static void quiz_start(void)
 {
-    rng ^= plat_ms() * 2654435761u + 1u;
+    t1_rng ^= plat_ms() * 2654435761u + 1u;
     qtype_now = ui.qsel;
     q.num = 0;
     q.score = 0;
@@ -1361,7 +1361,7 @@ static void q_finish(int right)
     q.score = (uint8_t)(q.score + q.gained);
     if (right == 1) {
         int_str(s, q.gained);
-        fmt(q.fb, S(S_F_RIGHT), s, 0, 0);
+        t1_fmt(q.fb, S(S_F_RIGHT), s, 0, 0);
         q.fb_col = COL_OK;
     } else {
         q_feedback(S(right == 2 ? S_F_SKIPPED : S_F_WRONG), COL_BAD);
@@ -1414,7 +1414,7 @@ static void q_note(int note)
         } else {
             q.errors++;
             q.wrong_pc = (int8_t)pc;
-            fmt(q.fb, S(S_F_PLAYED), nn, 0, 0);
+            t1_fmt(q.fb, S(S_F_PLAYED), nn, 0, 0);
             q.fb_col = COL_BAD;
         }
     } else if (q.kind == K_SEQ) {
@@ -1430,7 +1430,7 @@ static void q_note(int note)
         } else {
             q.errors++;
             q.wrong_pc = (int8_t)pc;
-            fmt(q.fb, S(q.pos == 0 ? S_F_FROM_TONIC : S_F_NOT_NEXT), nn, 0, 0);
+            t1_fmt(q.fb, S(q.pos == 0 ? S_F_FROM_TONIC : S_F_NOT_NEXT), nn, 0, 0);
             q.fb_col = COL_BAD;
         }
     } else {                                  /* K_SET */
@@ -1446,7 +1446,7 @@ static void q_note(int note)
         } else {
             q.errors++;
             q.wrong_pc = (int8_t)pc;
-            fmt(q.fb, S(S_F_NOT_CHORD), nn, 0, 0);
+            t1_fmt(q.fb, S(S_F_NOT_CHORD), nn, 0, 0);
             q.fb_col = COL_BAD;
         }
     }
@@ -1499,8 +1499,8 @@ static void quiz_next(void)
 {
     if (q.num >= NQ) {
         q.record = 0;
-        if (q.score > set.best[qtype_now]) {
-            set.best[qtype_now] = q.score;
+        if (q.score > cfg.best[qtype_now]) {
+            cfg.best[qtype_now] = q.score;
             set_dirty = 1;
             q.record = 1;
             settings_save();
@@ -1527,17 +1527,17 @@ static void draw_quiz(void)
     int i;
     int_str(s, q.num);
     int_str(u, NQ);
-    fmt(t, S(S_Q_HEADER), s, u, 0);
+    t1_fmt(t, S(S_Q_HEADER), s, u, 0);
     int_str(u, q.score);
-    fmt(s, S(S_Q_SCORE), u, 0, 0);
-    header(t, s, COL_ROOT);
-    tx(8, 29, &FONT_XS, q.l1, C_GRAY);
-    tx(8, 42, fit_font(q.l2, 228), q.l2, q.kind == K_CHOICE && q.nlisten ? C_DIM : C_WHITE);
+    t1_fmt(s, S(S_Q_SCORE), u, 0, 0);
+    ui_header(t, s, COL_ROOT);
+    t1_tx(8, 29, &FONT_XS, q.l1, C_GRAY);
+    t1_tx(8, 42, fit_font(q.l2, 228), q.l2, q.kind == K_CHOICE && q.nlisten ? C_DIM : C_WHITE);
     mk.scale = mk.root = mk.ok = mk.bad = mk.hint = 0;
     if (q.ref_pc >= 0)
-        mk.root = (uint16_t)PC(q.ref_pc);
+        mk.root = (uint16_t)PCB(q.ref_pc);
     if (q.wrong_pc >= 0 && !q.done)
-        mk.bad = (uint16_t)PC(q.wrong_pc);
+        mk.bad = (uint16_t)PCB(q.wrong_pc);
     if (q.kind == K_CHOICE) {
         for (i = 0; i < q.nopt; i++) {
             int32_t y = 72 + i * 22;
@@ -1551,10 +1551,10 @@ static void draw_quiz(void)
             cv_rect(4, y, 232, 20, bg);
             s[0] = (char)('A' + i);
             s[1] = 0;
-            tx(10, y + 2, &FONT_B, s, C_GRAY);
-            tx(30, y + 2, tw(&FONT_B, q.opt[i]) <= 200 ? &FONT_B : &FONT_XS, q.opt[i], (q.gone >> i & 1u) ? C_DIM : fg);
+            t1_tx(10, y + 2, &FONT_B, s, C_GRAY);
+            t1_tx(30, y + 2, t1_tw(&FONT_B, q.opt[i]) <= 200 ? &FONT_B : &FONT_XS, q.opt[i], (q.gone >> i & 1u) ? C_DIM : fg);
             if (q.gone >> i & 1u)
-                cv_rect(28, y + 10, tw(&FONT_B, q.opt[i]) + 4, 1, C_GRAY);
+                cv_rect(28, y + 10, t1_tw(&FONT_B, q.opt[i]) + 4, 1, C_GRAY);
         }
     } else {
         /* the answer's boxes: found notes named, the rest '?' (named in blue with a hint, all named at the end) */
@@ -1573,34 +1573,34 @@ static void draw_quiz(void)
                 note_name(q.nt[i], nn);
                 note_alt(q.nt[i], aa);
             } else {
-                str_cpy(nn, "?");
+                t1_strcpy(nn, "?");
             }
             note_box(x, 72, w, bh, nn, aa, bg, C_WHITE, q.kind == K_SEQ && i == q.pos && !q.done ? C_HI : C_LINE);
             if (got)
-                mk.ok |= (uint16_t)PC(q.pc[i]);
+                mk.ok |= (uint16_t)PCB(q.pc[i]);
             if (show_hint)
-                mk.hint |= (uint16_t)PC(q.pc[i]);
+                mk.hint |= (uint16_t)PCB(q.pc[i]);
         }
         y2 = 72 + bh + 4;
         if (q.fb[0])
-            tx(8, y2, tw(&FONT_B, q.fb) <= 226 ? &FONT_B : &FONT_XS, q.fb, q.fb_col);
+            t1_tx(8, y2, t1_tw(&FONT_B, q.fb) <= 226 ? &FONT_B : &FONT_XS, q.fb, q.fb_col);
         if (q.done) {
             if (q.ans[0]) {
                 if (q.done == 1)
-                    str_cpy(t, q.ans);
+                    t1_strcpy(t, q.ans);
                 else
-                    fmt(t, S(S_F_ANSWER), q.ans, 0, 0);
+                    t1_fmt(t, S(S_F_ANSWER), q.ans, 0, 0);
                 text_wrap(8, y2 + 20, 226, &FONT_XS, t, q.done == 1 ? C_HI : C_WHITE, 13, 184);
             }
         } else {
             int_str(u, q.errors);
-            fmt(t, S(S_F_ERRORS), u, 0, 0);
+            t1_fmt(t, S(S_F_ERRORS), u, 0, 0);
             if (q.hints) {
                 int_str(u, q.hints);
-                fmt(s, S(S_F_HINTS), u, 0, 0);
+                t1_fmt(s, S(S_F_HINTS), u, 0, 0);
                 str_cat(t, s);
             }
-            tx(8, y2 + 20, &FONT_XS, t, C_GRAY);
+            t1_tx(8, y2 + 20, &FONT_XS, t, C_GRAY);
             text_wrap(8, y2 + 36, 226, &FONT_XS,
                       S(q.kind == K_SEQ ? S_F_HELP_SEQ : q.kind == K_SET ? S_F_HELP_SET : S_F_HELP_ONE), C_DIM, 13,
                       184);
@@ -1608,15 +1608,15 @@ static void draw_quiz(void)
     }
     if (q.kind == K_CHOICE) {
         if (q.fb[0])
-            tx(8, 160, &FONT_B, q.fb, q.fb_col);
+            t1_tx(8, 160, &FONT_B, q.fb, q.fb_col);
         if (q.done && q.done != 1 && q.ans[0]) {
-            fmt(t, S(S_F_ANSWER), q.ans, 0, 0);
-            tx(8 + tw(&FONT_B, q.fb) + 10, 163, &FONT_XS, t, C_WHITE);
+            t1_fmt(t, S(S_F_ANSWER), q.ans, 0, 0);
+            t1_tx(8 + t1_tw(&FONT_B, q.fb) + 10, 163, &FONT_XS, t, C_WHITE);
         }
     }
     if (q.done)                               /* the answer on the keys */
         for (i = 0; i < q.n && q.kind != K_CHOICE; i++)
-            mk.ok |= (uint16_t)PC(q.pc[i]);
+            mk.ok |= (uint16_t)PCB(q.pc[i]);
     hint(S(q.done ? S_H_NEXT : q.kind == K_CHOICE ? S_H_QCHOICE : S_H_QPLAY));
 }
 
@@ -1643,17 +1643,17 @@ static void draw_qend(void)
 {
     char t[48], u[16];
     int i, stars = q.score >= 90 ? 3 : q.score >= 70 ? 2 : q.score >= 40 ? 1 : 0;
-    header(S(S_END), QT_NAMES[th_ui][qtype_now], C_GRAY);
+    ui_header(S(S_END), QT_NAMES[th_ui][qtype_now], C_GRAY);
     int_str(t, q.score);
     str_cat(t, "/100");
     text_c(34, &FONT_L, t, C_WHITE);
     for (i = 0; i < 3; i++)
         star(80 + i * 40, 94, 16, i < stars ? COL_ROOT : C_LINE);
     text_c(118, &FONT_B, S(stars == 3 ? S_END_3 : stars == 2 ? S_END_2 : stars == 1 ? S_END_1 : S_END_0), C_HI);
-    int_str(u, set.best[qtype_now]);
-    fmt(t, S(S_BEST), u, 0, 0);
+    int_str(u, cfg.best[qtype_now]);
+    t1_fmt(t, S(S_BEST), u, 0, 0);
     text_c(140, &FONT_B, q.record ? S(S_NEW_BEST) : t, q.record ? COL_OK : C_GRAY);
-    fmt(t, S(S_LEVEL), LEVEL_NAMES[th_ui][set.level], 0, 0);
+    t1_fmt(t, S(S_LEVEL), LEVEL_NAMES[th_ui][cfg.level], 0, 0);
     text_c(162, &FONT_XS, t, C_GRAY);
     hint(S(S_H_END));
     mk.scale = 0;
@@ -1718,64 +1718,64 @@ static void draw_lab(void)
         str_cat(t, " ");
         str_cat(t, TR(s.name));
     } else {
-        str_cpy(t, S(S_NO_SCALE));
+        t1_strcpy(t, S(S_NO_SCALE));
     }
-    header(S(S_M_LAB), t, has ? COL_SCALE : C_DIM);
+    ui_header(S(S_M_LAB), t, has ? COL_SCALE : C_DIM);
     mk.scale = mk.root = mk.ok = mk.bad = mk.hint = 0;
     if (has) {
         for (i = 0; i < s.n; i++)
-            mk.scale |= (uint16_t)PC(pc_of(scale_note(&s, ROOTS[ui.lab_root], i)));
-        mk.root = (uint16_t)PC(pc_of(ROOTS[ui.lab_root]));
+            mk.scale |= (uint16_t)PCB(pc_of(scale_note(&s, ROOTS[ui.lab_root], i)));
+        mk.root = (uint16_t)PCB(pc_of(ROOTS[ui.lab_root]));
         if (mask & ~(uint32_t)mk.scale)
             inscale = 0;
         mk.bad = (uint16_t)(mask & ~(uint32_t)mk.scale);
     }
     if (count == 0) {
-        tx(8, 30, &FONT_M, S(S_PLAY_SOMETHING), C_WHITE);
+        t1_tx(8, 30, &FONT_M, S(S_PLAY_SOMETHING), C_WHITE);
         para(8, 62, 226, S(S_LAB_INTRO), C_GRAY, 144);
     } else if (count == 1) {
         nt_t n = lab_spell(low % 12);
         note_full(n, t);
-        tx(8, 29, &FONT_M, t, C_WHITE);
+        t1_tx(8, 29, &FONT_M, t, C_WHITE);
         if (n.acc) {                          /* its other name */
             nt_t e = spell(n, 0, n.acc > 0 ? 1 : 6);
             note_full(e, u);
-            str_cpy(t, "= ");
+            t1_strcpy(t, "= ");
             str_cat(t, u);
-            tx(8, 56, &FONT_B, t, C_GRAY);
+            t1_tx(8, 56, &FONT_B, t, C_GRAY);
         }
         int_str(u, low / 12 - 1);
         int_str(nn, low);
-        fmt(t, S(S_OCTAVE_MIDI), u, nn, 0);
-        tx(8, 76, &FONT_XS, t, C_GRAY);
+        t1_fmt(t, S(S_OCTAVE_MIDI), u, nn, 0);
+        t1_tx(8, 76, &FONT_XS, t, C_GRAY);
         if (has) {
             for (i = 0; i < s.n; i++)
                 if (pc_of(scale_note(&s, ROOTS[ui.lab_root], i)) == low % 12)
                     break;
             if (i < s.n) {
                 int_str(u, i + 1);
-                fmt(t, S(S_DEGREE_OF), u, 0, 0);
+                t1_fmt(t, S(S_DEGREE_OF), u, 0, 0);
                 if (s.n == 7) {
                     str_cat(t, " (");
                     str_cat(t, degree_name(&s, i));
                     str_cat(t, ")");
                 }
             } else {
-                str_cpy(t, S(S_OUT_OF_SCALE));
+                t1_strcpy(t, S(S_OUT_OF_SCALE));
             }
-            tx(8, 92, tw(&FONT_B, t) <= 226 ? &FONT_B : &FONT_XS, t, i < s.n ? COL_SCALE : COL_BAD);
+            t1_tx(8, 92, t1_tw(&FONT_B, t) <= 226 ? &FONT_B : &FONT_XS, t, i < s.n ? COL_SCALE : COL_BAD);
         }
-    } else if (bits(mask) <= 2) {             /* two notes (or one note doubled): the interval */
+    } else if (t1_bits(mask) <= 2) {             /* two notes (or one note doubled): the interval */
         int semis = high - low, iv = semis % 12;
         nt_t a = lab_spell(low % 12), b = lab_spell(high % 12);
-        if (bits(mask) == 1)
+        if (t1_bits(mask) == 1)
             iv = 12;
-        str_cpy(t, TR(INTERVALS[iv].name));
+        t1_strcpy(t, TR(INTERVALS[iv].name));
         if (semis > 12 && iv != 12)
             str_cat(t, S(S_PLUS_OCTAVE));
-        tx(8, 29, fit_font(t, 228), t, C_WHITE);
+        t1_tx(8, 29, fit_font(t, 228), t, C_WHITE);
         note_full(a, u);
-        str_cpy(t, u);
+        t1_strcpy(t, u);
         str_cat(t, " - ");
         note_full(b, u);
         str_cat(t, u);
@@ -1783,7 +1783,7 @@ static void draw_lab(void)
         cat_int(t, semis);
         str_cat(t, " ");
         str_cat(t, S(semis == 1 ? S_SEMITONE : S_SEMITONES));
-        tx(8, 58, tw(&FONT_B, t) <= 226 ? &FONT_B : &FONT_XS, t, C_HI);
+        t1_tx(8, 58, t1_tw(&FONT_B, t) <= 226 ? &FONT_B : &FONT_XS, t, C_HI);
         text_wrap(8, 78, 226, &FONT_XS, TR(INTERVALS[iv].text), C_GRAY, 13, 130);
     } else {
         int ty, rp, inv;
@@ -1793,30 +1793,30 @@ static void draw_lab(void)
             int32_t x;
             char a[48];
             chord_name(ty, r, t);
-            tx(8, 29, fit_font(t, 226), t, C_WHITE);
+            t1_tx(8, 29, fit_font(t, 226), t, C_WHITE);
             chord_symbol(ty, r, u);
-            x = tx(8, 56, &FONT_B, u, COL_ROOT);
+            x = t1_tx(8, 56, &FONT_B, u, COL_ROOT);
             if (inv >= 0) {
-                tx(x + 12, 56, &FONT_B, INV_NAME[th_ui][inv], C_HI);
-                tx(8, 110, &FONT_XS, INV_WHY[th_ui][inv], C_GRAY);
+                t1_tx(x + 12, 56, &FONT_B, INV_NAME[th_ui][inv], C_HI);
+                t1_tx(8, 110, &FONT_XS, INV_WHY[th_ui][inv], C_GRAY);
             }
             for (k = 0; k < CHORDS[ty].n; k++)
                 cn[k] = chord_note(ty, r, k);
             notes_text(cn, CHORDS[ty].n, a);
-            fmt(t, S(S_NOTES), a, CHORDS[ty].formula, 0);
-            tx(8, 76, &FONT_XS, t, C_GRAY);
-            mk.root = (uint16_t)PC(rp);
+            t1_fmt(t, S(S_NOTES), a, CHORDS[ty].formula, 0);
+            t1_tx(8, 76, &FONT_XS, t, C_GRAY);
+            mk.root = (uint16_t)PCB(rp);
             if (has) {                        /* its degree in the scale */
                 for (k = 0; k < s.n; k++)
                     if (pc_of(scale_note(&s, ROOTS[ui.lab_root], k)) == rp)
                         break;
                 if (k < s.n && s.n == 7 && inscale) {
                     roman(k, ty, u);
-                    tx(tx(8, 90, &FONT_B, S(S_DEGREE), COL_SCALE), 90, &FONT_B, u, COL_SCALE);
+                    t1_tx(t1_tx(8, 90, &FONT_B, S(S_DEGREE), COL_SCALE), 90, &FONT_B, u, COL_SCALE);
                 }
             }
         } else {
-            tx(8, 29, &FONT_B, S(S_UNKNOWN_CHORD), C_WHITE);
+            t1_tx(8, 29, &FONT_B, S(S_UNKNOWN_CHORD), C_WHITE);
             t[0] = 0;
             for (i = 0; i < 12; i++)
                 if (mask >> i & 1u) {
@@ -1824,21 +1824,21 @@ static void draw_lab(void)
                     str_cat(t, nn);
                     str_cat(t, " ");
                 }
-            tx(8, 50, &FONT_B, t, C_HI);
+            t1_tx(8, 50, &FONT_B, t, C_HI);
             text_wrap(8, 72, 226, &FONT_XS, S(S_UNKNOWN_TIP), C_GRAY, 13, 130);
         }
     }
     if (has && count && !inscale)
-        tx(8, 132, &FONT_B, S(S_OUT_RED), COL_BAD);
-    str_cpy(t, S(S_LAST));                    /* the last notes played */
+        t1_tx(8, 132, &FONT_B, S(S_OUT_RED), COL_BAD);
+    t1_strcpy(t, S(S_LAST));                    /* the last notes played */
     for (i = 0; i < ui.nhist; i++) {
         note_name(lab_spell(ui.hist[i] % 12), nn);
         str_cat(t, nn);
         str_cat(t, " ");
     }
     cv_rect(4, 152, 232, 1, C_LINE);
-    tx(8, 158, &FONT_XS, t, C_GRAY);
-    tx(8, 172, &FONT_XS, S(has ? S_LAB_SEL1 : S_LAB_SEL0), C_DIM);
+    t1_tx(8, 158, &FONT_XS, t, C_GRAY);
+    t1_tx(8, 172, &FONT_XS, S(has ? S_LAB_SEL1 : S_LAB_SEL0), C_DIM);
     hint(S(S_H_LAB));
 }
 
@@ -1849,23 +1849,23 @@ static void draw_settings(void)
     static const int LABEL[NST] = {S_SET_LANG, S_SET_NAMES, S_SET_SOUND, S_SET_SPEED, S_SET_EXT, S_SET_BLE,
                                    S_SET_DEVICE, S_SET_RESET};
     int i;
-    header(S(S_M_SETTINGS), set_dirty ? "SAVE" : 0, COL_ROOT);
+    ui_header(S(S_M_SETTINGS), set_dirty ? "SAVE" : 0, COL_ROOT);
     for (i = 0; i < NST; i++) {
         int32_t y = 29 + i * 19, sel = i == ui.set_sel;
         const char *v = "";
         char dev[40];
         switch (i) {
-        case ST_LANG: v = LANG_SELF[set.ui % NLANGS]; break;
-        case ST_NAMES: v = NAMES_SELF[set.names % NNAMES]; break;
-        case ST_SOUND: v = SOUND_NAMES[th_ui][set.sound % NSOUNDS]; break;
-        case ST_SPEED: v = SPEED_NAMES[th_ui][set.speed % 3]; break;
-        case ST_EXT: v = S(set.ext_mute ? S_EXT_MUTE : S_EXT_BOTH); break;
-        case ST_BLE: v = !FM1B_BLE ? S(S_NOT_BUILT) : S(set.ble_off ? S_OFF : S_ON); break;
+        case ST_LANG: v = LANG_SELF[cfg.ui % NLANGS]; break;
+        case ST_NAMES: v = NAMES_SELF[cfg.names % NNAMES]; break;
+        case ST_SOUND: v = SOUND_NAMES[th_ui][cfg.sound % NSOUNDS]; break;
+        case ST_SPEED: v = SPEED_NAMES[th_ui][cfg.speed % 3]; break;
+        case ST_EXT: v = S(cfg.ext_mute ? S_EXT_MUTE : S_EXT_BOTH); break;
+        case ST_BLE: v = !FM1B_BLE ? S(S_NOT_BUILT) : S(cfg.ble_off ? S_OFF : S_ON); break;
         case ST_DEVICE:
             if (!FM1B_BLE_CENTRAL)
                 v = "-";
             else if (plat_ble_device() == BLE_DEV_READY) {
-                fmt(dev, S(S_CONNECTED), btdev_name(), 0, 0);
+                t1_fmt(dev, S(S_CONNECTED), btdev_name(), 0, 0);
                 v = dev;
             } else
                 v = S(ui.looking ? S_SEARCHING : S_REC_SEARCH);
@@ -1875,7 +1875,7 @@ static void draw_settings(void)
         }
         if (sel)
             cv_rect(4, y, 232, 18, COL_SELBG);
-        tx(10, y + 3, &FONT_XS, S(LABEL[i]), sel ? C_WHITE : C_GRAY);
+        t1_tx(10, y + 3, &FONT_XS, S(LABEL[i]), sel ? C_WHITE : C_GRAY);
         text_r(230, y + 3, &FONT_XS, v, sel ? COL_ROOT : C_HI);
     }
     hint(S(S_H_SETTINGS));
@@ -1884,21 +1884,21 @@ static void draw_settings(void)
 static void settings_change(int d)
 {
     switch (ui.set_sel) {
-    case ST_LANG: set.ui = (uint8_t)((set.ui + NLANGS + d) % NLANGS); break;
-    case ST_NAMES: set.names = (uint8_t)((set.names + NNAMES + d) % NNAMES); break;
-    case ST_SOUND: set.sound = (uint8_t)((set.sound + NSOUNDS + d) % NSOUNDS); break;
-    case ST_SPEED: set.speed = (uint8_t)((set.speed + 3 + d) % 3); break;
-    case ST_EXT: set.ext_mute = (uint8_t)!set.ext_mute; break;
+    case ST_LANG: cfg.ui = (uint8_t)((cfg.ui + NLANGS + d) % NLANGS); break;
+    case ST_NAMES: cfg.names = (uint8_t)((cfg.names + NNAMES + d) % NNAMES); break;
+    case ST_SOUND: cfg.sound = (uint8_t)((cfg.sound + NSOUNDS + d) % NSOUNDS); break;
+    case ST_SPEED: cfg.speed = (uint8_t)((cfg.speed + 3 + d) % 3); break;
+    case ST_EXT: cfg.ext_mute = (uint8_t)!cfg.ext_mute; break;
     case ST_BLE:
         if (!FM1B_BLE)
             return;
-        set.ble_off = (uint8_t)!set.ble_off;
-        plat_ble_enable(!set.ble_off);
+        cfg.ble_off = (uint8_t)!cfg.ble_off;
+        plat_ble_enable(!cfg.ble_off);
         break;
     case ST_RESET: {
         int i;
         for (i = 0; i < NQT; i++)
-            set.best[i] = 0;
+            cfg.best[i] = 0;
         app_say(S(S_SAY_RECORDS), S(S_SAY_RESET));
         break;
     }
@@ -1980,7 +1980,7 @@ static void note_in(int note, int vel, int on, int outside)
     if (note < 0 || note > 127)
         return;
     if (on) {
-        if (!outside || !set.ext_mute)
+        if (!outside || !cfg.ext_mute)
             synth_note_on(note, vel);
         if (ui.held[note] < 255)
             ui.held[note]++;
@@ -1994,7 +1994,7 @@ static void note_in(int note, int vel, int on, int outside)
             q_note(note);
         }
     } else {
-        if (!outside || !set.ext_mute)
+        if (!outside || !cfg.ext_mute)
             synth_note_off(note);
         if (ui.held[note])
             ui.held[note]--;
@@ -2021,32 +2021,32 @@ static void midi_in(void)
     }
 }
 
-static void go(int screen)
+static void ui_go(int screen)
 {
     ui.screen = (uint8_t)screen;
     ui.redraw = 1;
     play_stop();
 }
 
-static void back(void)
+static void ui_back(void)
 {
     switch (ui.screen) {
-    case SCR_LESSON: go(SCR_TOPICS); break;
-    case SCR_QUIZ: case SCR_QEND: go(SCR_QSETUP); break;
-    case SCR_SETTINGS: settings_save(); go(SCR_MENU); break;
-    default: go(SCR_MENU); break;
+    case SCR_LESSON: ui_go(SCR_TOPICS); break;
+    case SCR_QUIZ: case SCR_QEND: ui_go(SCR_QSETUP); break;
+    case SCR_SETTINGS: settings_save(); ui_go(SCR_MENU); break;
+    default: ui_go(SCR_MENU); break;
     }
 }
 
-static void enter(void)
+static void ui_enter(void)
 {
     switch (ui.screen) {
     case SCR_MENU:
-        go(ui.menu == 0 ? SCR_TOPICS : ui.menu == 1 ? SCR_QSETUP : ui.menu == 2 ? SCR_LAB : SCR_SETTINGS);
+        ui_go(ui.menu == 0 ? SCR_TOPICS : ui.menu == 1 ? SCR_QSETUP : ui.menu == 2 ? SCR_LAB : SCR_SETTINGS);
         break;
     case SCR_TOPICS:
         ui.topic = ui.topic_sel;
-        go(SCR_LESSON);
+        ui_go(SCR_LESSON);
         lesson_play();
         break;
     case SCR_QSETUP: quiz_start(); break;
@@ -2062,33 +2062,33 @@ static void enter(void)
     }
 }
 
-static int wrap(int v, int n) { return ((v % n) + n) % n; }
+static int t1_wrap(int v, int n) { return ((v % n) + n) % n; }
 
-static void encoder(int e, int d)
+static void ui_encoder(int e, int d)
 {
     switch (ui.screen) {
     case SCR_MENU:
         if (e == EN_SELECT)
-            ui.menu = (uint8_t)wrap(ui.menu + d, 4);
+            ui.menu = (uint8_t)t1_wrap(ui.menu + d, 4);
         break;
     case SCR_TOPICS:
         if (e == EN_SELECT || e == EN_ALGO)
-            ui.topic_sel = (uint8_t)wrap(ui.topic_sel + d, NTOPICS);
+            ui.topic_sel = (uint8_t)t1_wrap(ui.topic_sel + d, NTOPICS);
         break;
     case SCR_LESSON: {
         int n = ui.topic == T_HARMONY ? NHSCALES : TOPIC_ITEMS[ui.topic];
         if (e == EN_SELECT)
-            ui.item[ui.topic] = (uint8_t)wrap(ui.item[ui.topic] + d, n);
+            ui.item[ui.topic] = (uint8_t)t1_wrap(ui.item[ui.topic] + d, n);
         else if (e == EN_ALGO) {
-            ui.topic = (uint8_t)wrap(ui.topic + d, NTOPICS);
+            ui.topic = (uint8_t)t1_wrap(ui.topic + d, NTOPICS);
             ui.topic_sel = ui.topic;
         } else if (e == EN_K1 || e == EN_PRESET) {
             if (ui.topic == T_KEYS)
-                ui.item[T_KEYS] = (uint8_t)wrap(ui.item[T_KEYS] + d, NKEYSIG);
+                ui.item[T_KEYS] = (uint8_t)t1_wrap(ui.item[T_KEYS] + d, NKEYSIG);
             else
-                ui.root[ui.topic] = (uint8_t)wrap(ui.root[ui.topic] + d, NROOTS);
+                ui.root[ui.topic] = (uint8_t)t1_wrap(ui.root[ui.topic] + d, NROOTS);
         } else if (e == EN_K2 && ui.topic == T_HARMONY) {
-            ui.hdeg = (uint8_t)wrap(ui.hdeg + d, 7);
+            ui.hdeg = (uint8_t)t1_wrap(ui.hdeg + d, 7);
             lesson_play();                   /* a degree chosen: heard */
         } else if (e == EN_K3 && ui.topic == T_HARMONY)
             ui.hseventh = (uint8_t)!ui.hseventh;
@@ -2098,25 +2098,25 @@ static void encoder(int e, int d)
     }
     case SCR_QSETUP:
         if (e == EN_SELECT)
-            ui.qsel = (uint8_t)wrap(ui.qsel + d, NQT);
+            ui.qsel = (uint8_t)t1_wrap(ui.qsel + d, NQT);
         else if (e == EN_K1 || e == EN_ALGO || e == EN_PRESET) {
-            set.level = (uint8_t)wrap(set.level + d, 3);
+            cfg.level = (uint8_t)t1_wrap(cfg.level + d, 3);
             set_dirty = 1;
         }
         break;
     case SCR_QUIZ:
         if (e == EN_SELECT && q.kind == K_CHOICE && !q.done)
-            q.sel = (uint8_t)wrap(q.sel + d, q.nopt);
+            q.sel = (uint8_t)t1_wrap(q.sel + d, q.nopt);
         break;
     case SCR_LAB:
         if (e == EN_SELECT)
-            ui.lab_scale = (uint8_t)wrap(ui.lab_scale + d, NLABSCALES);
+            ui.lab_scale = (uint8_t)t1_wrap(ui.lab_scale + d, NLABSCALES);
         else if (e == EN_K1 || e == EN_PRESET)
-            ui.lab_root = (uint8_t)wrap(ui.lab_root + d, NROOTS);
+            ui.lab_root = (uint8_t)t1_wrap(ui.lab_root + d, NROOTS);
         break;
     case SCR_SETTINGS:
         if (e == EN_SELECT)
-            ui.set_sel = (uint8_t)wrap(ui.set_sel + d, NST);
+            ui.set_sel = (uint8_t)t1_wrap(ui.set_sel + d, NST);
         else if (e == EN_K1 || e == EN_PRESET)
             settings_change(d);
         if (FM1B_BLE_CENTRAL && e == EN_ALGO && ui.looking)
@@ -2131,7 +2131,7 @@ static void encoder(int e, int d)
 static void ble_device_button(void)
 {
     int ev;
-    if (!FM1B_BLE_CENTRAL || set.ble_off)
+    if (!FM1B_BLE_CENTRAL || cfg.ble_off)
         return;
     if (!btdev_busy() && !ui.looking) {
         ui.looking = 1;
@@ -2147,18 +2147,18 @@ static void ble_device_button(void)
 /* EDIT: the next way of naming the notes */
 static void names_next(void)
 {
-    set.names = (uint8_t)((set.names + 1u) % NNAMES);
+    cfg.names = (uint8_t)((cfg.names + 1u) % NNAMES);
     set_dirty = 1;
     settings_apply();
-    app_say(S(S_SET_NAMES), NAMES_SELF[set.names]);
+    app_say(S(S_SET_NAMES), NAMES_SELF[cfg.names]);
 }
 
-static void button(int b)
+static void ui_button(int b)
 {
     switch (b) {
-    case B_HOME: back(); return;
-    case B_SEL: enter(); return;
-    case B_GLO: go(SCR_SETTINGS); return;
+    case B_HOME: ui_back(); return;
+    case B_SEL: ui_enter(); return;
+    case B_GLO: ui_go(SCR_SETTINGS); return;
     case B_OCTDN: case B_OCTUP: {
         int o = clamp(ui.octave + (b == B_OCTUP ? 1 : -1), -2, 2);
         int i;
@@ -2217,7 +2217,7 @@ static void button(int b)
     ui.redraw = 1;
 }
 
-static void input(void)
+static void ui_input(void)
 {
     uint32_t keys, btn = plat_buttons(), k, now = plat_ms();
     int32_t e;
@@ -2245,17 +2245,17 @@ static void input(void)
     }
     for (k = 0; k < NB; k++)
         if ((btn >> k & 1u) && !(ui.btn >> k & 1u))
-            button((int)k);
+            ui_button((int)k);
     if (btn != ui.btn)
         ui.redraw = 1;
     ui.btn = btn;
     for (k = 0; k < NE; k++)
         if ((e = plat_enc((int)k)) != 0)
-            encoder((int)k, e);
+            ui_encoder((int)k, e);
     play_tick();
 }
 
-void app_input_only(void) { input(); }
+void app_input_only(void) { ui_input(); }
 
 void app_say(const char *a, const char *b)
 {
@@ -2270,7 +2270,7 @@ void app_say(const char *a, const char *b)
     ui.msg_until = plat_ms() + 1300u;
     ui.redraw = 1;
     if (ann_on()) {                          /* and to a screen reader (announce.c, fm1-reader) */
-        str_cpy(t, ui.msg[0]);
+        t1_strcpy(t, ui.msg[0]);
         if (ui.msg[1][0]) {
             str_cat(t, " ");
             str_cat(t, ui.msg[1]);
@@ -2285,7 +2285,7 @@ static void speak(void)
     if (ann_on() && ann_where()) {
         char t[160];
         const int where[8] = {S_TAGLINE, S_M_LESSONS, S_M_LESSONS, S_M_QUIZ, S_M_QUIZ, S_END, S_M_LAB, S_M_SETTINGS};
-        str_cpy(t, S(where[ui.screen & 7u]));
+        t1_strcpy(t, S(where[ui.screen & 7u]));
         if (ui.screen == SCR_QUIZ) {
             str_cat(t, ". ");
             str_cat(t, q.l1);
@@ -2318,11 +2318,11 @@ static void draw_all(void)
     case SCR_SETTINGS: draw_settings(); btn_live |= 1u << B_SEL | 1u << B_SAVE; break;
     default: break;
     }
-    keyboard();
+    ui_keyboard();
 }
 
 /* the screen in two halves of 120 rows: the same drawing, each half keeping its own rows */
-static void draw(void)
+static void ui_draw(void)
 {
     uint32_t half;
     for (half = 0; half < 2u; half++) {
@@ -2331,7 +2331,7 @@ static void draw(void)
         draw_all();
         cv_blit(0, half * 120u);
     }
-    lights();
+    ui_lights();
 }
 
 void app_ui_init(void)
@@ -2345,7 +2345,7 @@ void app_frame(void)
 {
     static uint32_t msg_was;
     uint32_t now = plat_ms();
-    input();
+    ui_input();
     speak();
     if (ui.screen == SCR_QUIZ && q.done && now - q.done_at >= (q.done == 1 ? 2200u : 3500u))
         quiz_next();
@@ -2353,7 +2353,7 @@ void app_frame(void)
         static int found;
         int n = ui.looking ? btdev_count() : 0, ev;
         char name[21];
-        btdev_page(ui.looking && !set.ble_off);
+        btdev_page(ui.looking && !cfg.ble_off);
         if (n > found && btdev_found(btdev_pick(), name, 0))
             app_say(S(S_SAY_FOUND), name);
         found = n;
@@ -2371,14 +2371,14 @@ void app_frame(void)
     }
     if (ui.redraw) {
         ui.redraw = 0;
-        draw();
+        ui_draw();
     }
 }
 
 void app_init(void)
 {
-    if (plat_store_load(OBJ_SETTINGS, &set, sizeof set) != (int)sizeof set || set.magic != SET_MAGIC ||
-        set.names >= NNAMES || set.ui >= NLANGS || set.sound >= NSOUNDS || set.speed > 2u || set.level > 2u)
+    if (plat_store_load(OBJ_SETTINGS, &cfg, sizeof cfg) != (int)sizeof cfg || cfg.magic != SET_MAGIC ||
+        cfg.names >= NNAMES || cfg.ui >= NLANGS || cfg.sound >= NSOUNDS || cfg.speed > 2u || cfg.level > 2u)
         settings_defaults();
     settings_apply();
     ui.screen = SCR_MENU;
@@ -2406,13 +2406,13 @@ int app_expect(const char *what, int *got)
     else if (!strcmp(what, "voices"))
         *got = synth_active();
     else if (!strcmp(what, "names"))
-        *got = set.names;
+        *got = cfg.names;
     else if (!strcmp(what, "lang"))
-        *got = set.ui;
+        *got = cfg.ui;
     else if (!strcmp(what, "level"))
-        *got = set.level;
+        *got = cfg.level;
     else if (!strcmp(what, "best0"))
-        *got = set.best[0];
+        *got = cfg.best[0];
     else if (!strcmp(what, "dirty"))
         *got = set_dirty;
     else
@@ -2466,7 +2466,7 @@ int app_host_cmd(const char *cmd, const char *a, const char *b, const char *c, c
         return 1;
     }
     if (!strcmp(cmd, "seed")) {
-        rng = (uint32_t)atoi(a) | 1u;
+        t1_rng = (uint32_t)atoi(a) | 1u;
         return 1;
     }
     if (!strcmp(cmd, "quizof")) {
@@ -2474,13 +2474,13 @@ int app_host_cmd(const char *cmd, const char *a, const char *b, const char *c, c
         return 1;
     }
     if (!strcmp(cmd, "lang")) {
-        set.ui = (uint8_t)(atoi(a) % NLANGS);
+        cfg.ui = (uint8_t)(atoi(a) % NLANGS);
         settings_apply();
         ui.redraw = 1;
         return 1;
     }
     if (!strcmp(cmd, "names")) {
-        set.names = (uint8_t)(atoi(a) % NNAMES);
+        cfg.names = (uint8_t)(atoi(a) % NNAMES);
         settings_apply();
         ui.redraw = 1;
         return 1;

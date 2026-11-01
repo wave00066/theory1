@@ -315,9 +315,9 @@ typedef struct {
     uint16_t mask, root;
     uint8_t play[8], nplay, together;
 } page_t;
-#define PC(x) (1u << (x))
-#define WHITE_PCS (PC(0) | PC(2) | PC(4) | PC(5) | PC(7) | PC(9) | PC(11))
-#define BLACK_PCS (PC(1) | PC(3) | PC(6) | PC(8) | PC(10))
+#define PCB(x) (1u << (x))
+#define WHITE_PCS (PCB(0) | PCB(2) | PCB(4) | PCB(5) | PCB(7) | PCB(9) | PCB(11))
+#define BLACK_PCS (PCB(1) | PCB(3) | PCB(6) | PCB(8) | PCB(10))
 static const page_t BASICS[8] = {
     {{"Le 7 note", "The 7 notes", "Las 7 notas", "Die 7 Stammtöne"},
      {"Le note sono sette: Do Re Mi Fa Sol La Si (in lettere: C D E F G A B). Sono i tasti bianchi. Dopo il Si "
@@ -328,7 +328,7 @@ static const page_t BASICS[8] = {
       "vuelve el Do, más agudo: es la octava. PLAY: la escala de Do.",
       "Es gibt sieben Stammtöne: C D E F G A H (Do Re Mi Fa Sol La Si). Das sind die weißen Tasten. Nach H kommt "
       "wieder C, höher: die Oktave. PLAY: die C-Dur-Tonleiter."},
-     WHITE_PCS, PC(0), {60, 62, 64, 65, 67, 69, 71, 72}, 8, 0},
+     WHITE_PCS, PCB(0), {60, 62, 64, 65, 67, 69, 71, 72}, 8, 0},
     {{"Tono e semitono", "Tone and semitone", "Tono y semitono", "Ganzton und Halbton"},
      {"Il semitono è la distanza più piccola: da un tasto a quello subito accanto, bianco o nero. Un tono = 2 "
       "semitoni. Tra Mi-Fa e Si-Do non c'è il tasto nero: sono semitoni.",
@@ -338,7 +338,7 @@ static const page_t BASICS[8] = {
       "semitonos. Entre Mi-Fa y Si-Do no hay tecla negra: son semitonos.",
       "Der Halbton ist der kleinste Schritt: von einer Taste zur nächsten, weiß oder schwarz. Ein Ganzton = 2 "
       "Halbtöne. Zwischen E-F und H-C gibt es keine schwarze Taste: das sind Halbtöne."},
-     PC(4) | PC(5) | PC(11) | PC(0), PC(4), {64, 65, 71, 72}, 4, 0},
+     PCB(4) | PCB(5) | PCB(11) | PCB(0), PCB(4), {64, 65, 71, 72}, 4, 0},
     {{"Diesis e bemolle", "Sharps and flats", "Sostenidos y bemoles", "Kreuz und b"},
      {"Il diesis (#) alza una nota di un semitono, il bemolle (b) la abbassa. Ogni tasto nero ha due nomi: Do# = "
       "Reb. Sono note 'enarmoniche': stesso suono, nome diverso.",
@@ -348,7 +348,7 @@ static const page_t BASICS[8] = {
       "Reb. Son notas 'enarmónicas': mismo sonido, distinto nombre.",
       "Ein Kreuz (#) erhöht einen Ton um einen Halbton (C wird Cis), ein b erniedrigt ihn (D wird Des). Jede "
       "schwarze Taste hat zwei Namen: Cis = Des. Das heißt 'enharmonisch'."},
-     BLACK_PCS, PC(1), {60, 61, 62, 63, 64}, 5, 0},
+     BLACK_PCS, PCB(1), {60, 61, 62, 63, 64}, 5, 0},
     {{"La tastiera dell'FM-1", "The FM-1 keyboard", "El teclado del FM-1", "Die FM-1-Tastatur"},
      {"27 tasti: 16 bianchi e 11 neri, da Fa a Sol (più di 2 ottave). Il Do è l'ottavo tasto bianco. OCT- e OCT+ "
       "spostano il suono di un'ottava. Funziona anche una tastiera MIDI (USB, jack, Bluetooth).",
@@ -358,7 +358,7 @@ static const page_t BASICS[8] = {
       "OCT+ mueven el sonido una octava. También funciona un teclado MIDI (USB, jack, Bluetooth).",
       "27 Tasten: 16 weiße und 11 schwarze, von F bis G (über 2 Oktaven). C ist die 8. weiße Taste. OCT- und OCT+ "
       "verschieben den Klang um eine Oktave. Auch ein MIDI-Keyboard geht (USB, Klinke, Bluetooth)."},
-     PC(0), PC(0), {48, 60, 72}, 3, 0},
+     PCB(0), PCB(0), {48, 60, 72}, 3, 0},
     {{"La scala", "The scale", "La escala", "Die Tonleiter"},
      {"Una serie di note in ordine, con una sequenza fissa di toni (T) e semitoni (S). La maggiore è: T T S T T T "
       "S. Le note della scala sono i 'gradi': I II III IV V VI VII.",
@@ -368,7 +368,7 @@ static const page_t BASICS[8] = {
       "S. Las notas de la escala son los 'grados': I II III IV V VI VII.",
       "Eine Reihe von Tönen mit festem Muster aus Ganztönen (G) und Halbtönen (H). Dur ist: G G H G G G H. Die "
       "Töne heißen 'Stufen': I II III IV V VI VII."},
-     WHITE_PCS, PC(0), {60, 62, 64, 65, 67, 69, 71, 72}, 8, 0},
+     WHITE_PCS, PCB(0), {60, 62, 64, 65, 67, 69, 71, 72}, 8, 0},
     {{"L'intervallo", "The interval", "El intervalo", "Das Intervall"},
      {"La distanza tra due note. Ha un numero (2a, 3a, 5a: quante note si contano) e una qualità (maggiore, "
       "minore, giusta). Do-Mi = 3a maggiore, 4 semitoni.",
@@ -378,7 +378,7 @@ static const page_t BASICS[8] = {
       "calidad (mayor, menor, justa). Do-Mi = tercera mayor, 4 semitonos.",
       "Der Abstand zweier Töne. Es hat eine Zahl (Sekunde, Terz, Quinte: wie viele Stufen man zählt) und eine Art "
       "(groß, klein, rein). C-E = große Terz, 4 Halbtöne."},
-     PC(0) | PC(4), PC(0), {60, 64}, 2, 0},
+     PCB(0) | PCB(4), PCB(0), {60, 64}, 2, 0},
     {{"L'accordo", "The chord", "El acorde", "Der Akkord"},
      {"Tre o più note insieme. La triade si fa 'saltando' una nota della scala: 1-3-5 (Do Mi Sol). Se la 3a è "
       "maggiore l'accordo è maggiore, se è minore è minore.",
@@ -388,7 +388,7 @@ static const page_t BASICS[8] = {
       "tercera es mayor el acorde es mayor; si es menor, es menor.",
       "Drei oder mehr Töne zusammen. Den Dreiklang baut man aus jedem zweiten Ton der Tonleiter: 1-3-5 (C E G). "
       "Große Terz: Dur. Kleine Terz: Moll."},
-     PC(0) | PC(4) | PC(7), PC(0), {60, 64, 67}, 3, 1},
+     PCB(0) | PCB(4) | PCB(7), PCB(0), {60, 64, 67}, 3, 1},
     {{"La tonalità", "The key", "La tonalidad", "Die Tonart"},
      {"La scala 'di casa' di un brano. La tonica è il punto di riposo: la melodia ci torna alla fine. Le "
       "alterazioni in chiave dicono quali note sono # o b (lezione Tonalità).",
@@ -398,11 +398,11 @@ static const page_t BASICS[8] = {
       "armadura dice qué notas son # o b (lección Tonalidades).",
       "Die 'Heimat'-Tonleiter eines Stücks. Der Grundton ist der Ruhepunkt: die Melodie kehrt am Ende zu ihm "
       "zurück. Die Vorzeichen zeigen, welche Töne # oder b sind (Lektion Tonarten)."},
-     WHITE_PCS, PC(0), {67, 71, 74, 72}, 4, 0},
+     WHITE_PCS, PCB(0), {67, 71, 74, 72}, 4, 0},
 };
 
 /* a template with %1 %2 %3 filled in */
-static void fmt(char *d, const char *t, const char *a, const char *b, const char *c)
+static void t1_fmt(char *d, const char *t, const char *a, const char *b, const char *c)
 {
     char *o = d;
     for (; *t; t++) {
